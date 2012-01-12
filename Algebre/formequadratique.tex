@@ -1,0 +1,335 @@
+\chapter{Formes quadratiques}
+\section{Formes quadratiques sur $\mathbb{R}^n$}
+\begin{de}
+On appelle forme quadratique sur $\mathbb{R}^n$ toute application polynomiale homogène du second degrès de $\mathbb{R}^n$ dans $\mathbb{R}$, donc une application défini par : 
+$$\mathbb{R}^n \overset{q}\rightarrow \mathbb{R}$$
+$$X \mapsto q(X)$$
+Si :
+$$X = \begin{pmatrix}
+       x_1\\
+ 	\vdots \\
+	x_n
+      \end{pmatrix}
+$$
+Alors : 
+$$q(X) = \sum_{i=1}^n a_{ii}.x_i^2 + 2.\sum_{1 \leq i < j \leq n} a_{ij}.x_j.x_i$$
+Avec : 
+$$\forall i > j,~ a_{ij} = a_{ji}$$
+\end{de}
+\subsection{Forme bilinéaire symétrique associé à une forme quadratique}
+\begin{prop}
+Si q est une forme quadratique sur $\mathbb{R}^n$, il existe une unique forme bilinéaire symétrique $\varphi$ sur $\mathbb{R}^n$ telle que : 
+$$\forall X \in \mathbb{R}~ q(X) = \varphi(X,X)$$
+$\varphi$ est appelé forme polaire de q.\\
+On montre que l'unicité est du à l'identité de polarisation, qui permet d'exprimer $\varphi$ explicitement en fonction de q.
+\end{prop}
+\subsection{Expressions matricielles de q et de $\varphi$}
+\begin{prop}
+Soient q et $\varphi$ une forme quadratique et sa forme polaire associé sur $\mathbb{R}^n$, alors : 
+$$\forall X \in \mathbb{R}^n~ q(X) = ^tX.A.X$$
+$$\forall(X,X') \in \mathbb{R}^n~ \varphi(X,X') = ^tX.A.X'$$
+Avec A matrice symétrique.
+\end{prop}
+\begin{prop}
+Il existe une unique matrice $A \in \mathcal{M}_n(\mathbb{R})$ symétrique telque : 
+$$\forall X \in \mathbb{R}^n~ q(X) = ^tX.A.X$$
+A est appelé la matrice de la forme quadratique q dans la base canonique, et se note :
+$$A = mat_{can}(q)$$
+De même, A est l'unique matrice symétrique de $\mathcal{M}_n(\mathbb{R})$ telque : 
+$$\forall(X,X') \in (\mathbb{R}^n)^2~ \varphi(X,X') = t^X.A.X'$$
+On obtient :
+$$A = mat_{can}(q) = mat_{can}(\varphi) = (a_{ij})$$
+Avec : 
+$$\forall (i,j) \in [|1,n|]^2~ a_{ij} = \varphi(\overrightarrow{e_i},\overrightarrow{e_j})$$
+Avec ($\overrightarrow{e_1},...,\overrightarrow{e_n}$) la base canonique de $\mathbb{R}^n$.
+\end{prop}
+\subsection{Endomorphisme symétrique de $\mathbb{R}^n$ associé à une forme quadratique q}
+$\mathbb{R}^n$ est munie du produit scalaire canonique. q est une forme quadratique sur $\mathbb{R}^n$, de forme polaire $\varphi$, de matrice A sur la base canonique.
+\begin{prop}
+Il existe un unique endomorphisme f de $\mathbb{R}^n$ symétrique telque : 
+$$\forall X \in \mathbb{R}^n~ q(X) = <f(X)| X >$$
+Cet endomorphisme vérifie aussi : 
+$$\forall (X,X') \in (\mathbb{R}^n)^2~ <f(X),X'> = <X|f(X')> = \varphi(X,X')$$
+f est appelé l'endomorphisme symétrique associé à q dans $(\mathbb{R}^n,<|>)$. De plus, nous avons : 
+$$mat_{cam}(f)=mat_{cam}(q)$$
+\end{prop}
+\subsection{Théorème de réduction orthonormale d'une forme quadratique de $\mathbb{R}^n$}
+\begin{theo}
+$\mathbb{R}^n$ étant munie de son produit scalaire canonique euclidien, et q étant une forme quadratique sur $\mathbb{R}^n$, il existe B=($\overrightarrow{u_1},...,\overrightarrow{u_n}$) base orthonormée de $\mathbb{R}^n$ telque si :
+$$X = x_1.\overrightarrow{u_1} + ... + x_n.\overrightarrow{u_n}$$
+alors : 
+$$q(X) = \lambda_1.x_1'^2 + ... + \lambda_n.x_n'^2$$
+ou les $\lambda_i$ sont des valeurs propres associés à f, l'endomorphisme symétrique canoniquement associé à q. Une telle base B s'obtient en orthonormalisent f. En résumé, par un changement de base, on fait "disparaitre" les termes rectangles ($x_i.x_j$ ...)
+\end{theo}
+\subsection{Version matricielle du théorème de réduction orthonormale}
+Soit q une forme quadratique sur $\mathbb{R}^n$, et $\varphi$ sa forme polaire. Soit A la matrice de q dans la base canonique, et f l'endomorphisme symétrique canoniquement associé à q dans $\mathbb{R}^n$ euclidien canonique.\\
+Si $X \in \mathbb{R}^n$ : 
+$$q(X) = ^tX.A.X = <f(X) | X>$$
+\subsubsection{Changement de base}
+Soit B une nouvelle base de $\mathbb{R}^n$, B=($\overrightarrow{u_1},...,\overrightarrow{u_n}$) et P la matrice de passage entre la base canonique et B. Soit $X' = mat_B(X)$. On sait que : 
+$$X = PX'$$
+Donc : 
+$$q(X) = ^tX.(^tP.A.P).X'$$
+Posons A' = $^tP.A.P$. A' est symétrique et c'est l'unique matrice symétrique vérifiant l'expression précédent $\forall X \in \mathbb{R}^n$. Par définition : 
+$$A' = mat_B(q)$$
+\begin{prop}
+Si A=($a'_{ij}$), alors :
+$$\forall (i,j) \in [|1,n|]^2~a'_{ij} = \varphi(\overrightarrow{u_i},\overrightarrow{u_j}) $$
+De plus, si B est une base orthonormée, alors : 
+$$A- = ^tP.A.P = P^{-1}.A.P$$
+\end{prop}
+
+\section{Généralisation : Formes quadratiques sur un espace vectoriel E}
+\begin{de}
+Soit E un $\mathbb{R}$ espace vectoriel quelconque, non nécessairement de dimension finie. On appelle forme quadratique sur E une application q : E $\rightarrow$ $\mathbb{R}$ tel qu'il existe $\varphi$ application de $E\times E \rightarrow \mathbb{R}$ bilinéaire symétrique vérifiant : 
+$$\forall \overrightarrow{x} \in E, q(\overrightarrow{x}) = \varphi(\overrightarrow{x},\overrightarrow{x})$$
+\end{de}
+
+\begin{prop}
+Avec les notations précédentes, $\varphi$ est alors unique et appelé forme polaire q.
+\end{prop}
+\begin{prop}
+En conservant les notations précédentes : 
+$$\forall (\overrightarrow{x},\overrightarrow{y}) \in E^2~ \varphi(\overrightarrow{x},\overrightarrow{y}) = \dfrac{1}{4}[q(\overrightarrow{x} + \overrightarrow{y}) - q(\overrightarrow{x}-\overrightarrow{y})]$$ 
+\end{prop}
+\begin{prop}
+Si q est une forme quadratique sur E, $\forall \lambda \in \mathbb{R}$ :
+$$\forall \overrightarrow{x} \in E~ q(\lambda.\overrightarrow{x}) = \lambda^2.q(\overrightarrow{x})$$ 
+\end{prop}
+\subsection{Exemples}
+Les formes quadratiques défini à la section précédente sur $\mathbb{R}^n$ sont des formes quadratiques au sens de la nouvelle définition générale. Réciproquement, toute forme quadratique sur $E = \mathbb{R}^n$ au sens de la nouvelle définition est une application polynomiale homogène du $2^{nd}$ degrès. En résumé, les formes quadratiques définies au paragraphe 1 sur $\mathbb{R}^n$ sont des cas particuliers des formes quadratiques défini globalement.
+\subsection{Expression dans une base, matrice d'une forme quadratique dans une base}
+\begin{prop}
+Soit q, application de E dans $\mathbb{R}$, une forme quadratique sur un $\mathbb{R}$ espace vectoriel E de dimension n. $\varphi$ est sa forme polaire. Soit B=($\overrightarrow{u_1},...,\overrightarrow{u_n}$) une base de E. Si : 
+$$\begin{cases}
+   \overrightarrow{x} = x_1.\overrightarrow{u_1} + ... + x_n.\overrightarrow{u_n} \\
+   \overrightarrow{y} = y_1.\overrightarrow{u_1} + ... + y_n.\overrightarrow{u_n} \\
+  \end{cases}
+$$
+Alors : 
+$$
+\begin{cases}
+ q(\overrightarrow{x}) = \sum_{i=1}^n a_{ii}.x_i^2 + 2.\sum_{1 \leq i < j \leq n} a_{ij}.x_i.x_j \\
+ \varphi(\overrightarrow{x},\overrightarrow{y}) = \sum_{(i,j) \in [|1,n|]^2} a_{ij}.x_i.x_j \\
+\end{cases}
+$$
+Réciproquement, si q est une application E dans $\mathbb{R}$, alors : 
+$$\forall \overrightarrow{x} \in E~ q(\overrightarrow{x}) \sum_{i=1}^n a_{ii}.x_i^2 + 2.\sum_{1\leq i<j\leq n} a_{ij}.x_i.x_j$$
+alors q est une forme quadratique et sa forme polaire $\varphi$ est définie par : 
+$$\varphi : E\times E \rightarrow \mathbb{R}$$
+$$(\overrightarrow{x},\overrightarrow{y}) \mapsto \sum_{(i,j) \in [1,n]^2} a_{ij}.x_i.x_j$$
+\end{prop}
+\begin{de}
+Avec les notations précédentes, la matrice A=($a_{ij}$) telque :
+$$\forall (i,j) \in [1,n]~ a_{ij}= \varphi(\overrightarrow{u_i},\overrightarrow{u_j})$$
+A est appelé matrice de q ou de $\varphi$ dans la base B.
+\end{de}
+\begin{prop}
+Avec les notations et définitions précédentes, A est l'unique matrice symétrique de $\mathcal{M}_n(\mathbb{R})$ telque :
+$$\forall \overrightarrow{x} = \sum_{i=1}^n x_i.\overrightarrow{u_i} \in E, q(\overrightarrow{x}) = ^tX.A.X$$
+Avec X la matrice de $\overrightarrow{x}$ dans B.
+\end{prop}
+\subsection{Changement de Base}
+Soit E un $\mathbb{R}$ espace vectoriel de dimension finie n, B et B' deux bases de E. Soit P la matrice de passage entre B et B'. q est une forme quadratique sur E. A est la matrice de q dans B, A' la matrice de q dans B' : 
+$$A' = t^P.A.P$$
+\begin{de}
+Si A et A' deux matrices de $\mathcal{M}_n(\mathbb{R})$. On dit que A et A' sont congruente s'il existe $P \in Gl_n(\mathbb{R})$ telque : 
+$$A' = ^tP.A.P$$
+On défini ainsi une relation d'équivalence sur E. Deux matrices congruentes sont en particulier équivalentes. Donc deux matrices congruentes ont même rang.
+\end{de}
+\begin{de}
+Soit q une forme quadratique sur un $\mathbb{R}$ espace vectoriel de dimension finie. On appelle rang de q le rang de sa matrice sur une base B de E. Cette définition ne dépend pas de la base B choisie.
+\end{de}
+\begin{de}
+Si E est un $\mathbb{R}$ espace vectoriel de dimension finie n et q une forme quadratique sur E. On dit que q est non dégénéré si rang(q)=n, c'est à dire si la matrice de q sur une base est inversible.
+\end{de}
+\subsection{Endomorphisme symétriques associés à une forme quadratique dans un espace vectoriel euclidien}
+\begin{prop}
+Soit q une forme quadratique sur un $\mathbb{R}$ espace vectoriel euclidien E, alors il existe un unique endomorphisme f$\in \mathcal{L}(E)$, symétrique ( pour le produit scalaire de E) telque : 
+$$\forall \overrightarrow{x} \in E~ q(\overrightarrow{x}) = <f(\overrightarrow{x})|\overrightarrow{x}>$$
+En outre, quelque soit la base B orthonormée de E : 
+$$mat_B(f) = mat_B(q)$$
+De plus, si $\varphi$ est la forme polaire de q :
+$$\forall (\overrightarrow{x},\overrightarrow{y})\in E^2,~ \varphi(\overrightarrow{x},\overrightarrow{y}) = <f(\overrightarrow{x}) | \overrightarrow{x}> = <\overrightarrow{x} | f(\overrightarrow{x})>$$
+\end{prop}
+\subsection{Réduction orthonormale d'une forme quadratique dans un espace vectoriel euclidien}
+\begin{theo}
+Soit E un $\mathbb{R}$ espace vectoriel euclidien de dimension n, q une forme quadratique sur E, alors il existe une base B orthonormée de E et des réels $\lambda_1,...,\lambda_n$ telque : 
+$$\forall \overrightarrow{x} = x_1.\overrightarrow{u_1} + ... + x_n.\overrightarrow{u_n} \in E~ q(\overrightarrow{x}) = \sum_{i=1}^n \lambda_i.x_i^2$$
+Une telle base B s'obtient en orthonormalisent l'endomorphisme symétrique f associé à q.\\
+Avec les notations précédentes, si $\overrightarrow{y} = y_1.\overrightarrow{u_1} + ... + y_n.\overrightarrow{u_n}$ et si $\varphi$ est la forme polaire de q : 
+$$\varphi(\overrightarrow{x},\overrightarrow{y}) = \sum_{i=1}^n \lambda_i.x_i.y_i$$ 
+\end{theo}
+\section{Application à la réduction de coniques}
+\begin{de}
+Soit E un $\mathbb{R}$ espace affine de dimension 2. Soit $\mathcal{R}$ un repère de E. On appelle conique au sens large un sous ensemble $(\Gamma)$ de E admettent dans $\mathcal{R}$ une équation du type : 
+$$P(x,y) = 0$$
+Avec P polynome du second degrès : 
+$$P(x,y) = a.x^2 + 2.b.x.y + c.y^2 + u.x + v.y + h$$
+Avec $(a,b,c) \neq (0,0,0)$. Soit $\Omega = (O,\overrightarrow{i},\overrightarrow{j})$. On défini une forme quadratique q par : 
+$$\overrightarrow{E} \rightarrow \mathcal{R}$$
+$$x.\overrightarrow{i} + y.\overrightarrow{j} \mapsto a.x^2 + 2.b.x.y + c.y^2$$
+Avec $\overrightarrow{E}$ l'espace vectoriel associé à E. Nous avons donc : 
+$$mat_{(\overrightarrow{i},\overrightarrow{j})}(q) = \begin{pmatrix}
+                                                      a & b \\
+						      b & c \\
+                                                     \end{pmatrix}
+$$
+On défini de même une forme linéaire l par : 
+$$\overrightarrow{E} \rightarrow \mathcal{R}$$
+$$x.\overrightarrow{i} + y.\overrightarrow{j} \mapsto u.x + v.y$$
+Avec ces notations, l'équation de $(\Gamma)$ s'écrit : 
+$$M \in (\Gamma) \Leftrightarrow q(\overrightarrow{OM}) + l(\overrightarrow{OM}) + h = 0$$
+\end{de}
+\begin{prop}
+Si $\mathcal{R}'$ est un autre repère de (E) si ($\Gamma$) a pour équation P(x,y)=0, avec P polynome du $2^{nd}$ degrès. dans le repère $\mathcal{R}$, alors ($\Gamma$) a pour équation :
+$$Q(x,y) = 0$$
+avec Q polynome du $2^{nd}$ degrès. Autrement dit, la définition ci-dessus ne dépend pas du repère choisi.
+\end{prop}
+\subsection{Cas général}
+On suppose ici E euclidien et $\mathcal{R}$ un repère orthonormée. En réduisant d'abord orthonormalement q, ce qui revient à un changement de repère par rotation, puis en effectuant éventuellement un deuxième changement de repère par translation, on montre qu'il existe un repère orthonormée $\mathcal{R}_1$ dans lequel $(\Gamma)$ à une équation du type (a,b>0):
+\begin{itemize}
+ \item[$\rightarrow$] Coniques non dégénéré :
+\begin{itemize}
+ \item[$\rightarrow$]$\dfrac{x_1^2}{a^2} + \dfrac{y_1^2}{b^2} = 1$. C'est une ellipse. q a deux valeurs propres de même signe
+ \item[$\rightarrow$]$\dfrac{x_1^2}{a^2} - \dfrac{y_1^2}{b^2} = 1$. C'est une hyperbole. q a deux valeurs propres de signe contraire
+ \item[$\rightarrow$]$x_1^2 = 2.p.y_1$. C'est une parabole. q a 1 valeur propre nulle.
+\end{itemize}
+ \item[$\rightarrow$] Coniques dégénéré :
+\begin{itemize}
+ \item[$\rightarrow$] $\dfrac{x_1^2}{a^2} + \dfrac{y_1^2}{b^2} = 0$. ($\Gamma$) est réduit au point (0,0).
+ \item[$\rightarrow$] $\dfrac{x_1^2}{a^2} + \dfrac{y_1^2}{b^2} = \alpha < 0$. ($\Gamma$) est égale au vide. 
+ \item[$\rightarrow$] $\dfrac{x_1^2}{a^2} - \dfrac{y_1^2}{b^2} = 0$. ($\Gamma$) est la réunion de deux droites sécantes.
+\end{itemize}
+\end{itemize}
+Pour déterminer la conique associé à $(\Gamma)$, on peut utiliser la méthode suivantes : Soit A la matrice de q ou de f dans une base orthonormée de dimension 2. Soit $\lambda_1$ et $\lambda_2$ les valeurs propres associé à A. On montre que :
+\begin{itemize}
+ \item[$\rightarrow$] $\lambda_1$ et $\lambda_2$ non nulle et de même signe $\Leftrightarrow$ det(A) > 0
+ \item[$\rightarrow$] $\lambda_1$ et $\lambda_2$ non nulle et de signe contraire $\Leftrightarrow$ det(A) < 0
+\end{itemize}
+De plus, si $(\Gamma)$ est une conique dégénéré, les sous espaces propres vectoriels de f fournissent les dimensions vectorielles des axes de la conique.\\
+Dans le cas d'un hyperbole, on obtient les droites parallèles au asymptotes en annulant q.
+\section{Catalogue des quadriques dans un $\mathbb{R}$ espace affine E (euclidien) de dimension 3}
+\begin{de}
+On appelle quadrique de (E) un ensemble ($\Sigma$) telque qu'il existe un repère $\mathbb{R}$ de E dans lequel ($\Sigma$) a pour équation P(x,y,z) = 0, avec P un polynome à coefficiant réele du $2^{nd}$ degrès.
+\end{de}
+\begin{prop}
+Dans ce cas, $\forall \mathcal{R}'$ repère de (E), ($\Sigma$) admet également une équation polynomiale de degrès 2 dans $\mathcal{R}'$. 
+\end{prop}
+\subsection{Catalogue des quadriques}
+On suppose E euclidien, $\mathcal{R}$ un repère orthonormée. Pour simplifier l'équation de $(\Sigma)$, on commence par réduire orthonormalement la forme quadratique q, c'est à dire diagonalisé orthonormalement l'endomorphisme symétrique f qui va de $\overrightarrow{E}$ dans $\overrightarrow{E}$ associé à q. On sait que l'on peut eliminer les termes rectangles. On va classer les quadriques possibles suivant, essentiellement, le nombre de valeur propre non nulle. 
+\subsubsection{Les trois valeurs propres sont non nulle}
+En développent les expressions, on montre que l'on obtient qu'il $\exists \Omega \in E~ /~ Si~ M\underset{\mathcal{R''}}\equiv (X,Y,Z)$, alors : 
+$$M \in (\Sigma) \Leftrightarrow \lambda_1.X^2 + \lambda_2.Y^2 + \lambda_3.Z^2 = h'$$
+On montre que ceci équivaut à : 
+$$\begin{cases}
+   \varepsilon_1.\dfrac{X^2}{a^2} + \varepsilon_2.\dfrac{Y^2}{b^2} + \varepsilon_3.\dfrac{Z^2}{c^2} = 1~ si~ h'\neq 0. \\
+   \varepsilon_1.\dfrac{X^2}{a^2} + \varepsilon_2.\dfrac{Y^2}{b^2} + \varepsilon_3.\dfrac{Z^2}{c^2} = 0~ si~ h'= 0. \\
+  \end{cases}
+$$
+Avec $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \pm 1$. Quitte à permutter les vecteurs $\overrightarrow{u_1},\overrightarrow{u_2},\overrightarrow{u_3}$ de la base B', nous avons les possibilités suivantes :
+$$(\varepsilon_1,\varepsilon_2,\varepsilon_3) = (+1,+1,+1)~ (1) $$
+$$(\varepsilon_1,\varepsilon_2,\varepsilon_3) = (+1,+1,-1)~ (2) $$
+$$(\varepsilon_1,\varepsilon_2,\varepsilon_3) = (+1,-1,-1)~ (3) $$
+$$(\varepsilon_1,\varepsilon_2,\varepsilon_3) = (-1,-1,-1)~ (4) $$
+Dans tous les cas suivants, on montre que l'on obtient les cas suivantes à partir de cas plus simple, au moyen d'affinité. 
+\subparagraph{Cas (1)}
+$\Sigma$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} + \dfrac{Z^2}{c^2} = 1$$
+La quadrique se déduit de la sphère unité par au plus 3 affinité droites. On obtient un ellipsoïde (allongé ou aplati). $\Omega$ est un center de symétrie. Les axes de coordonnée dans $\mathcal{R}''$ en sont les axes de symétries.
+\subparagraph{Cas (1')}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} + \dfrac{Z^2}{c^2} = 0$$
+C'est une quadrique dégénéré associé à 1 point :
+$$(\Sigma) = \left\lbrace \Omega \right\rbrace $$
+\subparagraph{Cas (2)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 1$$
+$(\Sigma)$ est un hyperboloide elliptique à une nappe
+\subparagraph{Cas (2')}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 0$$
+$(\Sigma)$ est le cône asymptote de l'hyperbolide elliptique précédent.
+\subparagraph{Cas (3)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 1$$
+$(\Sigma)$ est un hyperbolide elliptique de révolution à deux nappes
+\subparagraph{Cas (3')}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 0$$
+$(\Sigma)$ est le cone asymptote du cas précédent.
+\subparagraph{Cas (4)}
+$(\Sigma)$ est défini par : 
+$$-\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 1$$
+$(\Sigma)= \emptyset$
+\subparagraph{Cas (4')}
+$(\Sigma)$ est défini par : 
+$$-\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} - \dfrac{Z^2}{c^2} = 0$$
+$(\Sigma) = \left\lbrace \Omega \right\rbrace $
+\subsubsection{Deux valeurs propres distinct, la troisième nulle}
+Quitte à réordonnée les vecteurs propres, $\overrightarrow{u_1},\overrightarrow{u_2},\overrightarrow{u_3}$ de la vase B' on peut supposé :
+$$\lambda_1 \neq 0,~ \lambda_2 \neq 0,~ \lambda_3=0$$
+De la même façon que précédement : 
+$$\begin{cases}
+   \varepsilon_1.\dfrac{X^2}{a^2} + \varepsilon_2.\dfrac{Y^2}{b^2} = Z ~ si~ \omega_0'\neq 0. \\
+   \varepsilon_1.\dfrac{X^2}{a^2} + \varepsilon_2.\dfrac{Y^2}{b^2} = 1~ si~ \omega_0' = 0,~ h'\neq 0. \\
+   \varepsilon_1.\dfrac{X^2}{a^2} + \varepsilon_2.\dfrac{Y^2}{b^2} = 0~ si~ \omega_0' = 0,~ h'= 0. \\
+  \end{cases}
+$$
+Quitte à permutter $\overrightarrow{u_1},\overrightarrow{u_2}$, on peut avoir les cas suivants :
+$$(\varepsilon_1,\varepsilon_2) = (+1,+1)~ (1)$$
+$$(\varepsilon_1,\varepsilon_2) = (-1,-1)~ (2)$$
+$$(\varepsilon_1,\varepsilon_2) = (+1,-1)~ (3)$$
+\subparagraph{Cas (1)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} = Z$$
+$(\Sigma)$ est un paraboloide elliptique
+\subparagraph{Cas (2)}
+$(\Sigma)$ est défini par : 
+$$-\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} = Z$$
+On peut se ramener au cas précédent en changent de repère.
+\subparagraph{Cas (3)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} = Z$$
+$(\Sigma)$ est un paraboloide hyperbolique.\\
+Dans les cas suivants, l'équation est du type : 
+$$f(X,Y)=0$$
+On montre que ces surfaces sont des cylindres.
+\subparagraph{Cas (4)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} = 0$$
+$(\Sigma)$ est l'intersection des plans X=0 et Y=0. C'est à dire :
+$$(\Sigma) = (\Omega.Z) = \Omega + Vect(\overrightarrow{u_3})$$
+C'est une quadrique dégénéré.
+\subparagraph{Cas (5)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} = 0$$
+$(\Sigma)$ est la réunion de deux plans parallèle à Oz.
+\subparagraph{Cas (6)}
+$(\Sigma)$ est défini par : 
+$$-\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} = 1$$
+$(\Sigma) = \emptyset$
+\subparagraph{Cas (7)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} - \dfrac{Y^2}{b^2} = 1$$
+$(\Sigma)$ est un cylindre hyperbolique de génératrice parallèle à $\Omega z$.
+\subparagraph{Cas (8)}
+$(\Sigma)$ est défini par : 
+$$\dfrac{X^2}{a^2} + \dfrac{Y^2}{b^2} = 1$$
+$(\Sigma)$ est un cylindre hyperbolique de génératrice parallèle à $\Omega z$.
+\subsubsection{Une seule valeur propre non nulle}
+Quitte à réordonnée les vecteurs propres, $\overrightarrow{u_1},\overrightarrow{u_2},\overrightarrow{u_3}$ de la vase B' on peut supposé :
+$$\lambda_1 \neq 0,~ \lambda_2 = 0,~ \lambda_3=0$$
+\subparagraph{Cas 1}
+Si $(v',w') \neq (0,0)$. Dans un certain repère, on montre que l'équation de $(\Sigma)$ est donnée par : 
+$$X^2 - 2.p.Y = 0$$
+$(\Sigma)$ est un cylindre parabolique de génératice paralèlle ($\Omega z$)
+\subparagraph{Cas 2}
+Si $(v',w') = (0,0)$, on obtient une équation du type : 
+$$X^2 = h''$$
+Nous avons les cas suivants :
+\begin{itemize}
+ \item[$\rightarrow$] h'' < 0 $\Rightarrow$ ($\Sigma$) = 0
+ \item[$\rightarrow$] h'' = 0 $\Rightarrow$ ($\Sigma$) est le plan X=0
+ \item[$\rightarrow$] h'' > 0 $\Rightarrow$ ($\Sigma$) est la réunion de deux plans
+\end{itemize}

@@ -1,0 +1,34 @@
+\chapter{Développement asymptotiques}
+Il existe une méthodologie "classique" à utiliser dans le cas d'un développement asymptotique.
+\section{Fonction du type $f^{\alpha}$, ou ln(f)}
+Pour obtenir le développement asymtotique de fonction du type $f^{\alpha}$, ou ln(f), on range les termes de façon prépondérant décroissante, puis on met toujours le terme prépondérant en facteur, et enfin on effectue un développement limité avec le reste, qui tend vers 0.\\
+\underline{Exemple : }
+Considérons le fonction ln($x^2+x+1$). Cette fonction est rangé en considérant la prépondérance en l'infini. On obtient donc : 
+$$ln(x^2+x+1) = ln((x^2)(1+\dfrac{1}{x}+\dfrac{1}{x^2})$$
+$$ln(x^2+x+1) = ln(x^2) + ln(1+\dfrac{1}{x}+\dfrac{1}{x^2})$$
+On effectue un développement limité de la forme ln(1+u), avec u qui tend vers 0.
+\section{Développement asymptotique de $S_n$ ou de $R_n$ dans le cas d'une série}
+La première question à se poser est de savoir si la série $\underset{n}\sum u_n$ converge.
+\subsection{Si la série converge}
+Si la série converge, alors :
+$$\lim_{n\rightarrow \infty} S_n = S$$
+On poursuit en écrivant l'égalité suivante : 
+$$S_n = S - R_n$$
+Pour continuer le développement asymptotique, il faut donc détérminer un équivalent à $R_n$
+\subsection{Si la série diverge}
+Alors on cherche directement un équivalent de $S_n$
+\subsection{Méthode à suivre}
+Pour obtenir un équivalent de $S_n$, dans le cas divergent, ou un équivalent de $R_n$ dans le cas convergent, on simplifie le problème en remplacent $u_k$ par un équivalent $w_k$ plus simple.\\
+On obtient alors : 
+$$S_n \underset{\infty}\sim \sum_{k=n_0}^n w_k \mbox{ cas non sommable }$$
+$$R_n \underset{\infty}\sim \sum_{k=n+1}^{\infty} w_k \mbox{ cas sommable }$$
+L'utilisation de ceci ramène le problème de recherche d'équivalent de la somme partielle ou du reste de la série $\underset{k}\sum w_k$, avec $(w_k)$ appartenant à une échelle de comparaison. : 
+$$w_k = k^{\alpha}.ln(k)^{\beta}.e^{P(k)}$$
+Avec P(k) un pseudo polynome.\\
+Pour obtenir un équivalent, on distingue deux cas : 
+\begin{itemize}
+ \item[$\rightarrow$] Si $(w_k)$ est à variation lente ($P = 0$ ou deg(P)<1), alors on encadre par des intégrales
+ \item[$\rightarrow$] Si $(w_k)$ est à variation rapide (deg(P) $\geq$ 1), on utilise une comparaisons asymptotique entre $w_{k+1}-w_k$ et $w_k$.
+\end{itemize}
+Les relations de comparaions utilisable dans le second cas sont : 
+$$\gg;\ll;\sim$$

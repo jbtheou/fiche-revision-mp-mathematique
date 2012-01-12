@@ -1,0 +1,135 @@
+\chapter{Applications linéaires continues, normes subordonnées}
+\section{Application linéaires continues}
+Soient (E,$\parallel~\parallel$) et (E',$\parallel~\parallel'$) deux K espaces vectoriel (K = $\mathbb{R}$ ou $\mathbb{C}$) et $f \in \mathcal{L}(E,E')$.
+\textit{Rappel} : \\
+\begin{align*}
+\text{f est continue sur E} &\Leftrightarrow\ \text{ f est continue en tout }\overrightarrow{x_0} \in E \\
+							&\Leftrightarrow\ \forall \overrightarrow{x_0} \in E~\lim_{\overrightarrow{x}\rightarrow \overrightarrow{x_0}} f(\overrightarrow{x}) = f(\overrightarrow{x}) \\
+							&\Leftrightarrow\ \forall \overrightarrow{x_0} \in E, \forall \varepsilon > 0, \exists \alpha > 0~/~ \parallel \overrightarrow{x}-\overrightarrow{x_0} \parallel \leq \alpha \Rightarrow \parallel f(\overrightarrow{x})-f(\overrightarrow{x_0}) \parallel' \leq \varepsilon
+\end{align*}
+\begin{prop}
+Nous avons la propriété suivante : 
+$$f \in \mathcal{L}(E,E') \text{ est continue sur E } \Leftrightarrow f \text{ est continue en }\overrightarrow{0}$$
+\end{prop}
+\begin{prop}
+$f\in \mathcal{L}(E,E')$ est continue sur E $\Leftrightarrow$ f est bornée sur $\overline{B}(\overrightarrow{0},1)$ avec :
+$$\overline{B}(\overrightarrow{0},1) ) \left\lbrace \overrightarrow{x} \in E~ /~ \parallel \overrightarrow{x} \parallel \leq 1 \right\rbrace $$
+\end{prop}
+\begin{prop}
+Soit $f\in \mathcal{L}(E,E')$, avec E et E' des K espaces vectoriels normés.
+$$\text{ f est continue sur E }\Leftrightarrow \text{ f est bornée sur la sphère unité }$$
+Avec $S(\overrightarrow{0},1)$ la sphère unité définie par :
+$$S(\overrightarrow{0},1) = \left\lbrace \overrightarrow{x} \in E ~/~ \parallel \overrightarrow{x} \parallel = 1 \right\rbrace $$
+\end{prop}
+\begin{theo}
+Si E est un K espace vectoriel normé de dimension finie, et E' un K espace vectoriel normé, alors toute application linéaire $\in \mathcal{E,E'}$ est continue.
+\end{theo}
+\textbf{Rappel} : \\
+La somme de deux applications continues sur E est continue sur E (qu'elles soient ou non linéaire).\\
+Le produit par $\lambda \in K$ (K = $\mathbb{R}$ ou $\mathbb{C}$) d'une application continue sur E est continue sur E (toujours que l'application soit linéaire ou non).\\
+Si : $f E \rightarrow E'$ et $E' \rightarrow E''$ sont des applications continues alors gof aussi (encore une fois que f et g soient linéaire ou non).\\
+Il en résulte, dans le cas des applications linéaires, les propriétés suivantes : 
+\begin{prop}
+L'ensembe $\mathcal{L}_C(E,E')$ des applications linéaires continues de l'espace vectoriel normé E dans l'espace vectoriel normé E' est un K sous espace vectoriel de $\mathcal{L}(E,E')$ [pour les lois + et $\lambda.$]
+\end{prop}
+\begin{prop}
+$\mathcal{L}_C(E) = \mathcal{L}_C(E,E)$ est une K-algèbre de $\mathcal{L}(E)$ [pour les lois +,$\lambda.$ et o]
+\end{prop}
+\section{Normes subordonnées}
+\subsection{Propriété et définition}
+\begin{de}
+Soient (E,$\parallel~ \parallel$) et (E',$\parallel~\parallel'$) deux K espace vectoriel normé (K = $\mathbb{R}$ ou $\mathbb{C}$), alors : 
+\begin{align*}
+\mathcal{L}_C(E,E') &\rightarrow \mathbb{R} \\
+f &\mapsto \parallel f\parallel_* = \underset{\overrightarrow{x} \in \overline{B}(\overrightarrow{0},1)}\sup \parallel f(\overrightarrow{x}) \parallel'
+\end{align*}
+est une norme sur $\mathcal{L}_C(E,E')$ appelé norme subordonnée aux normes $\parallel~\parallel$ sur E et $\parallel~\parallel'$ sur E'.
+\end{de}
+\textbf{NB} :\\
+f étant linéaire contiue, f est bornée sur $\overline{B}(\overrightarrow{0},1)$, donc  $\underset{\overrightarrow{x} \in \overline{B}(\overrightarrow{0},1)}\sup \parallel f(\overrightarrow{x}) \parallel'$ existe dans $\mathbb{R}_+$
+\begin{prop}
+Si $f \in \mathcal{L}_C(E,E')$ : \\
+\begin{align*}
+\underset{\overrightarrow{x} \in \overline{B}(\overrightarrow{0},1)}\sup \parallel f(\overrightarrow{x}) \parallel' = \underset{\overrightarrow{x} \in S(\overrightarrow{0},1)}\sup \parallel f(\overrightarrow{x}) \parallel' & = \underset{\overrightarrow{x} \in E - \left\lbrace \overrightarrow{0}\right\rbrace}\sup \dfrac{\parallel f(\overrightarrow{x})\parallel'}{\parallel \overrightarrow{x}\parallel} \\
+         &= \underset{\overrightarrow{x} \in \overline{B}(\overrightarrow{0},1), \overrightarrow{x} \neq \overrightarrow{0}}\sup \dfrac{\parallel f(\overrightarrow{x})\parallel'}{\parallel \overrightarrow{x}\parallel}
+\end{align*}
+\end{prop}
+\subsection{Normes Matricielle subordonnée}
+Soit $A \in \mathcal{M}_{n,p}(\mathbb{R})$ et f : 
+\begin{align*}
+f : \mathbb{R}^p &\rightarrow \mathbb{R}^n\\
+	X &\mapsto AX \\
+\end{align*}
+l'application linéaire canoniquement associé à A.\\
+Munissons $\mathbb{R}^p$ d'une norme $\parallel~\parallel$ et $\mathbb{R}^n$ d'une norme $\parallel~\parallel'$. On note alors : $\parallel A\parallel_* = \parallel f \parallel_*$ la norme de f subordonnée aux normes $\parallel~\parallel$ et $\parallel~\parallel'$. Donc : 
+$$\parallel A \parallel_* = \underset{\overrightarrow{x} \in E - \left\lbrace \overrightarrow{0}\right\rbrace}\sup \dfrac{\parallel AX \parallel'}{\parallel X\parallel} =  \underset{\overrightarrow{x} \in \overline{B}(\overrightarrow{0},1)}\sup \parallel AX \parallel' = \underset{\overrightarrow{x} \in S(\overrightarrow{0},1)}\sup \parallel AX \parallel'$$
+\begin{prop}
+L'application : 
+\begin{align*}
+\mathcal{M}_{n,p}(\mathbb{R}) &\rightarrow \mathbb{R} \\
+A &\mapsto \parallel A\parallel_*
+\end{align*}
+est une norme sur $\mathcal{M}_{n,p}(\mathbb{R})$.
+\end{prop}
+\subsection{Propriété fondamentale de la norme $\parallel~\parallel_*$}
+\begin{prop}
+Soit $f \in \mathcal{L}_C(E,E')$, avec toujours les mêmes notations pour E et E'. Alors $\forall \overrightarrow{x} \in E$ :
+$$\parallel f(\overrightarrow{x})\parallel \leq \parallel f \parallel_* \parallel \overrightarrow{x}\parallel$$
+\end{prop}
+\textbf{Corollaire} :\\
+Si $f \in \mathcal{L}_C(E,E')$, alors f est $\parallel f \parallel_*$ lipchitzienne et donc uniformement continue.
+\textbf{Corollaire fondamentale} : \\
+La norme $\parallel~\parallel_*$ est sous multiplicative. C'est à dire que si $f \in \mathcal{L}_C(E,E')$ et $g \in \mathcal{L}_C(E,E')$, avec (E,$\parallel~ \parallel$), (E',$\parallel~\parallel'$) et (E'',$\parallel~\parallel''$) des K espaces vectoriels normés alors : 
+$$\parallel gof \parallel_* \leq \parallel f\parallel_* \parallel g\parallel_*$$
+Nous avons la propriété analogue pour les matrices.
+\subsection{Norme d'Algèbre}
+\begin{de}
+Soit ($\mathcal{A},+,\lambda.,\times$) une K-algèbre, avec $K = \mathbb{R}$ ou $\mathbb{C}$.\\
+Une norme sur le K espace vectoriel ($\mathcal{A},+,\lambda.$) est appelé norme d'Algèbre si elle est sous multiplicative, c'est à dire si :
+$$\forall(x,y)\in \mathcal{A}~\parallel x \times y \parallel \leq \parallel x\parallel \parallel y \parallel$$
+($\mathcal{A},+,\lambda.,\times,\parallel~\parallel$) est appelé alors une Algèbre normé.
+\end{de}
+\subsubsection{Norme subordonnée à $\parallel~\parallel_1$}
+Considérons le cas ou $K=\mathbb{R}$. Pour obtenir le résultat suivant, comme dans tout les cas suivant, on cherche à majorer la norme $\parallel~\parallel_*$ subordonnée à la norme considéré, puis à montrer un X particulier qui permet d'obtenir l'égalité. Si $\mathbb{R}^n$ est munie de $\parallel~\parallel = \parallel~\parallel_1$, alors : 
+$$\parallel A\parallel_* = \underset{1 \leq j \leq n}\max \parallel C_j \parallel_1$$
+Dans ce cas, le X particulier à considérer est : Si $\underset{1 \leq j \leq n}\max \parallel C_j \parallel_1 = \parallel C_{j0} \parallel$, alors X = $C_{j0}$.\\
+On obtient un résultat équivalent dans le cas où $K=\mathbb{C}$. 
+\subsubsection{Norme subordonnée à $\parallel~\parallel_{\infty}$}
+Considérons le cas ou $K = \mathbb{R}$. Dans ce cas, on obtient que : 
+$$\parallel A\parallel_* = \underset{1 \leq i \leq n}\max\parallel L_i \parallel_1$$
+Dans ce cas, le X particulier à considérer est : Si $\underset{1 \leq i \leq n}\max\parallel L_i \parallel_1 = \parallel L_{i0} \parallel_1 = \parallel a_{i0,1} \dots a_{i0,n}$, alors on prend :
+$$X = \begin{pmatrix}
+       signe(a_{i0,1}) \\
+	\vdots \\
+	signe(a_{i0,n}) \\
+      \end{pmatrix}
+$$
+\subsubsection{Norme subordonnée à $\parallel~\parallel_2$, la norme euclidienne canonique sur $\mathbb{R}^n$}
+Au cours de la démonstration, nous avons énoncé les définitions et propritétés suivantes : 
+\begin{de}
+Un endomorphisme f d'un $\mathbb{R}$ espace vectoriel euclidien E est dit positif (repectivement défini positif ) si la forme quadratique qui lui est associé est positive (respectivement définie positive)
+\end{de} 
+\begin{prop}
+Si f est un endomorphisme d'un $\mathbb{R}$ espace vectoriel euclidien E :
+\begin{align*}
+ \text{ f positif } &\Leftrightarrow S_p(f) \subset \mathbb{R}_+ \\
+ \text{ f défini positif } &\Leftrightarrow S_p(f) \subset \mathbb{R}_+^*
+\end{align*}
+On obtient en faisant comme d'habitude : Si $\parallel~\parallel = \parallel~\parallel_2$, la norme euclidienne canonique de $\mathbb{R}^n$, alors $\forall A \in \mathcal{M}_n(\mathbb{R})$ : 
+$$\parallel A\parallel_* = \sqrt{\rho(^tA A)}$$
+Avec $\rho(^tAA)$ le rayon spectral de $^tAA$.
+\end{prop}
+\subsection{Suite d'endomorphisme en dimension finie}
+\begin{prop}
+Soit $(f_k)_{k \in \mathbb{N}}$ une suite d'endomorphisme d'un K espace vectoriel normé (E,$\parallel~\parallel$) de dimension finie et $f \in \mathcal{L}(E)$. Alors les conditions suivantes sont équivalentes : 
+\begin{itemize}
+ \item[$\rightarrow$] $f_k \rightarrow f$ quand $k \rightarrow \infty$ (de plus, les espaces sont de dimensions finies, donc la convergence ne dépend pas de la norme considéré)
+ \item[$\rightarrow$] $f_k$ converge uniformement vers f sur toute parties bornées.
+ \item[$\rightarrow$] $f_k$ converge uniformement vers f sur tout compact.
+ \item[$\rightarrow$] $\forall \overrightarrow{x} \in E$, $f_k(\overrightarrow{x}) \underset{k \rightarrow +\infty}\rightarrow f(\overrightarrow{x})$ ($|f_k|$ converge simplement vers f sur E)
+ \item[$\rightarrow$] $\forall B$ base de E et $\forall \overrightarrow{e} \in B$ $f_k(\overrightarrow{e}) \underset{k\rightarrow \infty}\rightarrow f(\overrightarrow{e})$
+ \item[$\rightarrow$] $\exists B$ base de E telque $\forall \overrightarrow{e} \in B$ $f_k(\overrightarrow{e}) \underset{k\rightarrow \infty}\rightarrow f(\overrightarrow{e})$
+ \item[$\rightarrow$] $\forall B$ base de E, $mat_B(f_k) \underset{k\rightarrow \infty}\rightarrow mat_B(f)$
+ \item[$\rightarrow$] $\exists B$ base de E telque $mat_B(f_k) \underset{k\rightarrow \infty}\rightarrow mat_B(f)$
+\end{itemize}
+\end{prop}

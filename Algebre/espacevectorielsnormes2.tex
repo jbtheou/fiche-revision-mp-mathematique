@@ -1,0 +1,153 @@
+\chapter{Espace vectoriel normé - Deuxième partie}
+\section{Interieur d'un ensemble, ensemble ouvert}
+\begin{de}
+Soit (E,d) un espace métrique. En général, E est un K espace vectoriel munie d'une norme $\parallel~\parallel$, et d est la distance déduite de cette norme.\\
+Soit A un ensemble non vide de E. On dit que $a \in E$ est intérieur à A, si il existe r>0 telque :
+$$B(a,r) c A$$
+\end{de}
+\begin{de}
+On appelle interieur de A, et on le note $\overset{o}A$, l'ensemble des points interieurs à a.
+\end{de}
+\begin{de}
+A est dit ouvert si tout point de A est interieur à A. C'est à dire si :
+$$A c \overset{o}A$$
+Or, par définition, nous avons : 
+$$\overset{o}A c A$$
+Donc, nous avons l'équivalence suivante : 
+$$(\mbox{ A est un ouvert }) \Leftrightarrow (A = \overset{o}A)$$
+\end{de}
+\begin{prop}
+Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] $\emptyset$ est un ouvert par convention.
+ \item[$\rightarrow$] E est un ouvert
+ \item[$\rightarrow$] Une intersection finie d'ouvert est un ouvert.
+ \item[$\rightarrow$] Une réunion quelconque (finie ou infinie) d'ouvert est un ouvert.
+\end{itemize}
+\end{prop}
+\begin{prop}
+$\overset{o}A$ est le plus grand (Au sens de l'inclusion) ouvert inclu dans A.
+\end{prop}
+\subsubsection{Exemple}
+Nous avons un exemple classique : 
+\begin{itemize}
+ \item[$\rightarrow$] Les boules ouvertes d'une espace métrique sont des ouverts
+\end{itemize}
+
+\section{Adérence d'un ensemble, ensemble fermé}
+Considérons toujours A, un sous ensemble non vide d'un espace métrique (E,d).
+\begin{de}
+On dit que $x \in E$ est adhérent à A s'il existe une suite ($a_n$) d'élements de A telque : 
+$$a_n \underset{n \rightarrow \infty}\rightarrow x$$
+x peut être ou ne pas être un élement de A.\\
+Si d est une distance déduite d'une norme $\parallel~\parallel$, on peut écrire cette condition sous la forme : 
+$$\parallel a_n - x \parallel \underset{n\rightarrow +\infty}\rightarrow 0$$
+Par définition, tout point de A est adhérent à A
+\end{de}
+\begin{prop}
+Nous avons la propriété suivante : 
+$$( x \mbox{ est adhérent à A }) \Leftrightarrow (\forall \varepsilon > 0,~ B(x,\varepsilon) \cap A \neq \emptyset$$
+On dit que x est adhérent à A si pour tout $\varepsilon >0$, B($x,\varepsilon$) rencontre A.
+\end{prop}
+\begin{de}
+L'ensemble des points adhérent à A, s'appelle l'adhérence à A, et est noté $\overline{A}$. Par définition, nous avons donc : 
+$$\overset{o}A c A c \overline{A}$$
+\end{de}
+\begin{de}
+Un sous ensemble A d'un ensemble normé (E,d) est dit fermé s'il est égale à son adhérence, c'est à dire si A=$\overline{A}$. Et comme par définition nous avons l'une des inclusions, on obtient que A est fermé si et seulement si : 
+$$\overline{A} c A$$
+\end{de}
+\begin{de}
+On appelle complémentaire de A, et on le note $C_A$, l'ensemble défini par : 
+$$C_A = E - A$$
+\end{de}
+\begin{prop}
+Nous avons la propriété suivante :
+\begin{center}
+ A est fermé $\Leftrightarrow$ $C_A$ est ouvert
+\end{center}
+\end{prop}
+\begin{prop}
+Caractérisation séquentielle : \\
+A est fermé si et seulement si toute suite convergente d'élement de A à sa limite dans A.
+\end{prop}
+\begin{prop}
+Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] $\emptyset$ est un fermé
+ \item[$\rightarrow$] E est un fermé
+ \item[$\rightarrow$] La réunion d'un nombre fini de fermés est un fermé
+ \item[$\rightarrow$] Une intersection quelconque de fermés est un fermé
+\end{itemize}
+\end{prop}
+\begin{prop}
+Nous avons les propriétes suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] $\overline{A}$ est le plus petit fermé (au sens de l'inclusion) contenant A.
+ \item[$\rightarrow$] Dans un espace vectorielle normé, la boule fermé $\overline{B}(x_0,r)$ est l'adhérence de B($x_0,r$). Celà n'est pas nécessairement vrai dans un espace métrique.
+\end{itemize}
+\end{prop}
+\subsubsection{Exemples}
+Il y a un exemple classique de fermé : 
+\begin{itemize}
+ \item[$\rightarrow$] Les boules fermés d'un espace métrique sont des fermés.
+\end{itemize}
+\section{Frontière}
+\begin{de}
+Soit A une partie non vide d'un espace métrique (E,d). On appelle frontière de A, et on le note parfois $\partial A$, l'ensemble défini par : 
+$$\partial A = \overline{A} \cap \overline{C_A}$$
+\end{de}
+\begin{prop}
+Nous avons la propriété suivante :
+$$\partial A = \overline{A} - \overset{o}A$$
+\end{prop}
+\section{Diamètre d'une partie bornée}
+\begin{de}
+Une partie A d'un espace métrique (E,d) est dit borné si : 
+$$\exists M \in \mathbb{R}_+,~\exists x_0 \in E,~tq~ \forall x \in A d(x_0,x) \leq M$$
+Cette définition est équivalente à : 
+$$\exists M \in \mathbb{R}_+,~\exists x_0 \in E,~tq~ A c \overline{B}(x_0,M)$$
+\end{de}
+\begin{prop}
+Si cette condition est remplie, alors : 
+$$\forall x_1 \in E,~ \exists M_1 \in \mathbb{R}_+,~ tq~\forall x \in A,~ d(x_1,x) \leq M_1$$
+\end{prop}
+\section{Ensembles compacts}
+\section{Définitions et propriétés}
+\subsection{Définition de Bolzano-Weierstrass}
+\begin{de}
+Un sous ensemble C d'un espace vectoriel normée E (ou un espace métrique (E,d), avec d la distance déduite de la norme), munie de la norme $\parallel~\parallel$, est dit compact si de toute suite $(\gamma_n)$ à valeur dans C, on peut extraire une sous-suite $(\gamma_{\phi(n)})$, avec $\phi$ une application strictement croissante de N dans N, qui converge vers un éléments de C.
+\end{de}
+\subsection{Théorème}
+\begin{theo}
+Tout segment [a,b] inclu dans $\Re$ est compact, c'est à dire que de toute suite bornée on peut extraire une suite qui converge.
+\end{theo}
+\begin{theo}
+Nous avons les propriétes suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] Tout compact est fermé et borné
+ \item[$\rightarrow$] Tout fermé inclus dans un compact est compact
+ \item[$\rightarrow$][$a_1,b_1$]$\times...\times$[$a_n,b_n$] est un compact de ($\mathbb{R}^n,\parallel~\parallel_{\infty}$), ou même de ($\mathbb{R}^n,\parallel~\parallel$) car toutes les normes sont équivalentes en dimension finie.
+\end{itemize}
+\end{theo}
+\begin{theo}
+Dans un espace vectoriel de dimension finie, tout ensemble, non vide, fermé et borné est un compact.
+\end{theo}
+\begin{prop}
+Si $(x_n)$ est une suite d'élements d'un espace métrique convergeant vers l, alors : 
+$$K = \left\lbrace x_n, n \in \mathbb{N} \right\rbrace \cup \left\lbrace l\right\rbrace  $$
+est un compact.
+\end{prop}
+\begin{coro}
+Soit f une application de E dans E', avec E et E' des espaces vectoriels normés ou des espaces métriques, définie sur une partie non vide A c E.\\
+f est continue sur A si et seulement si f est continue sur tout compact inclu dans A.
+\end{coro}
+\begin{theo}
+Soit f une fonction de E dans E', avec E et E' deux K espaces vectoriels (ou espace métrique) munie respectivement des normes $\parallel~\parallel$ et $\parallel~\parallel'$, définie et continue sur un compact C de E. Alors :
+\begin{itemize}
+ \item[$\rightarrow$] f(C) est un compact de E'
+ \item[$\rightarrow$] f est bornée sur C, c'est à dire : $$\exists M \in R^+~ tq~ \forall \gamma \in C,~ \parallel f(\gamma)\parallel' \leq M$$
+ \item[$\rightarrow$] f est uniformement continue sur C
+ \item[$\rightarrow$] Si E'=$\Re$, alors f atteint ces bornes.
+\end{itemize}
+\end{theo}

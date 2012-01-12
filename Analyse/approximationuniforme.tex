@@ -1,0 +1,55 @@
+\chapter{Approximation uniforme}
+\section{Approximation uniforme par des fonctions en escaliers}
+\begin{theo}
+Soit [a,b] un segment inclu dans $\mathbb{R}$.\\
+Pour toute fonctions f de [a,b] dans K ,ou plus généralement dans E, un K espace vectoriel normée, et $\forall \varepsilon > 0$ :
+$$\exists \varphi : [a,b] \rightarrow K~ ou~ E$$
+fonction en escalier, telle que : 
+$$\parallel f - \varphi \parallel_{\infty,[a,b]} < \varepsilon $$
+\end{theo}
+Il existe plusieurs variantes de théorème :
+\begin{theo}
+Caractérisation séquentielle : \\
+Avec les notations précédentes, quelque soit f, fonction de [a,b] dans K ou E, il existe une suite de fonctions en escalier $(\varphi_n)$ de [a,b] dans K ou E, convergeant uniformement vers f sur [a,b]
+\end{theo}
+\begin{theo}
+L'ensemble $\mathcal{E}$ des fonctions en escalier de [a,b] dans K ou E est dense dans l'ensemble $C_{pm}$ des fonctions continue par morceaux de [a,b] dans K ou E.
+\end{theo}
+\section{Généralisation aux fonctions continues par morceaux}
+Avec les notations précédentes :\\
+Soit f une fonction de [a,b] dans K ou E, continue par morceaux. C'est à dire qu'il existe une subdivision, noté $\sigma$ :
+$$a = a_0 < \dots < a_p = b$$
+telque f soit continue sur $]a_k,a_{k+1}[$ , $k \in [|0,p-1|]$, et f admet une limite à droite et à gauche en $a_k$, à droite en $a_0$, a gauche en $a_p$.\\
+On peut donc définir $f_k$, le prolongement par continuité de f sur [$a_k,a_{k+1}$].\\
+Soit $\varepsilon > 0$. Il existe $\varphi_k$ en escalier sur [$a_k,a_{k+1}$] telque : 
+$$\parallel f_k - \varphi_k \parallel_{\infty,[a,b]} < \varepsilon $$
+On peut donc définir $\varphi$, commme coincident avec les $\varphi_k$ et égale à f aux bornes des intervalles. On obtient donc que : 
+$$\parallel f - \varphi \parallel_{\infty,[a,b]} < \varepsilon $$
+\section{Théorème}
+\begin{de}
+Soit $\varphi :$ $[a,b] \rightarrow E$. On dit que $\varphi$ est affine si il existe une subdivision :
+$$a < x_0 < ... < x_p=b$$
+telque : 
+$$\forall k \in [|0,p-1|],~ \exists (\overrightarrow{\alpha_k},\overrightarrow{\beta_k}) \in E^2~ tq~ \forall t \in ]x_k,x_{k+1}[~ \varphi(t) = t.\overrightarrow{\alpha_k}+ \overrightarrow{\beta_k}$$
+\end{de}
+\begin{theo}
+Soit f, application continue de [a,b] dans E, un K espace vectoriel normé (En particulier, on peut avoir E = $\mathbb{R}$ ou $\mathbb{C}$).\\
+Alors, $\forall \varepsilon > 0$, $\exists \varphi:~ [a,b] \rightarrow E$, continue et affine par morceaux, telque :
+$$\parallel f - \varphi \parallel_{\infty,[a,b]} \leq \varepsilon$$
+Ce théorème est inutile en pratique.
+\end{theo}
+\section{Théorème d'approximation uniforme de Weierstrass}
+\begin{theo}
+Soit $f \in C([a,b],K)$, avec $K=\mathbb{R}~ ou~ \mathbb{C}$.\\
+Alors, $\forall \varepsilon > 0,~ \exists P \in K[X]$ telque : 
+$$\parallel f- P \parallel_{\infty,[a,b]} \leq \varepsilon$$ 
+\end{theo}
+Il existe, comme précédement, des variantes de ce théorème : 
+\begin{theo}
+Caractérisation séquentielle.\\
+Pour tout f $\in C([a,b],K)$, $\exists (P_n)$ suite de polynomes $\in K[X]$ convergeant uniformement vers f sur [a,b].
+\end{theo}
+\begin{theo}
+L'ensemble des fonctions polynomiales de [a,b] dans K est dense dans l'ensemble des fonctions continue de [a,b] dans K.
+\end{theo}
+

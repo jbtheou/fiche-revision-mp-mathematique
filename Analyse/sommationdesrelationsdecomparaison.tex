@@ -1,0 +1,102 @@
+
+
+\chapter{Sommation des relations de comparaison}
+\section{Cas sommable}
+Dans tous ce chapitre, les relations de sommation sont des relations consernant $\textbf{les restes}$
+$$\sum_{k=n+1}^{\infty} u_k$$
+\begin{hypo}
+Dans l'ensemble de cette fiche, $(u_n)$ et $(v_n)$ sont deux suites définies à partir d'un certain rang $N_0$.
+\begin{itemize}
+ \item{$\rightarrow$} $(u_n)$ est une suite à valeur C.
+ \item{$\rightarrow$} $(v_n)$ est une suite à valeur dans $\Re^+$, ou à valeur réelles et de signe constant.
+\end{itemize}
+
+\end{hypo}
+\subsection{Négligabilité}
+\begin{theo}
+Avec les hypothèses précédentes :\\
+Supposons que $(v_n)$ soit sommable et que  :
+$$u_n \underset{\infty}\ll v_n$$
+Alors ($u_n$) est également sommable, et, $\forall n \geq N_0$ : 
+$$\sum_{k=n+1}^{\infty} u_k \ll \sum_{k=n+1}^{\infty} v_k$$
+\end{theo}
+On peut aussi enoncer ce théorème, mais avec les notations de Landau.
+\begin{theo}
+Sous les hypothèses de départ : \\
+Supposons que $(v_n)$ soit sommable et que : 
+$$u_n \underset{\infty}= o(v_n) $$
+Alors $(o(v_n))$ est sommable et 
+$$\sum_{k=n+1}^{\infty} o(v_k) \ll o(\sum_{k=n+1}^{\infty} v_k)$$
+\end{theo}
+\begin{prop}
+Soit $(a_n)$ et $(b_n)$ deux suites. Si : 
+$$a_n \underset{\infty}\ll b_n \Leftrightarrow \forall \varepsilon>0 \exists N \in N~ tq~ \forall n \geq N,~ |a_n|\leq\varepsilon |b_n|$$
+\end{prop}
+\subsection{Domination}
+\begin{theo}
+Avec les hypothèses précédentes :\\
+Supposons que $(v_n)$ soit sommable et que  :
+$$u_n \underset{\infty}\preccurlyeq v_n$$
+Alors ($u_n$) est également sommable, et, $\forall n \geq N_0$ : 
+$$\sum_{k=n+1}^{\infty} u_k \preccurlyeq \sum_{k=n+1}^{\infty} v_k$$
+\end{theo}
+On peut aussi enoncer ce théorème, mais avec les notations de Landau.
+\begin{theo}
+Sous les hypothèses de départ : \\
+Supposons que $(v_n)$ soit sommable et que : 
+$$u_n \underset{\infty}= O(v_n) $$
+Alors $(O(v_n))$ est sommable et 
+$$\sum_{k=n+1}^{\infty} O(v_k) \ll O(\sum_{k=n+1}^{\infty} v_k)$$
+\end{theo}
+\begin{prop}
+Soit $(a_n)$ et $(b_n)$ deux suites. Si : 
+$$a_n \underset{\infty}\preceq b_n \Leftrightarrow \exists M \in \Re{+},~ \exists N \in N,~ tq~ \forall n \geq N,~ |a_n|\leq M|b_n|$$
+\end{prop}
+\subsection{Equivalence}
+Sous les hypothèses du préambule, en particulier sur le fait que $(v_n)$ soit de signe constant à partir d'un certain rang $n_0$ : \\
+Si : 
+$$u_n \underset{\infty}\sim v_n \mbox{ et } (v_n) \mbox{ est sommable }$$
+Alors : 
+$$(u_n) \mbox{ est sommable et } \sum_{k=n+1}^{\infty}u_n \underset{\infty}\sim \sum_{k=n+1}^{\infty}v_n$$
+\section{Cas non sommable}
+Dans tout ce chapitre, les relations de sommation concerne les $\textbf{sommes partielle}$ : 
+$$\sum_{n_0}^n u_k$$
+\subsection{Négligabilité}
+\begin{theo}
+Avec les hypothèses précédentes, en particulier $(v_n)$ de signe constant à partir d'un certain rang :\\
+Supposons que $(v_n)$ ne soit pas sommable et que  :
+$$u_n \underset{\infty}\ll v_n$$
+Alors: 
+$$\sum_{k=n_0}^{n} u_k \ll \sum_{k=n_0}^{n} v_k$$
+Mais nous n'avons pas d'information sur la sommabilité ou la non sommabilité de $(u_n)$.
+\end{theo}
+On peut aussi enoncer ce théorème, mais avec les notations de Landau.
+\begin{theo}
+Sous les hypothèses de départ : \\
+Supposons que $(v_n)$ ne soit pas sommable et que : 
+$$u_n \underset{\infty}= o(v_n) $$
+Alors :
+$$\sum_{k=n_0}^{n} o(v_k) \ll o(\sum_{k=n_0}^{n} v_k)$$
+\end{theo}
+\subsection{Domination}
+\begin{theo}
+Avec les hypothèses précédentes :\\
+Supposons que $(v_n)$ ne soit pas sommable et que  :
+$$u_n \underset{\infty}\preccurlyeq v_n$$
+Alors $\forall n \geq N_0$ : 
+$$\sum_{k=n_0}^{n} u_k \preccurlyeq \sum_{k=n_0}^{n} v_k$$
+\end{theo}
+On peut aussi enoncer ce théorème, mais avec les notations de Landau.
+\begin{theo}
+Sous les hypothèses de départ : \\
+Supposons que $(v_n)$ ne soit pas sommable et que : 
+$$u_n \underset{\infty}= O(v_n) $$
+Alors : 
+$$\sum_{k=n_0}^{n} O(v_k) \ll O(\sum_{k=n_0}^{n} v_k)$$
+\end{theo}
+\subsection{Equivalence}
+Sous les hypothèses du préambule, en particulier sur le fait que $(v_n)$ soit de signe constant à partir d'un certain rang $n_0$ : \\
+Si : 
+$$u_n \underset{\infty}\sim v_n \mbox{ et } (v_n) \mbox{ n'est pas sommable }$$
+Alors, $(u_n)$ n'est pas sommable et : 
+$$\sum_{k=n_0}^{n}u_n \underset{\infty}\sim \sum_{k=n_0}^{n}v_n$$

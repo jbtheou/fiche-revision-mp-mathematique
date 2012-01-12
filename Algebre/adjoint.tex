@@ -1,0 +1,102 @@
+\chapter{Adjoint d'un endomorphisme, Endomorphisme et matrice symétrique}
+\section{Rappel}
+Soit E un $\mathbb{R}$ espace vectoriel, B=($\overrightarrow{e_1},\dots,\overrightarrow{e_n}$) une base orthonormé de E. Soit x et x' deux vecteurs de E. Soit X et X' les matrices de x et x' dans B. On obtient que : 
+$$<x|x'> = ^tX.X'$$
+\section{Propriétés - Définition d'un adjoint}
+\begin{prop}
+Soit E un $\mathbb{R}$ espace vectoriel euclidien de $f \in \mathcal{L}(E)$. Alors :
+$$\exists ! f^* \in \mathcal(E)~ tq~ \forall (\overrightarrow{x},\overrightarrow{y})\in E^2~ <f(\overrightarrow{x})|\overrightarrow{y}> = <\overrightarrow{x}|f^*(\overrightarrow{\overrightarrow{y}})>$$
+\end{prop}
+\begin{de}
+$f^*$ est appelé l'adjoint de f, pour un produit scalaire défini.
+\end{de}
+\begin{prop}
+Si E est un $\mathbb{R}$ espace vectoriel euclidien, et B une base orthonormée de E, alors : 
+$$mat_B f^* = ^t(mat_B f)$$ 
+\end{prop}
+\begin{de}
+Un endomorphisme f d'un $\mathbb{R}$ espace vectoriel euclidien E est dit auto-adjoint ou symétrique si :
+$$f^* = f$$
+\end{de}
+\begin{prop}
+Soit $f \in \mathcal{L}(E)$, avec E un $\mathbb{R}$ espace vectoriel euclidien.
+\begin{itemize}
+ \item[$\rightarrow$] Si f est symétrique, alors quelque soit la base orthonormée B de E, la matrice de f dans cette base est symétrique.
+ \item[$\rightarrow$] S'il existe une base orthonormée B de E telque la matrice de f soit symétrique, alors f est symétrique
+\end{itemize}
+\end{prop}
+\section{Propriétés élémentaires}
+Dans tout ce paragraphe, E désigne un $\mathbb{R}$ espace vectoriel euclidien. f et g désigne des endomorphisme de E.
+\begin{prop}
+Nous avons les propriétés suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] $(f+g)^* = f^* + g^*$
+ \item[$\rightarrow$] $\forall \lambda \in \mathbb{R}$ $(\lambda.f)^* = \lambda.f^*$
+ \item[$\rightarrow$] $(fog)^* = g^*of^*$
+ \item[$\rightarrow$] $(f^*)^* = f$
+\end{itemize}
+\end{prop}
+\begin{prop}
+Nous avons les propriétés suivantes : 
+$$Ker(f^*) = (Im(f))^{\bot}$$
+$$Im(f^*) = (Ker(f))^{\bot}$$
+\end{prop}
+\begin{prop}
+Si $\lambda \in Sp(f)$ et $\lambda' \in Sp(f^*)$. Si $\lambda \neq \lambda'$, alors : \\
+Ker($f-\lambda.Id$) et Ker($f^* - \lambda'.Id$) sont orthogonaux.
+\end{prop}
+\begin{prop}
+Soit F un sous espace vectoriel de E.
+$$(\mbox{ F est stable par f }) \Leftrightarrow ( F^{\bot}\mbox{ est un sous espace vectoriel stable par f })$$
+\end{prop}
+\subsection{Cas ou f et g sont symétrique}
+\begin{coro}
+L'ensemble des endomorphismes symétriques de E est un sous espace vectoriel de $\mathcal{L}(E)$.
+\end{coro}
+\begin{coro}
+Nous avons les égalités suivantes : 
+$$Ker(f) = (Im(f))^{\bot}$$
+$$Im(f) = (Ker(f))^{\bot}$$
+\end{coro}
+\begin{coro}
+Si $\lambda$ et $\lambda'$ sont deux valeurs propres distinct d'un endomorphisme f symétrique, alors : \\
+Ker($f-\lambda.Id$) et Ker($f - \lambda'.Id$) sont orthogonaux.
+\end{coro}
+\begin{coro}
+Si f est symétrie et si F est un sous espace vectoriel de E : 
+$$(\mbox{ F est stable par f }) \Leftrightarrow ( \mbox{ F est un sous espace vectoriel stable par f })$$
+\end{coro}
+\section{Théorème d'orthogonalisation}
+\begin{theo}
+Soit E un $\mathbb{R}$ espace vectoriel euclidien de dimension finie n. Soit f un endomorphisme symétrique de E. Alors : 
+\begin{itemize}
+ \item[$\rightarrow$] $P_f$ est scindé sur $\mathbb{R}$, c'est à dire que le spectre complexe de f est égale au spectre réel de f.
+ \item[$\rightarrow$] Les sous espaces vectoriels propre de f sont deux à deux orthogonaux et supplémentaires. En particulier, f est diagonalisable.
+ \item[$\rightarrow$] Il existe une base orthonormée de diagonalisation de f, c'est à dire une base orthonormée de E formée de vecteurs propres de f.
+ \item[$\rightarrow$] Réciproquement, si f est un endomorphisme de E orthonormalement diagonalisable, c'est à dire si f admet une base orthonormée de diagonalisation, alors f est symétrique.
+\end{itemize}
+\end{theo}
+\subsection{Corollaire matricielle}
+Si $A \in \mathcal{M}_n(\mathbb{R})$ est symétrique, alors A est orthonormalement diagonalisable, c'est à dire qu'il existe $P \in O_n(\mathbb{R})$ telque $P^{-1}.A.P$ soit diagonale. Dans ce cas $P^{-1} = P^{\bot}$
+\section{Caractéristation par l'adjoint de certains endomorphismes classiques d'un espace euclidien}
+Dans tout ce paragraphe, E désigne un $\mathbb{R}$ espace vectoriel euclidien, $f \in \mathcal{L}(E)$.
+\begin{prop}
+f est un projecteur orthogonal si et seulement si : 
+$$\begin{cases}
+   fof = f \\
+   f^* = f \\
+  \end{cases}
+$$
+\end{prop}
+\begin{prop}
+Nous avons la propriété suivante : 
+$$(f \in O(E) ) \Leftrightarrow (fof^* = Id_E)$$
+\end{prop}
+\begin{prop}
+Nous avons la propriété suivante : 
+$$\mbox{ f est symétrique orthogonale } \Leftrightarrow \begin{cases}
+                                                           f^2 = Id \\
+							   f^* = f \\
+                                                          \end{cases}
+$$
+\end{prop}

@@ -1,0 +1,63 @@
+\chapter{Intégrales généralisées}
+\section{Convergence d'une intégrale}
+\subsection{Propriétés}
+Il existe trois propriétés qui permettent de prouver la convergence, d'une intégrale complexe, à l'aide d'une intégrale "simple".
+\begin{itemize}
+ \item[$\rightarrow$] La convergence d'une intégrale de fonction positive par majoration (Implication)
+ \item[$\rightarrow$] L'intégration par domination (Implication)
+ \item[$\rightarrow$] La convergence des intégrale de fonction positive par equivalence (Équivalence)
+\end{itemize}
+\subsection{Fonctions "classique"}
+Il existe plusieurs "cas" standard, au quel on peut se rapporter pour démontrer la convergence d'une intégrale
+\subsubsection{En $\infty$}
+Nous retiendrons que dans l'étude en $+\infty$, les $\alpha$ "tendent plus vers l'infini" (utilisation du > dans les relations). \\
+Nous avons la règle de Riemann :
+\begin{prop}
+Soit f fonction continue par morceaux de $\left[a,\infty\right[$ dans K.\\
+Si il existe $\alpha > 1$ telque : 
+$$t^{\alpha}f(t) \underset{t \rightarrow \infty}\rightarrow 0$$
+Alors f est intégrable ( converge absolument) sur $\left[a,\infty\right[$
+\end{prop}
+Nous avons aussi l'intégrale de Bertrand : 
+\begin{prop}
+Soit a un réel strictement superieur à 1, et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_a^{\infty} \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha > 1,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+La propriété suivante n'est qu'un cas particulier de l'intégrale de Bertrand, ou $\beta = 0$ :
+\begin{prop}
+Soit $a \in \Re$, $a>0$ :
+$$\left(\int_a^{\infty} \dfrac{dt}{t^{\alpha}}\right) \mbox{ converge } \Leftrightarrow (\alpha > 1)$$
+\end{prop}
+\subsubsection{En 0}
+Nous retiendrons que l'ordre de l'étude en 0, les $\alpha$ "tend en quelque sorte plus vers 0" (utilisation du < dans les relations ).\\
+Nous avons la règle de Riemann :
+\begin{prop}
+Soit f fonction continue par morceaux de $\left]0,a\right]$ dans K.\\
+Si il existe $\alpha < 1$ telque : 
+$$t^{\alpha}f(t) \underset{t \rightarrow 0^+}\rightarrow 0$$
+Alors f est intégrable ( converge absolument) sur $\left]0,a\right]$
+\end{prop}
+Dans le cas de l'intégralde de Bertrand, nous retiendrons que le second cas, $\alpha =1,~ \beta > 1$, est identique en l'infini et en 0.\\
+Nous avons aussi l'intégrale de Bertrand : 
+\begin{prop}
+Soit a un réel telque $a \in \left]0,1\right[$, et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_0^a \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha < 1 ,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+La propriété suivante n'est qu'un cas particulier de l'intégrale de Bertrand, ou $\beta = 0$ :
+\begin{prop}
+Soit $a \in \Re$, $a>0$ :
+$$\left(\int_0^a \dfrac{dt}{t^{\alpha}}\right) \mbox{ converge } \Leftrightarrow (\alpha < 1)$$
+\end{prop}
+\section{Divergence d'une intégrale}
+\subsection{Les règles de Riemann}
+Les règles de Riemann nous donne les moyens de prouver la divergence d'une intégrale.
+\subsubsection{En $\infty$}
+Soit f fonction de $\left[a,\infty\right[$ dans $\Re$, continue par morceaux. Si :
+$$t.f(t) \underset{t\rightarrow\infty}\rightarrow 0$$
+Alors :
+$$\int_a^{\infty} \mbox{ diverge }$$
+\subsubsection{En 0}
+Soit f fonction de $\left]0,a\right]$ dans $\Re$, continue par morceaux. Si :
+$$t.f(t) \underset{t\rightarrow 0}\rightarrow 0$$
+Alors :
+$$\int_0^a \mbox{ diverge }$$

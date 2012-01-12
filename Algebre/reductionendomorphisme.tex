@@ -1,0 +1,251 @@
+\chapter{Réduction des endomorphismes et des matrices - Première Partie}
+\section{Système linéaire}
+Considérons un système linéaire (s) à n équations et à n inconnes. On peut écrire (S) sous sa forme matricielle : 
+$$AX = B$$
+Avec : 
+A la matrice des coefficiant, X la matrice des inconnue et B la matrice des seconds membres.\\
+\begin{de}
+Un système linéaire admet une unique solution si et seulement si A est inversible, donc si det(A) $\neq$ 0 ou rang (A) = n.\\
+Dans ce cas, on dit que le système linéaire est inversible, ou que c'est un système de Cramer. L'unique solution est donnée par : 
+$$\Omega = A^{-1}.B$$
+\end{de}
+\section{Détermination de l'inverse de A}
+\subsection{Méthode directe}
+Pour déterminer l'inverse de A, avec A une matrice inversible, on peut utiliser la formule suivante (Voir fiche de révision Sup) : 
+$$A^{-1} = \dfrac{1}{det(A)}.^t Com(A)$$
+Cependant, la complexité de cette méthode ( c'est à dire le nombre d'opération élémentaire à effectuer ) est équivalente en l'infini à $n^2.n!$. Ceci rend cette méthode totalement inutilisable pour n superieur à quelque unité.
+\subsection{Méthode du pivot de Gauss}
+À l'aide d'opération élémentaire, on peut modifier le système pour obtenir un système triangulaire. Avec cette méthode, la complexité de l'algorithme de résolution du système est équivalente en l'infini à $\dfrac{n^3}{3}$. La complexité est donc tout à fait acceptable.
+\subsubsection{Détails de la méthode général}
+\begin{de}
+Une famille est un ensemble ordonée, qui accepte les répétitions
+\end{de}
+Sachant que A est inversible, la famille ($C_1,..C_n$) des colonnes de A est libre, on peut donc trouver un pivot non nul.\\
+On fixe un pivot non nul (à l'aide de permutation si besoin), et élimine l'inconnu du pivot dans toutes les autres ligne par substitution. Et on intère la méthode pour toutes les inconnus, jusqu'a obtenir un système triangulaire.
+\subsubsection{Défault de la méthode du pivot de Gauss}
+Cette méthode est extrèmement instable numériquement. Il y a des erreurs d'arrondi lors des calculs (incontournable), mais ces erreurs peuvent être multiplié par un facteur extremement grand si le pivot est "petit". Cette méthode n'est donc pas fiable pour les grands système.
+\subsection{Méthode de Jacobi}
+La méthode de Jacobi s'applique à la résolution des systèmes Strictement diagonalement dominant
+\begin{de}
+Un système (S), ou la matrice A, est dit Strictement diagonalement dominant ( notée Sdd) si : 
+$$\forall i \in [1,n] |a_{ii}| > \underset{j \neq i}\sum |a_{ij}|$$
+\end{de}
+\subsubsection{Détails de la méthode général}
+La méthode de Jacobi consite à réecrire le systeme Sdd sous la forme suivante : 
+On résoud ce systeme en considérant que les coefficiant non diagonaux dans le systeme de départ sont nul. On obtient donc une valeur approché de la solution, on la note $X_0$ par exemple. Puis on itere le procédé avec la formule suivante : 
+$$X_{k+1} = A.X_k + b$$
+Cette formule devient par récurrence : 
+$$\forall k \in N~ X_k -\Omega = A^k ( X_0 - \Omega)$$
+Le comportement de $(X_k)$ dépend donc principalement de $A^k$.\\
+On montre que si M, la matrice des coefficiants, est Sdd, alors : 
+$$\lim_{k\rightarrow \infty} A^k = \overrightarrow{0}$$
+Avec $\overrightarrow{0}$ l'élément nul de l'espace $M_n$, l'espace des matrices carrée d'ordre n.\\
+On obtient donc que :
+$$\forall X_0 \in K^N ~ \lim_{k\rightarrow \infty}X_k = \Omega$$
+La convergence de la méthode de Jacobi est donc indépendante de l'approximation initale. Cette méthode est donc stable numériquement.
+\section{Valeur propres, vecteurs propre, sous-espace vectoriel propre}
+\subsection{Vecteurs propres}
+\begin{de}
+Soit E un K espace vectoriel et $f \in \mathcal(L)(E)$, le groupe des endomorphisme de E dans E.\\
+On dit que $\overrightarrow{x}\in E$ est un vecteur propre de f si $f(\overrightarrow{x})$ est parralèle à $\overrightarrow{x}$, c'est à dire si :
+$$\exists \lambda \in K~ tq~ f(\overrightarrow{x}) = \lambda \overrightarrow{x}$$
+Avec $\lambda$ qui a priori dépend de $\overrightarrow{x}$.
+\end{de}
+\begin{prop}
+\begin{itemize}
+ \item[$\rightarrow$] Si $\overrightarrow{x} = \overrightarrow{0}$, alors $\forall \lambda \in K~ f(\overrightarrow{0}) = \lambda.\overrightarrow{0}$
+ \item[$\rightarrow$] Si $\overrightarrow{x} \neq 0$, alors il existe au plus un $\lambda \in K$ tq $f(\overrightarrow{x}) = \lambda\overrightarrow{x}$
+\end{itemize}
+\end{prop}
+\subsection{Valeur propre}
+\begin{de}
+On appele valeur propre de l'endomorphisme tout $\lambda \in K$ tq : 
+$$\exists \overrightarrow{x}\in E - \left\lbrace 0 \right\rbrace~ tq~ f(\overrightarrow{x}) = \lambda \overrightarrow{x}$$
+On enlève $\overrightarrow{0}$ pour la propriété vu ci-dessus.
+\end{de}
+\subsection{Propriétés et définitions}
+\begin{de}
+Les vecteurs $\overrightarrow{x} \in E$ tq $f(\overrightarrow{x}) = \lambda \overrightarrow{x}$ sont appelé vecteur propre associé à la valeur propre.\\
+Leurs ensembles est égale à $Ker(f-\lambda Id)$. C'est un sous espace vectoriel de E, appelé sous espace vectoriel associé à la valeur propre $\lambda$.\\
+L'ensemble des valeurs propres de f est appelé spectre de f, notée $S_p(f)$ :
+$$\lambda \in S_p(f) \Leftrightarrow Ker(f-\lambda.Id) \neq \left\lbrace \overrightarrow{0} \right\rbrace $$
+\end{de}
+\begin{theo}
+Des sous espaces vectoriel propre, d'un endomorphisme f, associés à des valeur propre deux à deux différentes sont en somme direct. 
+\end{theo}
+\begin{prop}
+Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] f est injective $\Leftrightarrow$ Ker f = $\left\lbrace \overrightarrow{0} \right\rbrace $
+ \item[$\rightarrow$] f est injective $\Leftrightarrow 0 \notin S_p(f)$
+\end{itemize}
+Si la dimension de E est fini, nous avons la propriété suivante : 
+\begin{itemize}
+  \item[$\rightarrow$] f est bijective $\Leftrightarrow 0 \notin S_p(f)$
+\end{itemize}
+\end{prop}
+\begin{prop}
+Dans un système aux vecteurs propres ( C'est à dire un système définissant l'espace Ker(f-$\lambda Id$), les équations sont toujours liée entre elles, autrement dit elle sont linéairement dépendentes. Ce système n'est donc pas un système de Cramer, ce n'est donc pas un système inversible.
+\end{prop}
+
+\subsection{Cas des matrices}
+On appele $v_p,\overrightarrow{v_p}$, sous espace propre, spectre de A le $v_p,\overrightarrow{v_p}$, sous espace propre, spectre de f, l'endomorphisme canoniquement associé à A : 
+$$f : K^n \rightarrow K^n$$
+$$ X \mapsto A.X$$
+Donc, par définition : 
+$$\lambda \in S_p(A) \Leftrightarrow \exists X \in K^n,~ X \neq \overrightarrow{0}~ tq~ AX = \lambda X$$
+\section{Cas où E est de dimension finie : Polynôme caractéristique}
+Dans tout ce chapitre, E est un K espace vectoriel de dimension n et $f \in \mathcal{L}(E)$
+\begin{prop}
+On montre que $S_p(f)$ est l'ensemble des racines dans K du poylome $P_f \in K[X]$, défini par :
+$$P_f(X) = det(f-X.id)$$
+Ce polynome est aussi notée $\chi_f$. On défini aussi ce polynome par : 
+$$P_f(X) = det(X.id-f)$$
+Ces deux définitions sont équivalente, sauf qu'il y a un rapport $(-1)^n$ entre les deux, car : 
+$$det(-g) = (-1)^n.det(g)$$
+Par extension au matrice, on obtient que :
+$$P_f(X) = det(A-X.I_n)$$
+\end{prop}
+\begin{prop}
+L'ensembles des valeurs propre d'un endomorphisme est aussi l'ensemble des racines du polyôme $P_f$.
+\end{prop}
+\begin{de}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension finie n.\\
+On appelle polynome caractéristique de f le polynome : 
+$$P_f(X) = det(f-\lambda.id) \in K[X]$$ 
+\end{de}
+\begin{de}
+Soit A $\in \mathcal{M}_n(K)$.\\
+On appelle polynome caractéristique de A : 
+$$P_A = det (A - X.I_n)$$
+\end{de}
+\begin{prop}
+Si f est l'endomorphisme de $K^n$ canoniquement associé à A, alors : 
+$$P_A(X) = P_f(X)$$
+\end{prop}
+\begin{prop}
+Soit f $\in \mathcal{L}(E)$, E un K espace vectoriel de dimension n. On obtient que : 
+$$P_f(X) = (-1)^n\left[X^n-Trace(f).X^{n-1}+\dots+(-1)^n.det(f)\right] $$
+Les coefficiants dans les $\dots$ ne sont pas à connaitre.
+\end{prop}
+\begin{theo}
+Soit f $\in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension n.\\
+Alors : 
+$$\forall \lambda \in S_p(f),~ 1\leq dim(Ker(f-\lambda.Id) \leq mult_{P_f}(\lambda)$$
+Avec $mult_{P_f}(\lambda)$ la multiplicité de $\lambda$ dans les racines de $P_f$
+\end{theo}
+\subsection{Relations entre les racines d'un polynome et ses racines}
+\begin{prop}
+Soit P un polynome scindé de la forme : 
+\begin{eqnarray*}
+  P(X) & = & (X-\lambda_1)\dots(X - \lambda_n)\nonumber \\
+   & = & X^n+\alpha_{n-1}.X^{n-1}+...+\alpha_1+\alpha_0 \nonumber \\
+\end{eqnarray*}
+On obtient les relations suivantes : 
+\begin{eqnarray*}
+  \alpha_{n-1} & = & -\sum_{i=1}^n \lambda_i \\
+  \alpha_{n-2} & = & -\sum_{\underset{i<j}{i,j=1}}^n \lambda_i.\lambda_j \\
+  \vdots & = & \vdots\\
+  \alpha_0 & = & (-1)^n\lambda_1\dots\lambda_n\\
+\end{eqnarray*}
+\end{prop}
+\section{Diagonalisabilité}
+\subsection{Définitions}
+\begin{de}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension n.\\
+On dit que f est diagonalisable s'il existe une base B de E tq $mat_B(f)$ soit diagonale : 
+\[ mat_B(f) = \begin{pmatrix}
+  \lambda_1 &  & (0) \\
+   & \ddots &  \\
+  (0)&  & \lambda_n \\
+
+\end{pmatrix}
+\]
+Quitte à réordonnée les vecteurs de B, il existe aussi une base B' de E telque : 
+\[mat_{B'}(f) = \begin{blockarray}{cccccccccc}
+        | \leftarrow & -\overset{n_1}-- &\rightarrow | & | \leftarrow & -\overset{n_2}-- &\rightarrow|& \dots  & |\leftarrow & -\overset{n_p}-- & \rightarrow| \\
+        \begin{block}{(cccccccccc)}
+           \lambda_1 &  &  & & & & & & & (0) \\
+   	   & \ddots & & & & & & & \\
+  	   &  & \lambda_1 & &  & & & & &\\
+  	   &  &  & \lambda_2 & & & & & & \\
+  	   &  &  &  & \ddots & & & & &\\
+ 	   &  &  &  & & \lambda_2 & & & & \\
+ 	   &  &  &  & &  & \ddots & & &\\
+ 	   &  &  &  & &  &  & \lambda_p & &\\
+ 	   &  &  &  & &  & & & \ddots &\\
+  	  (0) &  &  &  & &  &  & & & \lambda_p\\
+        \end{block}
+        \end{blockarray}
+\]
+
+Avec les $\lambda_i$ deux à deux distincts. On obtient alors que : 
+\begin{eqnarray*}
+  P(X) & = & (\lambda_1-X)^{n_1}\dots(\lambda_p-X)^{n_p}\nonumber \\
+   & = & (-1)^n (X-\lambda_1)^{n_1}\dots(X-\lambda_p)^{n_p} \nonumber \\
+\end{eqnarray*}
+Le polynome est donc scindé.
+Comme les $\lambda_i$ sont deux à deux distincts, on obtient que : 
+$$n_i = multi_{P_f}(\lambda_i)$$
+De plus, nous avons les résultats suivants :
+\begin{itemize}
+ \item[$\rightarrow$]Ker($f-\lambda_1.Id)$ est le sous espace vectoriel engendré par les $n_1$ premiers vecteurs de B'
+ \item[$\rightarrow$]Ker($f-\lambda_2.Id)$ est le sous espace vectoriel engendré par les $n_2$ vecteurs suivants de B'
+ \item[$\rightarrow$]Etc ....
+\end{itemize}
+Enfin, on obtient que les sous espaces vectoriel propres sont supplémentaire.
+\end{de}
+\begin{theo}
+Soit f $\in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension finie n. Les conditions suivantes sont équivalente :
+\begin{itemize}
+ \item[$\rightarrow$] f est diagonalisable
+ \item[$\rightarrow$] $P_f$ est scindé et $\forall \lambda \in Sp(f)$, $dim(f-\lambda.Id)$ = $mult_{P_f}(\lambda)$
+ \item[$\rightarrow$] Les sous espaces propres de f sont supplémentaire
+ \item[$\rightarrow$] $\underset{\lambda \in S_p(f)}\sum dim(Ker(f-\lambda.Id)) = dim(E)$
+\end{itemize}
+\end{theo}
+\subsection{Cas particulier des valeurs propres simples}
+\begin{prop}
+Soit $f\in \mathcal{L}(E)$, E un K espace vectoriel de dimension finies n.\\
+Si $\lambda \in S_p(f)$ est une racine simple de $P_f$, on obtient que : 
+$$dim(Ker(f-\lambda.Id) = 1 $$
+Les sous espaces associé à une valeur propre simple sont donc des droites vectoriel, appelé droite propre
+\end{prop}
+\begin{prop}
+Si $P_f$ est un polynome scindé, c'est à dire que f admet n valeurs propres simple, alors on as : 
+$$\forall k \in \left\lbrace 1,...,n \right\rbrace~ dim(Ker(f-\lambda_k.Id)) = multi_{P_f}(\lambda_k) = 1 $$
+On en déduit donc que f est diagonalisable et que tout ses sous espaces vectoriel propres sont des droites vectoriel.
+\end{prop}
+\subsection{Cas d'une matrice}
+\begin{de}
+Soit $A \in \mathcal{M}_n(K)$. On dit que A est diagonalisable si f, l'endomorphisme canoniquement associé à A est diagonalisable
+\end{de}
+\begin{prop}
+Soit $A \in \mathcal{M}_n(K)$. Nous avons la propriété suivantes : 
+$$\mbox{( A est diagonalisable )} \Leftrightarrow (\exists P \in GL_n(K)~ tq~ P^{-1}.A.P \mbox{ soit diagonale })$$
+\end{prop}
+\begin{theo}
+Soit $A \in \mathcal{M}_n(\Re)$, une matrice symétrique réelle, alors A est orthonormalement diagonalisable, c'est à dire que A est diagonalisable ($P_A$ est scindé dans $\Re[X]$ ) et ses espaces propres, qui sont supplémentaire, sont deux à deux orthogonaux dans $\Re^n$ euclidien canonique, c'est à dire munie du produit scalaire canonique. 
+\end{theo}
+\section{Trigonalisabilité}
+\begin{de}
+Soit $f \in \mathcal(E)$, avec E un K espace vectoriel de dimension finie n.\\
+On dit que f est trigonalisable si il existe une base B de E telque $mat_f(B)$ soit triangulaire superieur.
+\end{de}
+\begin{de}
+Soit $A \in \mathcal{M}_n(K)$.\\
+On dit que A est trigonalisable si l'endomorphisme canoniquement associée à A est trigonalisable.
+\end{de}
+\begin{prop}
+Soit $A \in \mathcal{M}_n(K)$. Nous avons la propriété suivantes : 
+$$\mbox{( A est trigonalisable )} \Leftrightarrow (\exists P \in GL_n(K)~ tq~ P^{-1}.A.P \mbox{ soit triangulaire superieur })$$
+\end{prop}
+\begin{theo}
+Soit $f \in \mathcal{L}(E)$, avec E une K espace vectoriel de dimension finie n.\\
+$$\mbox{(f est trigonalisable)} \Leftrightarrow (P_f \mbox{ est scindé dans } K[X])$$
+\end{theo}
+\begin{corr}
+Soit E un $\mathcal{C}$ espace vectoriel de dimension finie, alors tout $f \in \mathcal{L}(E)$ est trigonalisable.
+De même, toute matrice $A \in \mathcal{M}_n(\mathcal{C})$ est trigonalisable
+\end{corr}
+

@@ -1,0 +1,115 @@
+\chapter{Séries d'endomorphismes et de matrices}
+\section{Définitions et propriétés générales}
+\begin{de}
+Soit E un K espace vectoriel normé de dimension finie n et $(f_k)_{n \in \mathbb{N}}$ une suite d'endomorphisme de E.\\
+On appelle série de terme général $f_k$ la nouvelle suite $(S_k)_{k \in \mathbb{N}}$ défini par : 
+$$S_k = \sum_{i=0}^k f_i$$
+On note $\underset{k}\sum f_k = (S_k)_{k \in \mathbb{N}}$.\\
+On dit que la série converge lorsque $S_k$ à une limite dans $\mathcal{L}(E)$, et on note alors : 
+$$S = \sum_{i=0}^{\infty} f_i$$
+cette limite. Dans ce cas, nous pouvons définir aussi : 
+$$R_k = \lim_{p \rightarrow \infty} \sum_{i=k+1}^p f_i = \sum_{i=k+1}^{\infty} f_i$$
+qui est le reste de la série. On as trivialement, lorsque la série converge (Pour pouvoir définir le reste) : 
+$$S = S_k + R_k$$
+et 
+$$R_k \underset{k \rightarrow \infty}\rightarrow \tilde{0}$$
+De plus, comme on a supposé E de dimension finie ici, $\mathcal{L}(E)$ est aussi de dimension finie, donc la convergence ne dépend pas de la norme choisie sur $\mathcal{L}(E)$.\\
+Nous avons aussi une définition analogue dans le cas d'une suite de matrice.
+\end{de}
+\begin{prop}
+Si B est une base de E et si $A_k = mat_B(f_k)$ alors : 
+$$\sum_{i=0}^k A_i = mat_B(\sum_{i=0}^k f_k)$$
+et $\underset{k} \sum f_k$ converge si et seulement si $\underset{k}\sum A_k$ converge, et dans ce cas : 
+\begin{align*}
+ \sum_{k=0}^{\infty} A_k &= mat_B(\sum_{k=0}^{\infty} f_k) \\
+  \sum_{i=k+1}^{\infty} A_i &= mat_B(\sum_{i=k+1}^{\infty} f_i) \\
+\end{align*}
+\end{prop}
+\begin{de}
+Si $\parallel~\parallel'$ est une norme quelconque sur $\mathcal{L}(E)$ et si $(f_k)_{k \in \mathbb{N}}$ est une suite d'endomorphisme de E, on dit que $\underset{k}\sum f_k$ converge absolument au sens de $\parallel~\parallel'$ si :
+$$\underset{k}\sum \parallel f_k\parallel' \text{ converge }$$
+Nous avons une définition analogue pour les matrices.
+\end{de}
+\begin{prop}
+Si $\underset{k} \sum f_k$ converge absolument, alors $\underset{k} \sum f_k$ converge dans $\mathcal{L}(E)$. Nous avons la même propriété pour les matrices. 
+\end{prop}
+\subsection{Exemple : La série géométrique}
+\begin{prop}
+S'il existe une norme sous-multiplicative $\parallel~\parallel$ sur $\mathcal{L}(E)$ telque $\parallel f\parallel < 1$ alors $\underset{k} \sum f^k$ converge
+\end{prop}
+\section{Exponentielle d'endomorphisme ou de matrice}
+\subsection{Propriétés et définitions}
+\begin{de}
+Si $f \in \mathcal{L}(E)$, avec E un K espace vectoriel normé de dimension finie N, avec $K = \mathbb{R}$ ou $\mathbb{C}$, alors $\underset{n} \sum \dfrac{f^n}{n!}$ converge dans $\mathcal{L}(E)$ et on note : 
+$$e^f = \sum_{k=0}^{\infty} \dfrac{f^n}{n!}$$
+De même, si $A \in \mathcal{M}_N(K)$, alors $\underset{n} \sum \dfrac{A^n}{n!}$ converge et on note : 
+$$e^A = \sum_{k=0}^{\infty} \dfrac{A^n}{n!}$$
+\end{de}
+\begin{prop}
+Si $u \in C^1(I,K)$, avec I intervalle $\subset \mathbb{R}$, alors, avec $A \in \mathcal{M}_N(K)$ : 
+\begin{align*}
+ I &\overset{f}\rightarrow \mathcal{M}_N(K)\\
+ t &\mapsto e^{u(t)A}
+\end{align*}
+est $C^1$ sur I et :
+\begin{align*}
+\forall t \in I~ f'(t)&=u'(t)Ae^{u(t)A} \\
+		      &=u'(t)e^{u(t)A}A	
+\end{align*}
+\end{prop}
+\section{Applications de l'exponentielle de matrices à la résolution d'un système différentiel linéaire à coefficient constant}
+\begin{de}
+Un système différentielle linéaire est un système du type : 
+$$\begin{cases}
+   x'_1 = a_{11}(t)x_1 + \dots + a_{1n}(t)x_n + b_1(t) \\
+  \vdots\\
+  x'_n = a_{n1}(t)x_1 + \dots + a_{nn}(t)x_n + b_n(t) \\
+  \end{cases}
+$$
+avec les $a_{ij}$ et les $b_i$ des applications données de I dans K=$\mathbb{R}$ ou $\mathbb{C}$, avec $I \subset \mathbb{R}$.\\
+Les $x_j$ sont des applications inconnu que l'on cherche dans l'ensemble $C^1(I,K)$. On remarque que le nombre d'inconnu est égale au nombre d'équations.\\
+Ce système est dit à coefficients constant lorsque les $a_{ij}$ sont des applications constantes. Le système est dit homogène lorsque les $b_i$ sont toutes des applications nulles.\\
+Dans la suite, on va supposer que le système est à coefficients constants. Notons : 
+$$A = (a_{ij})\in \mathcal{M}_n(K)$$
+\begin{align*}
+ B : I &\rightarrow K^n \\
+     t &\mapsto \begin{pmatrix}
+                 b_1(t) \\
+		 \vdots \\
+		 b_n(t)
+                \end{pmatrix}
+\end{align*}
+\begin{align*}
+ X : I &\rightarrow K^n \\
+     t &\mapsto \begin{pmatrix}
+                 x_1(t) \\
+		 \vdots \\
+		 x_n(t)
+                \end{pmatrix}
+\end{align*}
+Avec ces notations, on obtient que $x_1, \dots, x_n$ sont solution sur I du système différentielle précédent si et seulement si : 
+$$X \in C^1(I,K),~ \forall t \in I~ \dfrac{dX}{dt} = AX + B(t)$$
+\end{de}
+\begin{theo}
+Nous avons un théorème de Cauchy-Lipschitz pour les systèmes :\\
+Soit $\dfrac{dX}{dt} = A(t)X + B(t)$
+, avec A et B défini comme précédement, continue sur un intervalle $I \subset \mathbb{R}$, c'est à dire que toutes leurs composantes sont continues sur I. Alors $\forall X_0 = \begin{pmatrix}
+                                                                                                                                                                                x_{01} \\
+						     \vdots \\
+						     x_{0n}
+\end{pmatrix} \in K^n$ et $\forall t_0 \in I$, il existe une unique solution de (S) vérifiant la condition initiale $X(t_0)=X_0$, c'est à dire : 
+$$\begin{cases}
+   x_1(t_0)=x_{01} \\
+   \vdots \\
+   x_n(t_0)=x_{0n} \\
+  \end{cases}
+$$ 
+\end{theo}
+\begin{coro}
+Sous les hypothèses précédente concernant I (intervalle $\subset \mathbb{R}$) et $A \in C(I,\mathcal{M}_n(K))$, l'ensemble des solutions de ($S_0$) sur I est a valeur dans $K^n$ est un K espace vectoriel de dimension n. 
+\end{coro}
+\begin{coro}
+Sous les hypothèses ci-dessus concernant I,A et b, l'ensemble des solutions de (S) sur I à valeurs dans $K^n$ est un espace affinie de direction vectorielle ($S_0$). C'est à dire si u est une solution particuliere de (S) : 
+$$Sol_{(S)}(I,K^n)= \left\lbrace U + X,~ X \in Sol_{(S_0)}(I,K^n)\right\rbrace  $$
+\end{coro}
+

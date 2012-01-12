@@ -1,0 +1,185 @@
+\chapter{Suite de fonctions ou d'application - Convergence uniforme}
+\section{Convergence simple}
+\begin{de}
+Soit A une ensemble (en général, A est un intervalle), et $(E,\parallel~\parallel)$ un K espace vectoriel normé.\\
+Soit $(f_n)$ une suite d'application de $A\rightarrow E$.\\
+On dit que cette suite converge simplement sur A si : 
+$$\forall x \in A~ (f_n(x)) \mbox{ converge dans } (E,\parallel~\parallel)$$
+Lorsque que c'est le cas, la limite de $f_n(x)$ quand n tend vers $\infty$ dépend a priori de x.\\
+On peut donc définir une nouvelle application : 
+$$f : A \rightarrow E$$
+$$x \mapsto f(x) = \lim_{n\mapsto\infty}f_n(x)$$
+On dit que f est la limite simple de $f_n$ sur A.
+\end{de}
+\section{Convergence uniforme d'une suite d'applications}
+\begin{prop}
+L'ensemble B(A,E) des applications bornées d'un ensemble A dans un K espace vectoriel normes (E,$\parallel~\parallel$) est un K sous espace vectoriel des applications de A dans E. De plus : 
+$$B(A,E) \rightarrow \Re^+$$
+$$f \mapsto \parallel f\parallel_{\infty,A}=\underset{A}Sup\parallel f\parallel$$
+est une norme 
+\end{prop}
+\begin{de}
+Soit $(f_n)$ une suite d'application de A, qui est un ensemble de E, un K espace vectoriel normé $(E,\parallel~\parallel)$, et f une application de A dans E.\\
+On dit que $(f_n)$ converge uniformement vers f sur A si :
+$$\exists n_0 \in N~ tq~ \forall n\geq n_0~ f_n-f \in B(A,E) \mbox{ (bornée) }$$
+$$\parallel f_n-f\parallel_{\infty,A}\underset{n\mapsto\infty}\rightarrow0$$
+En général, la première condition est évidente. Il faut donc se concentrer sur la deuxième propriété. En pratique, E=$\Re$ et A = I c $\Re$.
+\end{de}
+\begin{prop}
+Soit $(f_n)$ une suite d'application de A, un ensemble, dans (E,$\parallel~\parallel$), un K espace vectoriel normée.\\
+Si $(f_n)$ converge uniformement vers f sur A:
+$$f : A \rightarrow E$$
+Alors $(f_n)$ converge simplement vers f sur A.
+\end{prop}
+\begin{prop}
+Cette propriété est utile pour prouver la non convergence uniforme.\\
+Soit $(f_n)$ une suite d'application de A, un ensemble, dans (E,$\parallel~\parallel$) un K espace vectoriel normée.\\
+Si $(f_n)$ convergent uniformement vers f, application de A dans E, alors :
+$$\forall (x_n) \in A^N~ f_n(x_n) - f(x_n) \underset{n \rightarrow \infty}\rightarrow \overrightarrow{0}$$
+De plus, $(x_n)$ n'est pas necessairement convergente et cette notion n'a meme pas de sens si il n'y a pas de distance de défini sur A.
+\end{prop}
+\section{Théorème classique sous les hypothèses de convergence uniforme}
+\subsection{Théorème de continuité}
+\begin{theo}
+Soit $(f_n)$ une suite d'application de $I\mapsto K$, avec I un intervalle de $\Re$, convergent uniformement vers f, application de I dans K, sur tout le segment $[a,b]$ inclu dans I.\\
+Si $\forall n \in N$, $f_n$ est continue en $x_0 \in I$, alors f est continue en $x_0$.\\
+Si $\forall n \in N$, $f_n$ est continue sur I, alors f est continue sur I.
+\end{theo}
+\begin{gene}
+Soit $(f_n)$ une suite d'application de A dans E, avec A une partie non vide d'un espace vectoriel normée, E un K espace vectoriel.\\
+Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $f_n$ est continue sur A, respectivement en $a \in A$.\\
+ \item[$\rightarrow$] $(f_n)$ converge uniformement vers $f : A \rightarrow E$ sur tout compact $\in A$\\
+\end{itemize}
+Alors, f est continue sur A, respectivement en a.
+\end{gene}
+\begin{de}
+Un compact est une extension du théorème de Bolzano-Weistrass, qui dit que de toute suite convergente on peut extraire une suite croissante.
+\end{de}
+\subsection{Théorème d'interversion des limites, ou théorème de la double limite}
+\begin{theo}
+Soit $(f_n)$ une suite d'application de I dans K, avec I un intervalle non vide de $\Re$, convergent uniformement sur I, vers un application f de I dans K.\\
+Soit $a \in \bar{\Re}$ un point de I ou une extrémité de I.\\
+Si $\forall n \in N$ :
+$$f_n(x) \underset{x \rightarrow a}\rightarrow l_n \in K$$
+avec $x \in a$, alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] $(l_n)$ converge vers une limite $l \in K$.\\
+ \item[$\rightarrow$] $f(x) \underset{x \rightarrow a}\rightarrow l$, avec $x \in a$.\\
+\end{itemize}
+\end{theo}
+\begin{de}
+On dit qu'un espace vectoriel normée qu'il est complet si toute suite de cette espace vérifiant le critère de cauchy converge.\\
+Les espaces vectoriel normée complet sont appellé espace de Banach
+\end{de}
+\begin{gene}
+Soit $(f_n)$ une suite d'application de A dans E, avec A une partie non vide d'un espace vectoriel normée, et E un K espace vectoriel normée complet.\\
+Si $(f_n)$ converge uniformement sur A vers une application f de A dans E, si $a \in \bar{A}$ c'est à dire si tout voisinage de a rencontre A, et si $\forall n \in N~ f_n(x) \underset{x \rightarrow a}\rightarrow l_n \in E$, avec $x \in A$, alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] ($l_n$) converge vers $l \in E$.\\
+ \item[$\rightarrow$] De plus $f(x) \underset{x \rightarrow a}\rightarrow l$, avec $x \in A$. On peut écrire ceci sous la forme suivante :  
+$$\lim_{x \rightarrow a,~ x \in A} \lim_{n\rightarrow \infty} f_n(x) = \lim_{n\rightarrow \infty} \lim_{x \rightarrow a,~ x \in A} f_n(x)$$
+\end{itemize}
+On peut inverser les limites dans ce cas.
+\end{gene}
+\subsection{Théorème d'integration sur un segment sous les hypothèses de convergence uniforme}
+\begin{theo}
+Soit $(f_n)$ une suite d'application continue sur un segment [a,b], à valeur dans K, convergent uniformement sur [a,b] vers f, application de [a,b] dans K.\\
+Alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] f est continue sur [a,b]\\
+ \item[$\rightarrow$] $\int_a^b f_n = \int_a^b f$ quand $n\rightarrow\infty$ \\
+\end{itemize}
+On peut écrire la deuxième conclusion sous la forme : 
+$$\lim_{n\rightarrow\infty} \int_a^b f_n = \int_a^b \lim_{n\rightarrow\infty} f_n$$
+\end{theo}
+\begin{gene}
+Ce théorème reste valable lorsqu'on remplace l'ensemble d'arrivé par un K espace vectoriel normée complet E. Ceci suppose d'avoir, au préalable défini $\int_a^b g$ pour g fonction de [a,b] dans E, un espace de banach, au moins continue par morceaux.
+\end{gene}
+\subsection{Thérorème de classe $C^1$}
+\begin{theo}
+Soit $(f_n)$ une suite d'application de I, un intervalle de $\Re$, dans K. On suppose que : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $f_n$ est $C^1$ sur I\\
+ \item[$\rightarrow$] La suite $(f_n)$ converge simplement sur I vers une application f de I dans K\\
+ \item[$\rightarrow$] La suite $(f'_n)$ converge uniformement sur tout segment [a,b] inclu I vers une application g de I dans \\
+\end{itemize}
+Alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] f est de classe $C^1$ sur I\\
+ \item[$\rightarrow$] f'=g\\
+ \item[$\rightarrow$] $f_n$ converge uniformement vers f sur tout segment inclu dans I.\\
+\end{itemize}
+La conclusion 2 peut aussi s'écrire sous la forme : 
+$$\dfrac{d}{dx} \lim_{n\mapsto\infty} f_n = \lim_{n\mapsto\infty} \dfrac{d}{dx} f_n$$
+\end{theo}
+\begin{gene}
+Le théorème précédent reste vrai quand on remplace l'ensemble d'arrivé par un espace vectoriel normée complet, un espace de Barach  
+\end{gene}
+\subsection{Théorème de classe $C^p$}
+\begin{theo}
+Soit $(f_n)$ une suite d'application de I, un intervalle de $\Re$, dans K. Soit $p \in N^*$.\\
+On suppose que : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $f_n$ est $C^p$ sur I
+ \item[$\rightarrow$] Les suites $(f_n),(f'_n),...,(f_n^{(p-1)}$ converge simplement sur I vers une application f de I dans K
+ \item[$\rightarrow$] La suite $(f_n^{(p)})$ converge uniformement sur tout segment [a,b] inclu I vers une application g de I dans K
+\end{itemize}
+Alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] La limite simple f de la suite $(f_n)$ est $C^p$ sur I.
+ \item[$\rightarrow$] $\forall k \in \textlbrackdbl\ 1,p \textrbrackdbl$ $f^{(k)}$ est la limite simple de la suite $(f_n^{(k)})$
+ \item[$\rightarrow$] $\forall k \in \left[0,p\right]$ $(f_n^{(k)})$ converge uniformement vers $f^{(k)}$ sur tout segment de I.
+\end{itemize}
+\end{theo}
+\begin{gene}
+Ce théorème reste valable quand on remplace l'ensemble d'arrivé par un espace vectoriel complet.
+\end{gene}
+\subsection{Théorème de classe $C^{\infty}$}
+\begin{de}
+Une application de I, un intervalle inclu dans $\Re$, dans K est dite de classe $C^{\infty}$ sur I si $\forall p \in N^*$ elle est $C^p$ sur I.
+\end{de}
+On en déduit facilement du théorème $C^p$ précédent que si $(f_n)$ est une suite d'application de I dans K, et si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $f_n$ est de classe $C^{\infty}$ sur I\\
+ \item[$\rightarrow$] $\forall k \in N$ $(f_n^{(k)})$ converge uniformement sur tout segment inclu dans I\\
+\end{itemize}
+Alors :\\
+\begin{itemize}
+ \item[$\rightarrow$] La limite simple f de la suite $(f_n)$ est $C^{\infty}$ sur I.
+ \item[$\rightarrow$] $\forall k \in N$ $(f_n^{(k)})$ converge uniformement vers $f^{(k)}$ sur tout segment inclu dans I.
+\end{itemize}
+Pour définir le classe $C^p$ dans le cas d'un espace E, on utilise le taux de variation
+\section{Théorème de convergence monotone et convergence dominé}
+\subsection{Théorème de convergence monotone}
+\begin{de}
+La suite $(f_n)$ d'application de I dans $\Re$ est dite monotone si $\forall x \in I$, $(f_n(x))$ est monotone
+\end{de}
+\begin{theo}
+Soit I un intervalle quelconque de $\Re$ (pas forcément un segment), et $(f_n)$ une suite d'application continue par morceaux sur I, à valeur dans $\Re$, convergent simplement sur I vers f, application de I dans $\Re$, également continue par morceaux. Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] La suite $(f_n)$ est monotone\\
+ \item[$\rightarrow$] Si $f_0$ et f sont intégrable sur I\\
+\end{itemize}
+Alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $f_n$ est intégrable sur I
+ \item[$\rightarrow$] $\int_I f_n \rightarrow \int_I f$ quand $n\rightarrow\infty$
+\end{itemize}
+La deuxieme conclusion peut s'écrire sous la forme : 
+$$\lim_{n\rightarrow\infty} \int_I f_n = \int_I \lim_{n\rightarrow\infty} f_n$$
+\end{theo}
+\subsection{Théorème de la convergence dominée}
+\begin{theo}
+Soit I un intervalle quelconque inclu dans $\Re$, et $(f_n)$ une suite d'application de I dans K, continue par morceaux, convergent simplement vers f, application de I dans K, également continue par morceaux.\\
+Si $\exists$ g, application de I dans $\Re^+$, continue par morceaux et intégrale sur I, telque (condition de domination): 
+$$\forall n \in N,~ \forall x \in I,~ |f_n(x)|\leq g(x)$$
+Alors :\\ 
+\begin{itemize}
+ \item[$\rightarrow$] Les $f_n$ et f sont intégrable sur I
+ \item[$\rightarrow$] $\int_I f_n = \int_I f$ quand $n \rightarrow \infty$.
+\end{itemize}
+On peut écrire cette dernière conséquence sous la forme suivante : 
+$$\lim_{n \rightarrow \infty} \int_I f_n = \int_I \lim_{n \rightarrow\infty} f_n$$
+\end{theo}

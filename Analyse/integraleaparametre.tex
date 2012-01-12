@@ -1,0 +1,71 @@
+\chapter{Intégrales à paramètres}
+\section{Théorème de continuité}
+Soit :
+$$f : X\times I \rightarrow K $$
+$$(x,t) \mapsto f(x,t)$$
+avec X et I intervalles de $\mathbb{R}$.\\
+On peut définir :
+$$F(x) = \int_I f(x,t) dt$$
+à condition suffisante que $t \mapsto f(x,t)$ soit $C^0$ par morceaux sur I et que $\int_I f(x,t)dt$ converge.\\
+Si cette condition est satisfaite, pour tout $x \in X$, on peut définir une nouvelle application :
+$$F : X \rightarrow K$$
+$$x \mapsto F(x) $$
+Avec : 
+$$F(x) = \int_I f(x,t) dt$$
+\begin{theo}
+Avec les notations précédentes, si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall x \in X$, $t \mapsto f(x,t)$ est continue par morceaux sur I
+ \item[$\rightarrow$] $\forall t \in I$, $x \mapsto f(x,t)$ est continue sur X
+ \item[$\rightarrow$] Condition de domination : $\exists \varphi : I \rightarrow \mathbb{R}_+$, condition par morceaux, intégrable sur I, telque :
+$$\forall (x,t) \in X \times I~ |f(x,t)| \leq \varphi(t)$$
+\end{itemize}
+Alors F est définie et continue sur X.
+\end{theo}
+\begin{prop}
+En considérant que la continuité est une propriété locale, on peut remplacer la condition de domination par : \\
+$\forall [a,b] $c X, $\exists \varphi_{[a,b]} : I \rightarrow \Re_+$ continue par morceaux et intégrale sur I telle que : 
+$$\forall x \in [a,b]~ \forall t \in I, |f(x,t)|\leq \varphi_{[a,b]}(t)$$
+\end{prop}
+\section{Théorème de classe $C^1$}
+\begin{theo}
+Soit f : 
+$$f : \mathbb{R}^2 \rightarrow K$$
+$$(x,t) \mapsto f(x,t)$$
+Avec K un corps, X et I deux intervalles de $\mathbb{R}$.\\
+Si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall x \in X$, $t \mapsto f(x,t)$ est continue par morceaux sur I
+ \item[$\rightarrow$] $\forall t \in I$, $x \mapsto f(x,t)$ est $C^1$ sur X et t $\rightarrow \dfrac{\partial f}{\partial x}(x,t)$ est continue par morceaux sur I
+ \item[$\rightarrow$] Condition de domination : $\exists \varphi : I \rightarrow \mathbb{R}_+$, condition par morceaux, intégrable sur I, telque :
+$$\forall (x,t) \in X \times I~ |\dfrac{\partial f}{\partial x}(x,t)| \leq \varphi(t)$$
+\end{itemize}
+Alors F : 
+$$F : X \rightarrow K$$
+$$x \mapsto F(x) $$
+Avec : 
+$$F(x) = \int_I f(x,t) dt$$
+est définie et de classe $C^1$ sur X et :
+$$\forall x \in X~ F'(x) = \int_I \dfrac{\partial f}{\partial x} (x,t) dt$$
+On appelle ceci formule de dérivation soussigne intégrale de Lipnitz
+\end{theo}
+\begin{prop}
+En considérant que la continuité est une propriété locale, on peut remplacer la condition de domination par : \\
+$\forall [a,b] $c X, $\exists \varphi_{[a,b]} : I \rightarrow \Re_+$ continue par morceaux et intégrale sur I telle que : 
+$$\forall x \in [a,b]~ \forall t \in I, |\dfrac{\partial f}{\partial x}(x,t)|\leq \varphi_{[a,b]}(t)$$
+\end{prop}
+\section{Théorème de classe $C^p$ (Hors programme)}
+\begin{theo}
+Soit F :
+$$F : x \mapsto \int_I f(x,t) dt$$ 
+avec f une fonction de XxI dans K, avec X et I des intervalles inclus dans $\mathbb{R}$. Si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall t \in I$, $x \mapsto f(x,t)$ est $C^p$ sur X, $p \in \mathbb{N}$.
+ \item[$\rightarrow$] Condition de domination : $\forall x \in X, \forall k \in [|0,p|]$, $t \mapsto \dfrac{\partial^k f}{\partial x^k}(x,t)$ est continue par morceaux sur I, et $\forall k \in [|0,p|]$, $\exists \varphi_k$ fonction de I dans $\mathbb{R}_+$, continue par morceaux sur I et intégrable sur I telque : 
+$$\forall (x,t) \in X \times I,~ |\dfrac{\partial^k f}{\partial x^k}(x,t)|\leq \varphi_k(t)$$
+Alors F est $C^p$ sur X et les dérivées succésives s'obtienne en dérivant sous le signe intégrale
+\end{itemize}
+\end{theo}
+\begin{prop}
+Comme dans les théorèmes précédent, en considérant le caractère locale de la classe $C^p$, on peut se ramener pour la condition de domination à tout segment inclu dans X. On peut aussi considéré une famille d'intervalle exaustives.
+\end{prop}

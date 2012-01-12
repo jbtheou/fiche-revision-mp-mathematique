@@ -1,0 +1,494 @@
+\chapter{Rappels et Compléments}
+\section{Relations de comparaison}
+\subsection{Relations d'équivalence}
+Soit R une relation.
+\begin{enon}
+R est une relation d'equivalence sur E si et seulement si :
+\begin{enumerate}[I) ]
+ \item R est réflexive : $\forall x \in E,~ xRx$
+ \item R est symétrique : $\forall (x,y) \in E^2~ tq~ xRy,~ on~ as~ :~ yRx$
+ \item R est transitive : $\forall (x,y,z) \in E^3~ tq~ xRy~ et~ yRz,~ on~ as~ :~ xRz$
+\end{enumerate}
+\end{enon}
+\subsection{Fonction module}
+\begin{enon}
+La fonction module, fonction de $\left[a,b\right]$ dans $\Re$, est une fonction continue
+\end{enon}
+\subsection{Voisinage fondamental}
+\begin{de}
+On défini un voisinage fondamental de $x_0 \in \bar{\Re}$ par : 
+\begin{itemize}
+ \item[$\rightarrow$] Si $x_0 \in \Re$ : V = ]$x_0-r,x_0+r$[
+ \item[$\rightarrow$] Si $x_0 = + \infty$ : V= ]a,$\infty$[
+ \item[$\rightarrow$] Si $x_0 = - \infty$ : V= ]$-\infty$,a[
+\end{itemize}
+\end{de}
+\subsection{Négligabilité}
+\begin{enon}
+Soient u et v deux fonctions de $\Re$ dans K, définies sur un même voisinage de 0.\\
+Par exemple, définies sur ]-r,r[, avec r > 0.\\
+On dit que u est négligable devant v en 0 si et seulement si, $\exists r' \in ]0,r[$ et h, une fonction définie par : 
+$$h : \left] -r',r' \right[  \rightarrow K$$
+avec $\lim\limits_{0} h = 0$ telque : 
+$$\forall x \in \left]-r',r'\right[~ u(x) = v(x).h(x)$$
+On le note $$u \underset{0}= o(v)$$
+\end{enon}
+\begin{prop}
+Soit u fonction de V dans K, avec V voisinage fondamental de $x_0 \in \bar{\Re}$.\\
+Si $\lambda$ est une constante de $K^*$, indépendante de la variable x, alors :
+$$o(\lambda.u) \underset{x_0}= o(u) $$
+\end{prop}
+\begin{prop}
+Soient $o_1(u),o_2(u),...,o_p(u)$ fonctions négligable devant u.\\
+Si p ne dépend pas de la variable x :
+$$o_1(u)+o_2(u)+...+o_p(u) = o(u)$$
+\end{prop}
+\subsubsection{Notation d'Hardy et de Landau}
+\begin{enon}
+Soient u et v deux fonctions de $\Re$ dans K, définies sur un voisinage $\left]-r,r\right[$, avec r>0, en 0.
+$$u \underset{0}\ll v \Leftrightarrow u \underset{0}= o(v)$$
+La première notation est la notation d'Hardy. La seconde est celle de Landau.
+\end{enon}
+\subsection{Équivalence}
+\begin{enon}
+Soient u et v deux fonctions de $\Re$ dans K, définies sur un voisinage $\left]-r,r \right[ $, avec r>0, de 0.
+On dit que u est équivalent à v en 0 si et seulement si, $\exists r' \in ]0,r[$ et h, une fonction définie par : 
+$$h : \left] -r',r' \right[  \rightarrow K$$
+avec $\lim\limits_{0} h = 1$ telque : 
+$$\forall x \in \left]-r',r'\right[~ u(x) = v(x).h(x)$$
+On le note :
+$$u \underset{0}\sim v$$
+\end{enon}
+\begin{prop}
+Soient u et v deux fonctions équivalente en $x_0$.\\
+Nous avons, si $\alpha$ est indépendant de la variable :
+$$u \underset{x_0}\sim v \Rightarrow u^{\alpha} \underset{x_0}\sim v^{\alpha}$$
+\end{prop}
+\begin{prop}
+Avec les conditions précédentes, nous avons :
+$$u \underset{x_0}\sim v \Leftrightarrow u \underset{x_0}= v + o(v)$$
+$$u \underset{x_0}\sim v \Leftrightarrow u-v \underset{x_0}\ll v$$
+Par symétrie, on peut inverser ces relations.
+\end{prop}
+\begin{prop}
+Soient u et v deux applications de V dans K, définies sur un voisinage fondamental V de $x_0\in \bar{\Re}$.\\
+Si $u \underset{x_0}\sim v$, et $u(x) \underset{x_0}\rightarrow l \in C~ ou~ l \in \bar{\Re}$, alors :
+$$v(x) \underset{x_0}\rightarrow l$$
+\end{prop}
+\begin{prop}
+Avec les conditions précédentes :
+Si $u(x) \underset{x_0}\sim u_1(x)$ et $v(x) \underset{x_0}\sim v_1(x)$, alors : 
+$$u(x).v(x) \underset{x_0}\sim u_1(x).v_1(x)$$
+$$\dfrac{u}{v} \underset{x_0}\sim \dfrac{u_1}{v_1}$$
+\end{prop}
+\begin{prop}
+Si $u(x) \underset{x_0}\sim v(x)$ et si u et v restent > 0 au voisinage de $x_0$ et si $u(x)$ et $v(x)$ tendent vers l$\in \bar{\Re}_+ -\left\lbrace1\right\rbrace $ en $x_0$, alors :
+$$ln(u) \underset{x_0}\sim ln(v)$$
+\end{prop}
+\subsection{Négligabilité et équivalence}
+\begin{prop}
+Soient u et v deux fonctions de V dans K, avec V un voisinage fondamental de $x_0 \in \bar{\Re}$.\\
+Alors :
+$$u \underset{x_0}\sim v \Rightarrow o(u) \underset{x_0}= o(v)$$
+\end{prop}
+
+\begin{prop}
+Si $u_1,u_2,...,u_p$ sont des fonctions de $\Re$ dans K, définies sur un voisinage $\left]-r,r\right[$, avec r>0, de 0.
+Si $u_1 \underset{0}\gg u_2 \underset{0}\gg ... \underset{0}\gg u_p$, alors : 
+$$u_1+...+u_p \underset{0}\sim u_1$$
+\end{prop}
+\subsection{Lien entre limite et somme}
+\begin{prop}
+Soient $h_2,h_3,...,h_p$ fonctions telque :
+$$\forall k \in \left\lbrace2,..,p\right\rbrace~ \lim_0 h_k = 0$$
+La conséquence suivante est vraie uniquement si p est indépendant de x :
+$$\lim_0 h_2+...+h_p = 0$$
+\end{prop}
+\subsection{Signe et équivalent}
+\begin{prop}
+Soient u et v deux fonctions de $\Re$ dans $\Re$ définies sur un voisinage de 0, telque :
+$$u \underset{0}\sim v$$
+alors, $\exists \alpha > 0$ telque $\forall x \in \left]-\alpha,\alpha\right[ $, $u(x)$ et $v(x)$ ont même signe et même points d'annulation.\\
+"Un équivalent contrôle localement le signe"
+\end{prop}
+\subsection{Domination - Grand O}
+\begin{de}
+Soient u et v deux fonctions de $\Re$ dans K, définies sur un voisinage $\left]-r,r \right[ $, avec r>0, de 0.\\
+On dit que u est dominé par v si et seulement si, $\exists r' \in ]0,r[$ et h, une fonction définie par : 
+$$h : \left] -r',r' \right[  \rightarrow K$$
+avec h bornée sur ]-r',r'[ telque : 
+$$\forall x \in \left]-r',r'\right[~ u(x) = v(x).h(x)$$
+On le note :
+$$u \underset{0}= O(v)$$
+\end{de}
+\subsection{Dans le cas des suites}
+\subsubsection{Domination - Grand O}
+\begin{de}
+Soient $(u_n)$ et $(v_n)$ deux suites à valeurs dans K.
+$$u_n = O(v_n) \Leftrightarrow (\exists n_0 \in N, \exists (h_n)_{n \geq n_0}~ tq~ \forall n \geq n_0~ u_n=v_n.h_n)$$
+avec $(h_n)_{n \geq n_0}$ suite bornée.
+\end{de}
+\section{Fonctions}
+\subsection{Fonctions continue sur un segments}
+Soit f fonction continue de $\left[a,b\right] $ dans $\Re$.
+\begin{prop}
+f est bornée sur $\left[a,b\right]$ :
+$$\exists M \in \Re^+~ tq~ \forall x \in \left[a,b\right]~ |f(x)| \leq M$$
+\end{prop}
+\begin{prop}
+f est majorée et minorée, et atteint son Sup et son Inf en des points de $\left[a,b\right]$ : 
+$$\exists \alpha \in \left[a,b\right]~ tq~ Sup_{\left[a,b\right]} f = f(\alpha)$$
+\end{prop}
+\begin{prop}
+f est uniformement continue sur [a,b]
+\end{prop}
+\subsection{Fonctions continue par morceaux sur un intervalle}
+\begin{prop}
+Si f est continue par morceau sur un intervalle I, il en est de même pour |f|.
+\end{prop}
+\begin{prop}
+L'ensemble des application d'un intervalle I, à valeur dans K, continue par morceaux sur I, est une algèbre.\\
+C'est à dire que cet espace est stable par addition, produit par un scalaire, et par produit. Mais cet ensemble n'est pas stable par composition.
+\end{prop}
+\subsection{Théorème des accroissements finis}
+La notation $f \in C^n(\left[a,b\right], \Re)$ signifie que f est de classe de $C^n$ de $\left[a,b\right]$ dans $\Re$
+\begin{de}
+Soit $f \in C^1(\left[a,b\right], \Re)$, alors : 
+$$\exists c \in (\left]a,b\right[~ tq~ f(b)-f(a) = f'(c)(b-a)$$
+\end{de}
+\subsection{Inégalité des accroissement finis}
+\begin{de}
+Soit $f \in C^1(\left[a,b\right], K)$.\\
+Si f' est bornée sur $\left[a,b\right]$, alors : 
+$$|f(b) -f(a)| \leq \underset{\left[a,b\right]}Sup |f'|.(b-a)$$
+\end{de}
+On démontre le lien entre le signe de la dérivée et les variations de la fonction à l'aide de cette inégalité.
+\subsection{Théorème de Rolles}
+\begin{enon}
+Soit f application continue sur [a,b] et dérivable sur ]a,b[.\\
+Si f(a) = f(b), alors : 
+$$\exists c \in \left]a,b\right[~ tq~ f'(c) = 0 $$
+\end{enon}
+\subsection{Théorème des valeurs intermédiaire}
+Les trois propriétés suivantes sont équivalentes.
+\begin{prop}
+Soit f application continue de I dans $\Re$, avec I intervalle inclus dans $\Re$.\\
+Alors f(I) est aussi un intervalle
+\end{prop}
+\begin{prop}
+Soit f application de A dans $\Re$, définie et continue sur [a,b].\\
+Si :
+$$f(a).f(b)\leq 0$$
+Alors :
+$$\exists c \in \left[a,b\right]~ tq~ f(c)=0$$
+\end{prop}
+\begin{prop}
+Soit f application continue de I dans $\Re$.\\
+$\forall (x,x') \in I^2$, tous $y$ compris entre f($x$) et f($x'$) est une valeur de f sur [$x,x'$]
+\end{prop}
+\subsubsection{Cas particuliers}
+\begin{prop}
+Soit f, fonction de $\Re$ dans $\Re$, continue sur [a,b].\\
+Alors f([a,b]) = [m,M], avec : 
+$$m = Inf_{\left[a,b\right]}f $$
+$$M = Sup_{\left[a,b\right]}f $$
+\end{prop}
+\begin{prop}
+Soit f fonction de $\Re$ dans $\Re$, continue et strictement croissante sur un intervalle I.\\
+Alors f induit une bijection de I sur f(I), qui est lui même un intervalle, et sa bijection réciproque, $f^{-1}$, de f(I) dans I, est également continue et strictement croissante.\\
+On peut préciser f(I). Quand I possède une borne ouverte, on fait appelle à la limite de f en la valeur de cette borne, et quand I possède une borne fermée, on prend la valeur de f en cette borne. Par exemple : 
+$$I = \left]a,b\right] \rightarrow f(I) = \left]\lim_a f,f(b) \right] $$
+\end{prop}
+\begin{prop}
+Soit f fonction de $\Re$ dans $\Re$, croissante sur I.\\
+Alors : 
+\begin{itemize}
+ \item[$\rightarrow$] Soit f n'est pas majorée sur I, alors dans ce cas :  $$f(x) \underset{x \rightarrow\infty}\rightarrow \infty$$
+ \item[$\rightarrow$] Soit f est majorée sur I, alors dans ce cas : $$f(x) \underset{x \rightarrow\infty}\rightarrow Sup\underset{I} f$$
+\end{itemize}
+\end{prop}
+\subsection{Lien entre limite et bornée}
+\begin{prop}
+Soit f fonction de $\Re$ dans K, définie sur un voisinage de $x_0 \in \bar{\Re}$.\\
+Si f a une limite finie quand x tend vers $x_0$, alors il existe un voisinage de $x_0$ V telque f soit bornée sur V. 
+\end{prop}
+\subsection{Étude de Arctan}
+Dans le cas d'une étude asymptotique de arctan au voisinage de $\infty$, la propriété suivant peut etre utile : 
+\begin{prop}
+$$\forall u \in \Re^+ ~ arctan(u)+arctan(\dfrac{1}{u}) = \varepsilon.\dfrac{\pi}{2}$$
+avec $\varepsilon$ = +1 si u est positif, -1 si u est négatif
+\end{prop}
+\subsection{Limite d'une fonction}
+\begin{prop}
+Soit f une fonction complexe.
+$$(\mbox{ f est continue par morceaux }) \Leftrightarrow (\mbox{ Re(f) et Im(f) sont continue par morceaux })$$
+\end{prop}
+\begin{prop}
+Soit f fonction complexe, décomposable en $f = f_1 + if_2$. Soit $(l_1,l_2) \in \Re^2$
+$$(\lim_{\infty} f = l=l_1+i l_2) \Leftrightarrow (\lim_{\infty} f_1 = l_1~ et~ \lim_{\infty} f_2 = l_2)$$
+\end{prop}
+\subsection{Injectivité}
+\begin{de}
+Soit f application de A dans A'.\\
+f est injective si et seulement si :
+$$\forall(x,x')\in A~ f(x)=f(x') \Rightarrow x=x'$$
+\end{de}
+\begin{prop}
+Soit f application linéaire entre deux espaces vectoriels.
+$$(\mbox{ f est injective }) \Leftrightarrow Ker(f) = \left\lbrace 0 \right\rbrace $$
+\end{prop}
+\subsection{Surjectivité}
+\begin{de}
+Soit f application de A dans A'.\\
+f est surjective si et seulement si :
+$$\forall y \in A'~ \exists x \in A~ tq~ f(x)=y$$
+On peut aussi écrire ce si et seulement si sous la forme : 
+$$f(A) = A'$$
+\end{de}
+\subsection{Bijectivité}
+\begin{de}
+Soit f une application de A dans A'.\\
+f est une bijection de A sur A' si et seulement si :
+$$\forall y \in A'~ \exists!x\in A~ tq~ f(x)=y$$
+Dans ce cas, on peut définir l'application réciproque $f^{-1}$ :
+$$f^{-1} : A' \rightarrow A$$
+$$y \rightarrow f^{-1}(y)$$
+avec $f^{-1}(y)$ l'unique antécédent de y par f.
+\end{de}
+\begin{prop}
+f est une bijection si f est injective et surjective.
+\end{prop}
+\begin{prop}
+Soit f une fonction bijective.\\
+Si $x \in A,~ y\in A'$.\\
+$$(f(x) = y) \Leftrightarrow (x = f^{-1}(y))$$
+Et : 
+$$f{-1}of = Id_A$$
+$$fof{-1} = Id_{A'}$$
+\end{prop}
+\subsection{Difféomorphisme}
+\begin{de}
+Soit f une application $C^k$ d'un intervalle I dans $\Re$, avec $k \in N^*$ (le cas k=0 est écarté, car ce cas possède un nom différent).\\
+On dit que f réalise un $C^k$-difféomorphisme de I sur f(I) si et seulement si : 
+\begin{itemize}
+ \item[$\rightarrow$] f réalise une bijection de I sur f(I)
+ \item[$\rightarrow$] f est $C^k$ sur I
+ \item[$\rightarrow$] La fonction réciproque, $f^{-1}$ de f(I) dans I, est également $C^k$ sur f(I).
+\end{itemize}
+On dit que f est un $C^{\infty}$ difféomorphisme de I sur f(I) si f est un $C^k$ difféomorphisme de I sur f(I) pour tous $k \in N^*$
+\end{de}
+\begin{theo}
+Soit f une application de classe $C^k$ de $\Re$ dans $\Re$, avec $k \in N^*$ sur un intervalle $I C \Re$.\\
+Alors f est un $C^k$ difféomorphisme de I sur f(I) si et seulement si f' ne s'annule pas sur I.\\
+Dans le cas, d'apres le théorème des valeurs intermédiaire, f' garde donc un signe continue sur I. Si $ \forall x \in I$ : 
+\begin{itemize}
+ \item[$\rightarrow$] f'(x) > 0, alors f est un $C^k$ difféomorphisme strictement croissant
+ \item[$\rightarrow$] f'(x) < 0, alors f est un $C^k$ difféomorphisme strictement décroissant
+\end{itemize}
+\end{theo}
+\section{Développements limités}
+\subsection{Lien entre développement limité et dérivabilité}
+Soit f fonction de $\Re$ dans K définies sur un voisinage $V_0$ de 0.
+Supposons que f admet un développement limité d'ordre 1 de la forme : $f(x) = a + bx + o(x)$
+\begin{prop}
+$$(\mbox{ f admet un développement limité d'ordre 1 en 0 }) \Leftrightarrow ( \mbox{ f est dérivable en 0 })$$
+\end{prop}
+\begin{prop}
+On obtient les égalités suivantes :
+$$f(0) = a$$
+$$f(0) = b$$
+De plus, l'équation de la tangente en 0 au graphe de f est :
+$$y=a+bx$$
+\end{prop}
+\subsection{Position relative de la courbe par rapport à la tangente}
+Soit f fonction de $\Re$ dans K définies sur un voisinage $V_0$ de 0.
+Supposons que f admet un développement limité d'ordre 2 de la forme : $f(x) = a + bx + cx^p + o(x^p)$, avec $c\neq 0$.
+\begin{prop}
+La position de la courbe par rapport à sa tangente au voisinage du point d'abscisse O=(0,a),est donnée à l'aide du signe de $c.x^p$ (Voir Signe et équivalent)
+\end{prop}
+\subsection{Développement limités usuels}
+\begin{itemize}
+ \item[$\rightarrow$]$(1+x)^{\alpha} = 1 + \alpha x+\dfrac{\alpha (\alpha - 1)}{2!}x^2+o(x^2)$
+ \item[$\rightarrow$]$cos(x) = 1 - \dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+o(x^6)$
+ \item[$\rightarrow$]$sin(x) = 1 - \dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+o(x^7)$
+ \item[$\rightarrow$]$e^x = 1 +x + \dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\dfrac{x^4}{4!}+o(x^4)$
+ \item[$\rightarrow$]$\dfrac{1}{1-x} = 1+x+x^2+...+x^n+o(x^n)$
+ \item[$\rightarrow$]$ch(x) = 1 + \dfrac{x^2}{2!}+\dfrac{x^4}{4!}+...+\dfrac{x^{2n}}{2n!}+o(x^{2n+1})$
+ \item[$\rightarrow$]$sh(x) = 1 + \dfrac{x^3}{3!}+\dfrac{x^5}{5!}+...+\dfrac{x^{2n+1}}{(2n+1)!}+o(x^{2n+1})$
+ \item[$\rightarrow$]$ln(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} +o(x^3)$
+ \item[$\rightarrow$]$tan(x) = x + \dfrac{x^3}{3}+o(x^3)$
+ \item[$\rightarrow$]$Arctan(x) = x- \dfrac{x^3}{3}+\dfrac{x^5}{5}-...+(-1)^n\dfrac{x^{2n+1}}{2n+1}+o(x^{2n+2})$
+\end{itemize}
+\subsection{Développement asymptotique d'une "échelle de comparaison E"}
+\begin{de}
+Soit $x_0 \in \bar{\Re}$, et E un ensemble de fonction de $\Re$ dans K, dont chacune est définie sur un voisinage fondamental de $x_0$.\\
+On dit que f admet un développement asymptotique dans l'échelle E à la précision o($u_p$), $u \in E$, s'il existe des applications $u_1,...,u_p$ appartenant à E et des scalaires $\lambda_1,\lambda_2,...,\lambda_p \in K^p$, non tous nuls, et un voisinage fondamental V de $x_0$ telque :
+$$u_1 \gg ... \gg u_p$$
+$$\forall x \in V~ f(x)=\lambda_1.u_1(x)+...+\lambda_p.u_p(x)+o(u_p(x))$$
+\end{de}
+\subsubsection{Exemples d'échelle de comparaison E}
+\begin{itemize}
+ \item[$\rightarrow$] Pour $x_0 \in \Re$, l'échelle des dévellopements limités en $x_0$ :
+$$E = \left\lbrace x \mapsto (x-x_0)^n, n \in N \right\rbrace $$
+ \item[$\rightarrow$] Pour $x_0 \in \Re$ :
+$$E = \left\lbrace x \mapsto (x-x_0)^n, n \in Z \right\rbrace $$
+ \item[$\rightarrow$] Pour $x_0 = \infty $ :
+$$E = \left\lbrace x \mapsto x^{\alpha}(ln(x))^{\beta}e^{P(x)},~ P(x) = \sum_{i=1}^q q_ix^{\gamma_1}, ~(\alpha,\beta) \in \Re^2,~ q \in N^*,~ q_i \in \Re^*,~ \gamma_i \in \Re^{*+} \right\rbrace $$
+
+\end{itemize}
+
+\section{Intégrale}
+\subsection{Somme de Riemmann}
+Soit f, fonction continue par morceaux de $\left[a,b\right]$ dans K.
+Soit $(u_n)$ la somme de Riemmann associé à f
+\begin{prop}
+Quand n tend vers l'infini, le nombre de termes tend vers l'infini, et chacun des termes tend vers 0. La limite de la somme n'est pourtant pas nul
+\end{prop}
+\begin{prop}
+$$\lim_{n \rightarrow \infty} u_n = \lim_{n \rightarrow \infty} \sum_{k=0}^{n-1} \dfrac{b-a}{n}.f(x_k) = \int_a^b f$$
+\end{prop}
+\subsection{Inégalité de majoration}
+\begin{prop}
+Soit f fonction continue par morceaux de [a,b], a<b, dans K.\\
+$$|\int_a^b f| \leq \int_a^b |f| $$
+\end{prop}
+\subsubsection{Croissance de l'intégrale}
+\begin{prop}
+Soient f,g deux fonctions continue par morceaux de [a,b] a<b dans $\Re$.\\
+Si :
+$$f \leq g$$
+alors :
+$$\int_a^b f \leq \int_a^b g$$
+\end{prop}
+\subsection{Inégalité de Cauchy-Schwarz}
+\begin{enon}
+Soit u et v deux vecteur d'un $\Re$ espace vectoriel. :
+$$<u|v> \leq ||u||.||v||$$
+\end{enon}
+\begin{prop}
+Si f et g sont deux applications continue par morceaux de [a,b] dans K, alors :
+$$|\int_a^b f(t)g(t)dt| \leq \sqrt{\int_a^b |f(t)|^2dt}.\sqrt{\int_a^b |g(t)|^2dt}$$
+Le produit scalaire sous jacents dans le cas réel est : 
+$$<f|g> = \int_a^b f(t).g(t) dt$$
+A l'aide de ceci, on peut démontrer l'inégalité des accroissements finis.
+\end{prop}
+\subsection{Intégrale et négligabilité}
+\begin{prop}
+Si u et v sont deux applications de $\Re$ dans K, continue sur un voisinage de 0 (pour que l'on puisse définir les intégrales). Alors :
+$$u \underset{0}\ll v \Rightarrow  \int_0^x u \underset{0}\ll \int_0^x v$$
+\end{prop}
+\section{Vrac}
+\subsection{Suite géométrique}
+\begin{prop}
+La somme d'une suite géométrique de raison z est donnée par, pour $z \neq 1$ :
+$$1+z+...+z^n = \dfrac{1-z^{n+1}}{1-z}$$
+Pour z = 1 : 
+$$1+z+...+z^n = n+1$$
+\end{prop}
+\subsubsection{Application aux matrices}
+Soit A une matrice carrée.\\
+De même, on obtient, si (I-A) est inversible :
+$$I + A + A^2 + ... + A^n = (I-A)^{-1}(I-A^{n+1})$$
+$$I + A + A^2 + ... + A^n = (I-A^{n+1})(I-A)^{-1}$$
+On observe que les matrices commutent (Ce qui n'est pas le cas général)
+\subsection{Suite complexe}
+Soit $(u_n)$ une suite de complexe.
+\begin{prop}
+$$\lim_{n \rightarrow \infty} |u_n| = 0 \Leftrightarrow \lim_{n \rightarrow \infty} u_n = 0$$
+\end{prop}
+\subsection{Utilisations des inégalités}
+Soient $(u_n)$ et $(v_n)$ deux suites qui tendent vers l et l'
+\begin{prop}
+Si $\forall n \in N~ u_n \leq v_n$, alors $l \leq l'$.\\
+Mais si Si $\forall n \in N~ u_n < v_n$, alors $l \leq l'$.\\
+On observe donc qu'il est plus "facile" de travailler sur des inégalités large.
+\end{prop}
+\subsection{Densité}
+Soient A et A' deux sous ensembles non vide de C, avec A inclue dans A'.\\
+\begin{enon}
+On dit que A est dense dans A' si :
+$$\forall a' \in A',~ \forall \varepsilon > 0,~ \exists a \in A~ tq~ |a'-a| \leq \varepsilon$$
+\end{enon}
+\begin{prop}
+On dit que A est dense dans A' si tous points de A' est la limite d'une suite de points de A
+\end{prop}
+\subsection{Formule du binôme et dérivée}
+\begin{de}
+Soit a et b deux complexes :
+$$(a+b)^n = \sum_{k=0}^n \dbinom{n}{k} a^k.b^{n-k}$$
+\end{de}
+\begin{prop}
+On peut étendre la formule du binome au dérivation d'un produit de fonction : 
+$$(f.g)^{(n)} = \sum_{k=0}^n \dbinom{n}{k} f^{(k)}.g^{(n-k)}$$
+\end{prop}
+\begin{prop}
+De même, on peut étendre cette formule aux matrices si les deux matrices commutent.\\
+Soient A et B deux matrice carrée telque AB=BA : 
+$$(A+B)^n = \sum_{k=0}^n \dbinom{n}{k} A^k.B^{n-k}$$
+\end{prop}
+\subsection{Dérivée successives de cosinus et sinus}
+\begin{enon}
+Soit n $\in$ N :
+$$cos^{(n)}(x) = cos(x+n.\dfrac{\pi}{2})$$
+$$sin^{(n)}(x) = sin(x+n.\dfrac{\pi}{2})$$
+\end{enon}
+
+\begin{prop}
+$\forall k \in N : $
+$$cos^{(2k)} = (-1)^k.cos(x)$$
+$$sin^{(2k+1)} = (-1)^{k+1}cos(x)$$
+\end{prop}
+\subsection{Régle de d'Alembert}
+Soit ($u_n$) une suite de réels positifs.\\
+Supposons que :
+$$\lim_{n \rightarrow \infty} \dfrac{u_{n+1}}{u_n} = a$$
+\begin{itemize}
+ \item[$\rightarrow$] Si a $\in \left[0,1\right[$, ($u_n$) converge vers 0
+ \item[$\rightarrow$] Si a>1, $(u_n)$ diverge vers $+\infty$
+\end{itemize}
+\subsection{Nombre complexe}
+\begin{prop}
+Si z = x + iy, avec x,y deux réels, alors : 
+$$|x| \leq |z|$$
+$$|y| \leq |z|$$
+\end{prop}
+\section{Les polynomes}
+\subsection{Polynomes irréductibles}
+\begin{prop}
+Si K est un corps commutatif, tous polynomes de K[X] s'écrit comme le produit d'un nombres de polynomes irréductible de K[X] et cette écriture est unique à l'ordre près des facteurs.
+\end{prop}
+\begin{enon}
+Les polynomes irréductibles de C[X] sont les polynomes du $1^{er}$ degrés.\\
+Les polynomes irréductibles de C[X] unitaire sont les polynome aX+$\lambda$, avec $\lambda$ un complexe et a=1.
+\end{enon}
+\begin{enon}
+Les polynomes irréductibles de $\Re$[X] sont les polynomes du $1^{er}$ degrés et les polynomes du $2^{nd}$ degrés avec discriminant négatif.
+\end{enon}
+\subsection{Racine et ordre de multiplicité}
+\begin{de}
+Soit $\lambda$ un complexe.\\
+$\lambda$ est une racine d'ordre n de $P \in K[X]$ si et seulement si $(X-\lambda)^n$ divise P et que $(X-\lambda)^{n+1}$ ne le divise pas.
+\end{de}
+\begin{prop}
+Soit $\lambda$ un complexe.\\
+$\lambda$ est une racine d'ordre n de $P \in K[X]$ si et seulement si :
+$$\forall k \in \left\lbrace0,n-1\right\rbrace~ P^{(k)}(\lambda) = 0 $$
+et que
+$$P^{(n)}(\lambda) \neq 0$$
+\end{prop}
+\begin{prop}
+Soit z un complexe.\\
+On peut factoriser $z^n-1$ sous la forme : 
+$$z^n-1 = \prod_{k=0}^{n-1}(z-e^{i\dfrac{k2\pi}{n}})$$
+\end{prop}
+\begin{prop}
+D'après la propriété précédente, et en utilisant le faite que :
+$$1 + z + ... +z^{n-1} = \dfrac{z^{n}-1}{z-1}$$
+On obtient que : 
+$$1 + z + ... +z^{n-1} =  \prod_{k=1}^{n-1}(z-e^{i\dfrac{k2\pi}{n}})$$
+\end{prop}
+\begin{prop}
+Soit $P\in\Re[X]$, et $\lambda$ une racine complexe de P, avec $\lambda$ non réel.\\
+Alors :
+$$mult_P(\bar{\lambda}) = mult_P(\lambda)$$
+\end{prop}

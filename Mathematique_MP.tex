@@ -1,0 +1,72 @@
+% % % % % % % % % % Tout ce qui est mis derriÃ¨re un Â«Â %Â Â» n'est pas vu par LaTeX
+% On appelle cela des Â«Â commentairesÂ Â».  Les commentaires permettent de
+% commenter son document - comme ce que je suis en train de faire
+% actuellement - et de cacher du code - cf. la ligne \pagestyle.
+
+\documentclass[a4paper, titlepage, draft,twoside]{book}
+
+\include{preambule}
+
+\begin{document}
+
+\pagestyle{empty}
+\titleGMPHY
+\clearpage
+\frontmatter                  % Prologue.
+\chapter{Licence}
+J'ai décidé d'éditer cet ouvrage sous la licence Créative Commons suivante : CC-by-nc-sa. Pour plus d'information :\\
+http://creativecommons.org/licenses/by-nc-sa/2.0/fr/.\\
+Ce type de licence vous offre une grande liberté, tout en permettant de protéger mon travail contre une utilisation commercial à mon insu par exemple.\\
+Pour plus d'information sur vos droits, consultez le site de Créative Commons
+\chapter{Avant-propos}
+Il y a un plus d'un an, au milieu de ma SUP MP, j'ai décidé de faire mes fiches de révision à l'aide de Latex, un "traitement de texte" très puissant. Il en résulte les fiches qui suivent. Je pense que travailler sur des fiches de révision, totalement séparé de notre cours, est un énorme plus, et réduit grandement la quantité de travail pour apprendre son cours, ce qui laisse plus de temps pour les exercices. Mon experience en tout cas va dans ce sens, j'ai notablement progressé à l'aide de ces fiches.\\
+J'ai décidé de les rassembler sous forme d'un "livre", ou plutôt sous forme d'un recueil. Ce livre à pour principal interet pour moi d'être transportable en cours. C'est cet interet qui m'a poussé à faire ce livre.\\
+Dans la philosophie de mes fiches de révision, ce livre est disponible gratuitement et librement sur mon blog. Il est édité sous License Créative Commons. Vous pouvez librement adapter ce libre à vos besoins, les sources Latex sont disponibles sur mon blog. Je pense que pour être en accord avec la philosophie de ces fiches, il serai bien que si vous effectuez des modifications de mon ouvrage, vous rendiez ces modifications disponible à tous. Je laisserai volontiers une place pour vos modifications sur mon blog. Je pense sincèrement que ce serai vraiment profitable au plus grand nombre, et dans la logique de mon travail.\\
+J'ai hiérarchisé mon ouvrage de façon chronologique. Les parties sont rangées dans l'ordre "d'apparition" en MP, tout en conservant une certaine logique dans les parties. J'ai mis en Annexe des petites fiches de méthodologie, qui peuvent s'avérer utiles.\\
+Je vous souhaite une bonne lecture, et surtout une bonne réussite.\\
+Jean-Baptiste Théou
+\chapter{Remerciements}
+Je tient à remercier Georges Marin, Professeur de Physique-Chimie en MP au Lycée Lesage et François Brunou, Professeur de Mathématiques en MP au Lycée Lesage.\\
+Sans eux, ce livre ne pourrai exister.\\
+\mainmatter                   % On passe aux choses serieuses
+\part{Révisions}
+\include{Analyse/revision}
+\part{Intégrales, Fonctions}
+\setcounter{chapter}{0}
+\include{Analyse/integrablegeneralisee}
+\include{Analyse/integraleaparametre}
+\include{Analyse/approximationuniforme}
+\part{Suites, Séries}
+\setcounter{chapter}{0}
+\include{Analyse/suitedefonctionconvergencesimple}
+\include{Analyse/serie}
+\include{Analyse/sommationdesrelationsdecomparaison}
+\include{Analyse/seriedapplication}
+\include{Analyse/serieentier}
+\include{Analyse/complementseries}
+\include{Algebre/serieendomorphisme}
+\part{Équations différentielles}
+\setcounter{chapter}{0}
+\include{Analyse/equationsdifferentielles}
+\part{Réduction d'endomorphismes}
+\setcounter{chapter}{0}
+\include{Algebre/reductionendomorphisme}
+\include{Algebre/reductionendomorphisme2}
+\part{Espaces vectoriels normés}
+\setcounter{chapter}{0}
+\include{Algebre/espacevectorielsnormes}
+\include{Algebre/espacevectorielsnormes2}
+\include{Algebre/espaceprehilbertien}
+\include{Algebre/adjoint}
+\include{Algebre/formequadratique}
+\include{Algebre/applicationlineairenorme}
+\appendix                     % Les annexes
+\part{Annexe}
+\include{Methodo/integrale}
+\include{Methodo/developpementasymptotique}
+\include{Methodo/serie}
+\include{Algebre/calculmatricielparblocs}
+\include{Methodo/quadrique}
+\backmatter
+\tableofcontents            % Table des matières
+\end{document}

@@ -1,0 +1,168 @@
+\documentclass[a4paper,12 pt,oneside]{report}     % Type de document
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+%\usepackage{amsfont}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{prop}{Propriété}
+
+%$\begin{bmatrix}
+%  \cos(x)-X & -\sin x \\
+%  \sin x & \cos(x)-X \\
+%\end{bmatrix}$
+
+%opening
+\title{Méthodologie}
+\author{MP}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Intégrales généralisées}
+\section{Convergence d'une intégrale}
+\subsection{Propriétés}
+Il existe plusieurs trois propriétés qui permettent de prouver la convergence, d'une intégrale complexe à l'aide d'une intégrale "simple".
+\begin{itemize}
+ \item[$\rightarrow$] La convergence d'une intégrale de fonction positive par majoration (Implication)
+ \item[$\rightarrow$] L'intégration par domination (Implication)
+ \item[$\rightarrow$] La convergence des intégrale de fonction positive par equivalence (Équivalence)
+\end{itemize}
+\subsection{Fonctions "classique"}
+Il existe plusieurs "cas" standard, au quel on peut se rapporter pour démontrer la convergence d'une intégrale
+\subsubsection{En $\infty$}
+Nous retiendrons que dans l'étude en $+\infty$, les $\alpha$ "tendent plus vers l'infini" (utilisation du > dans les relations). \\
+Nous avons la règle de Riemann :
+\begin{prop}
+Soit f fonction continue par morceaux de $\left[a,\infty\right[$ dans K.\\
+Si il existe $\alpha > 1$ telque : 
+$$t^{\alpha}f(t) \underset{t \rightarrow \infty}\rightarrow 0$$
+Alors f est intégrable ( converge absolument) sur $\left[a,\infty\right[$
+\end{prop}
+Nous avons aussi l'intégrale de Bertrand : 
+\begin{prop}
+Soit a un réel strictement superieur à 1, et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_a^{\infty} \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha > 1,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+La propriété suivante n'est qu'un cas particulier de l'intégrale de Bertrand, ou $\beta = 0$ :
+\begin{prop}
+Soit $a \in \Re$, $a>0$ :
+$$\left(\int_a^{\infty} \dfrac{dt}{t^{\alpha}}\right) \mbox{ converge } \Leftrightarrow (\alpha > 1)$$
+\end{prop}
+\subsubsection{En 0}
+Nous retiendrons que l'ordre de l'étude en 0, les $\alpha$ "tend en quelque sorte plus vers 0" (utilisation du < dans les relations ).\\
+Nous avons la règle de Riemann :
+\begin{prop}
+Soit f fonction continue par morceaux de $\left]0,a\right]$ dans K.\\
+Si il existe $\alpha < 1$ telque : 
+$$t^{\alpha}f(t) \underset{t \rightarrow 0^+}\rightarrow 0$$
+Alors f est intégrable ( converge absolument) sur $\left]0,a\right]$
+\end{prop}
+Dans le cas de l'intégralde de Bertrand, nous retiendrons que le second cas, $\alpha =1,~ \beta > 1$, est identique en l'infini et en 0.\\
+Nous avons aussi l'intégrale de Bertrand : 
+\begin{prop}
+Soit a un réel telque $a \in \left]0,1\right[$, et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_0^a \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha < 1 ,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+La propriété suivante n'est qu'un cas particulier de l'intégrale de Bertrand, ou $\beta = 0$ :
+\begin{prop}
+Soit $a \in \Re$, $a>0$ :
+$$\left(\int_0^a \dfrac{dt}{t^{\alpha}}\right) \mbox{ converge } \Leftrightarrow (\alpha < 1)$$
+\end{prop}
+\section{Divergence d'une intégrale}
+\subsection{Les règles de Riemann}
+Les règles de Riemann nous donne les moyens de prouver la divergence d'une intégrale.
+\subsubsection{En $\infty$}
+Soit f fonction de $\left[a,\infty\right[$ dans $\Re$, continue par morceaux. Si :
+$$t.f(t) \underset{t\rightarrow\infty}\rightarrow 0$$
+Alors :
+$$\int_a^{\infty} \mbox{ diverge }$$
+\subsubsection{En 0}
+Soit f fonction de $\left]0,a\right]$ dans $\Re$, continue par morceaux. Si :
+$$t.f(t) \underset{t\rightarrow 0}\rightarrow 0$$
+Alors :
+$$\int_0^a \mbox{ diverge }$$
+\chapter{Développement asymptotiques}
+Il existe une méthodologie "classique" à utiliser dans le cas d'un développement asymptotique.
+\section{Fonction du type $f^{\alpha}$, ou ln(f)}
+Pour obtenir le développement asymtotique de fonction du type $f^{\alpha}$, ou ln(f), on range les termes de façon prépondérant décroissante, puis on met toujours le terme prépondérant en facteur, et enfin on effectue un développement limité avec le reste, qui tend vers 0.\\
+\underline{Exemple : }
+Considérons le fonction ln($x^2+x+1$). Cette fonction est rangé en considérant la prépondérance en l'infini. On obtient donc : 
+$$ln(x^2+x+1) = ln((x^2)(1+\dfrac{1}{x}+\dfrac{1}{x^2})$$
+$$ln(x^2+x+1) = ln(x^2) + ln(1+\dfrac{1}{x}+\dfrac{1}{x^2})$$
+On effectue un développement limité de la forme ln(1+u), avec u qui tend vers 0.
+\section{Développement asymptotique de $S_n$ ou de $R_n$ dans le cas d'une série}
+La première question à se poser est de savoir si la série $\underset{n}\sum u_n$ converge.
+\subsection{Si la série converge}
+Si la série converge, alors :
+$$\lim_{n\rightarrow \infty} S_n = S$$
+On poursuit en écrivant l'égalité suivante : 
+$$S_n = S - R_n$$
+Pour continuer le développement asymptotique, il faut donc détérminer un équivalent à $R_n$
+\subsection{Si la série diverge}
+Alors on cherche directement un équivalent de $S_n$
+\subsection{Méthode à suivre}
+Pour obtenir un équivalent de $S_n$, dans le cas divergent, ou un équivalent de $R_n$ dans le cas convergent, on simplifie le problème en remplacent $u_k$ par un équivalent $w_k$ plus simple.\\
+On obtient alors : 
+$$S_n \underset{\infty}\sim \sum_{k=n_0}^n w_k \mbox{ cas non sommable }$$
+$$R_n \underset{\infty}\sim \sum_{k=n+1}^{\infty} w_k \mbox{ cas sommable }$$
+L'utilisation de ceci ramène le problème de recherche d'équivalent de la somme partielle ou du reste de la série $\underset{k}\sum w_k$, avec $(w_k)$ appartenant à une échelle de comparaison. : 
+$$w_k = k^{\alpha}.ln(k)^{\beta}.e^{P(k)}$$
+Avec P(k) un pseudo polynome.\\
+Pour obtenir un équivalent, on distingue deux cas : 
+\begin{itemize}
+ \item[$\rightarrow$] Si $(w_k)$ est à variation lente ($P = 0$ ou deg(P)<1), alors on encadre par des intégrales
+ \item[$\rightarrow$] Si $(w_k)$ est à variation rapide (deg(P) $\geq$ 1), on utilise une comparaisons asymptotique entre $w_{k+1}-w_k$ et $w_k$.
+\end{itemize}
+Les relations de comparaions utilisable dans le second cas sont : 
+$$\gg;\ll;\sim$$
+\chapter{Séries}
+\section{Propriétés générales}
+Pour montrer la convergence d'une série $\underset{n} \sum u_n$, il faut déjà vérifier que $(u_n) \underset{\infty}\rightarrow 0$. Ceci est une condition necessaire, mais non suffisante.\\
+Nous avons trois propriétés générales qui implique la convergence à l'aide d'un terme générale plus simple :
+\begin{itemize}
+ \item[$\rightarrow$] La convergence d'une série de terme général positive par majoration (Implication)
+ \item[$\rightarrow$] L'intégration par domination (Implication)
+ \item[$\rightarrow$] La convergence d'une serie de terme générale par équivalence (Équivalence)
+\end{itemize}
+\section{Règle usuelle}
+\subsection{Convergence des séries de Riemann}
+Soit une séries de Riemman, de terme général :
+$$u_n  = \dfrac{1}{n^{\alpha}}$$
+Cette série converge si et seulement si :
+$$(\alpha > 1)$$
+\subsection{Règle de Riemann - Convergence}
+Soit $(u_n)$ une suite à valeur complexe.\\
+Si il existe $\beta > 1$ telque :
+$$(n^{\beta}.u_n \underset{\infty}\rightarrow 0$$
+Alors $(u_n)$ est sommable
+\subsection{Règle de Riemann - Divergence}
+Soit $(u_n)$ une suite à valeur réelle.\\
+Si : 
+$$n.u_n \underset{\infty}\rightarrow \infty $$
+Alors la série de terme générale $u_n$ diverge.
+\subsection{Série de Bertrand}
+Soit une série de Bertrand, de terme général :
+$$u_n = \dfrac{1}{n^{\alpha}.ln(n)^{\beta}}$$
+Cette série converge si et seulement si : 
+$$(\alpha > 1~ ou~ \alpha=1~ et~ \beta>1)$$
+\subsection{Règle de d'Alembert}
+Soit $(u_n)$ une suite de réels telques $\forall n \geq n_0$, $u_n>0$ et telque : 
+$$\dfrac{u_{n+1}}{u_n} \underset{\infty}\rightarrow l$$
+Alors :
+\begin{itemize}
+ \item{$\rightarrow$} Si l > 1, alors la série de terme général $u_n$ diverge grossièrement
+ \item{$\rightarrow$} Si l < 1, alors la série converge
+\end{itemize}
+\end{document}

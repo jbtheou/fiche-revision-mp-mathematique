@@ -1,0 +1,169 @@
+\chapter{Séries d'applications}
+\section{Définitions}
+\begin{de}
+Soit $(u_n)$ une suite d'application d'un ensemble A a valeurs dans un K espace vectoriel normée E, munie de la norme $\parallel~\parallel$.\\
+En pratique, A est un intervalle inclu dans $\Re$, et E sera presque toujours K, et donc dans ce cas : 
+$$\parallel~\parallel = |~ |$$
+À partir de cette suite d'application de A dans E, on peut construire une nouvelle suite d'application $(S_n)$ : 
+$$S_n : A \rightarrow E$$
+$$x \mapsto S_n(x) = \sum_{k=0}^n u_k(x)$$
+Cette nouvelle suite $(S_n)$ s'appelle la série d'application de terme général $u_n$, et se note : $\underset{n} \sum u_n$
+\end{de}
+\subsection{Convergence simple}
+\begin{de}
+On dit que $\underset{n} \sum u_n$ converge simplement sur A si la suite d'application $(S_n)$ converge simplement sur A. Lorsque que c'est le cas, on peut définir une nouvelle application :
+$$S : A\rightarrow E$$
+$$x \mapsto \sum_{k=0}^{\infty} u_k(x)$$
+On dit que S, application de A dans E, est la limite simple de la serie. On peut également, lorsqu'il y a convergence simple de la série sur A, définir l'application $R_n$ : 
+$$R_n : A \rightarrow E$$
+$$x \rightarrow \sum_{k=n+1}^{\infty} u_k(x)$$
+Et nous avons les relations suivantes :
+$$S = S_n + R_n$$
+$$\forall x \in A~ R_n(x) \rightarrow \overrightarrow{0} \in E$$
+On dit aussi, pour la dernière relation, que $(R_n)$ converge simplement vers $\tilde{0}$ sur A
+\end{de}
+\subsection{Convergence absolue}
+\begin{de}
+On dit que la série d'application $\underset{n}\sum u_n$ converge absolument sur A si :
+$$\forall x \in A~ \sum_n \parallel u_n(x)\parallel \mbox{ converge }$$ 
+\end{de}
+\begin{prop}
+Si E = K, la convergence absolue de $\underset{n}\sum u_n$ sur A implique ma convergence simple de cette série d'application sur A.\\
+Cette propriété reste vrai sur E est un K espace vectoriel normée complet, dit de Banach 
+\end{prop}
+\subsection{Convergence uniforme}
+\begin{de}
+On dit que la série d'application $\underset{n} \sum u_n$ converge uniformement sur A si la suite d'application $(S_n)$ converge uniformement sur A.\\
+Lorsque c'est le cas, la série d'application converge simplement sur A.\\
+Notons S la limite simple de $(S_n)$. Dire que la série d'application converge sur A signifie que : 
+$$\parallel S_n - S \parallel_{\infty,A} \underset{n \rightarrow \infty}\rightarrow 0 \Leftrightarrow \parallel R_n \parallel_{\infty,A} \underset{n \rightarrow \infty}\rightarrow 0$$
+Et qu'il existe un rang a partir du quel $R_n$ est bornée.\\
+On peut dire ceci de la façon suivante aussi. La serie d'application de terme général $u_n$ converge uniformement sur A : 
+\begin{itemize}
+ \item[$\rightarrow$] La serie converge simplement sur A (Pour l'existance de S, donc de $(R_n)$)
+ \item[$\rightarrow$] La suite $(R_n)$ converge uniforment sur A.
+\end{itemize}
+\end{de}
+\begin{prop}
+Si $(S_n)$ converge uniformement sur A vers S, alors :
+$$\forall (x_n) \mbox{ à valeur dans A }, S_n(x_n) - S(x_n) \underset{n}\rightarrow \overrightarrow{0} \in E$$
+On écrit de même : 
+$$\forall (x_n) R_n(x_n) \rightarrow \overrightarrow{0} \in E$$
+Cette propriété est utile pour montrer la non convergence uniforme.\\
+\end{prop}
+\subsection{Convergence normale, ou convergence au sens de Weirstrass}
+\begin{de}
+On dit qu'une série d'application $\underset{n} \sum u_n$ converge normalement sur A si $u_n$ est bornée sur A, au moins à partir d'un certain indice $n_0$, au quel cas on peut définir sa norme infini, et si 
+$$\sum_n \parallel u_n \parallel_{\infty,A} \mbox{ converge }$$
+\end{de}
+\begin{prop}
+Si la série d'application de terme général $u_n$ converge normalement sur A, alors :\\
+$$\mbox{La série converge absolument sur A}$$
+et si E est complet ( en particulier E=K), alors
+$$ \mbox{La série converge uniformement sur A}$$
+\end{prop}
+\section{Théorème classique sous hypothèse de convergence uniforme}
+\subsection{Théorème de continuité}
+\begin{theo}
+Soit ($u_n$) une suite d'application de I, un intervalle inclu dans $\Re$, dans K.\\
+Si $\forall n \in N$ $u_n$ est continue en $x_0 \in I$, respectivement continue sur I, et si $\underset{n} \sum u_n$ converge uniformement sur I, alors :
+$$S = \sum_{k=0}^{\infty} u_k \mbox{ est continue en }x_0\mbox{, respectivement sur I}$$
+\end{theo}
+\begin{theo}
+De plus, consient que la continuité est une propriété locale, on peut énoncer le théorème précédent de la façon suivante :\\
+Soit $(u_n)$ une suite d'application continue sur I, un intervalle de $\Re$, et à valeur dans K.\\
+Si la série de fonctions converge uniformement sur tout segment inclu dans I, alors S est continue sur I
+\end{theo}
+\begin{de}
+Un sous ensemble d'un K espace vectoriel normée E est dit compact si de toute suite $(x_n)$ à valeur dans K, on peut extraire une sous-suite $(x_{\phi(n)}$, avec $\phi$ application strictement croissante de N dans N, convergent vers un élement de K.
+\end{de}
+\begin{gene}
+Soit $(u_n)$ une suite d'application de A dans E, avec A un sous ensemble non vide d'un K espace vectoriel normée E', et E un K espace vectoriel normée.\\
+Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ $u_n$ est continue sur A\\
+ \item[$\rightarrow$] $\underset{n} \sum u_n$ converge uniformenet sur tout compact inclu dans A\\
+\end{itemize}
+Alors S est continue sur A
+\end{gene}
+\subsection{Théorème d'inversion de la limite et de la somme}
+\begin{theo}
+Soit $(u_n)$ une suite d'application de I, un intervalle inclue dans $\Re$, dans K, et $a\in I$, ou a une extrémité, ou a = $\pm \infty$.\\
+Si :\\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$ : 
+$$\lim_{x \rightarrow a,x\in A} u_n(x) = l_n \in K$$
+ \item[$\rightarrow$] $\underset{n} \sum u_n(x)$ converge uniforment sur I\\
+\end{itemize}
+Alors la série $\underset{n} \sum l_n$ converge et : 
+$$S(x) \underset{x\rightarrow a,x\in A}\rightarrow \sum_{k=0}^{\infty} l_k$$
+On peut aussi ecrire ceci sous la forme : 
+$$\lim_{x \rightarrow a,x\in A} \sum_{k=0}^{\infty}u_k(x) = \sum_{k=0}^{\infty}\lim_{x \rightarrow a,x\in A} u_k(x)$$
+\end{theo}
+\begin{gene}
+Ce théorème reste valable pour des applications $u_n$ de [a,b] dans E, un K espace vectoriel complet, à condition d'avoir défini ce qu'est l'intégrale de $u_n$ dans cette espace.
+\end{gene}
+\subsection{Théorème de classe $C^1$}
+\begin{theo}
+Soit $(u_n)$ une suite d'application de I dans K, avec I un intervalle de $\Re$.\\
+Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$, $u_n$ est de classe $C^1$ sur I.\\
+ \item[$\rightarrow$] $\underset{n} \sum u_n$ converge simplement sur I \\
+ \item[$\rightarrow$] $\underset{n} \sum u'_n$ converge uniformement sur I, ou sur tout segment de I \\
+\end{itemize}
+Posons :
+$$S = \sum_{k=0}^{\infty} u_k$$
+Alors :\\
+\begin{itemize}
+ \item[$\rightarrow$] S est $C^1$ sur I\\
+ \item[$\rightarrow$] On peut exprimer S', la dérivé de S de la façon suivante (dérivation terme à terme) : 
+$$S' = \sum_{k=0}^{\infty} u'_k$$
+ \item[$\rightarrow$] La suite ($u_n$) converge uniforment sur tout segment inclue dans I.
+\end{itemize}
+\end{theo}
+\begin{gene}
+Ce théorème reste valable pour des applications $u_n$ de [a,b] dans E, un K espace vectoriel complet.
+\end{gene}
+\subsection{Théorème de classe $C^p$}
+\begin{theo}
+Soit $(u_n)$ une suite d'application de I dans K, avec I un intervalle de $\Re$, et $p\in N^*$\\
+Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$, $u_n$ est de classe $C^p$ sur I.\\
+ \item[$\rightarrow$] $\forall k \in \left[0,p-1\right]~ \underset{n} \sum u^{(k)}_n$ converge simplement sur I \\
+ \item[$\rightarrow$] $\underset{n} \sum u^{(p)}_n$ converge uniformement sur I, ou sur tout segment de I \\
+\end{itemize}
+Posons :
+$$S = \sum_{k=0}^{\infty} u_k$$
+Alors :\\
+\begin{itemize}
+ \item[$\rightarrow$] S est $C^1$ sur I\\
+ \item[$\rightarrow$] $\forall k \in \left[0,p-1\right]$, on peut exprimer $S^{(k)}$, la dérivé k-ème de S de la façon suivante (dérivation terme à terme) : 
+ $$S^{(k)} = \sum_{t=0}^{\infty} u^{(k)}_t$$
+ \item[$\rightarrow$] $\forall k \in \left[0,p\right]$, la suite ($u^{(k)}_n$) converge uniforment sur tout segment inclue dans I.
+\end{itemize}
+\end{theo}
+\begin{gene}
+Ce théorème reste valable pour des applications $u_n$ de [a,b] dans E, un K espace vectoriel complet.
+\end{gene}
+\subsection{Théorème de classe $C^{\infty}$}
+\begin{theo}
+Soit $(u_n)$ une suite d'application de I dans K, avec I un intervalle de $\Re$, et $p\in N^*$\\
+Si : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\forall n \in N$, $u_n$ est de classe $C^{\infty}$ sur I.\\
+ \item[$\rightarrow$] $\forall p \in N~ \underset{n} \sum u^{(p)}_n$ converge uniformement sur I ou sur tout segment de I\\
+\end{itemize}
+Posons :
+$$S = \sum_{k=0}^{\infty} u_k$$
+Alors :\\
+\begin{itemize}
+ \item[$\rightarrow$] S est $C^{\infty}$ sur I\\
+ \item[$\rightarrow$] $\forall p \in N$, on peut exprimer $S^{(p)}$, la dérivé p-ème de S de la façon suivante (dérivation terme à terme) : 
+ $$S^{(p)} = \sum_{t=0}^{\infty} u^{(p)}_t$$
+\end{itemize}
+\end{theo}
+\begin{gene}
+Ce théorème reste valable pour des applications $u_n$ de [a,b] dans E, un K espace vectoriel complet.
+\end{gene}

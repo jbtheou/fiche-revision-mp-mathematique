@@ -1,0 +1,36 @@
+\chapter{Compléments sur les séries}
+\section{Intégration des séries de fonctions}
+\begin{theo}
+Théorème d'interversion du signe $\sigma$ et du signe intégrale.\\
+Soit $\underset{n} u_n$ une série d'application $u_n$ : I $\rightarrow$ K, avec I un intervalle quelconque, continue par morceaux et convergent simplement sur I. On suppose que chaque $u_n$ est intégrale sur I.\\
+Si $\underset{n} \int_I |u_n|$ converge, alors :
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{n} \sum \int_I u_n$ converge
+ \item[$\rightarrow$] $S = \underset{n = 0 }\sum^{\infty} u_n$, supposé continue par morceaux sur I, est intégrable sur I.
+ \item[$\rightarrow$] $\int_I S$ = $\underset{n=0}\sum^{\infty} \int_I u_n$
+\end{itemize}
+La dernière conséquence est bien une propriété d'interversion du signe $\sigma$ et du signe intégrale.
+\end{theo}
+\section{Rudiment sur les séries doubles}
+\begin{de}
+Étant donnée un ensemble I, on appelle famille à valeur dans K et indexé par I, et on note $(u_i)_{i \in I}$, une application :
+$$I \overset{u}\rightarrow K$$
+$$i \rightarrow u_i$$
+\end{de}
+Soit $(u_{ij})$ une famille de complexe. ($u_{ij}$) est une application :
+$$u: \mathbb{N}\times\mathbb{N} \rightarrow K$$
+$$(i,j) \mapsto u_{ij}$$
+\begin{de}
+On dira que :
+$$\sum_{i = 0}^{\infty} \sum_{j=0}^{\infty} u_{ij}$$
+existe si et seulement si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall i \in \mathbb{N} \underset{j}\sum u_{ij}$ converge
+ \item[$\rightarrow$] En supposant la condition précédente vérifié, et en notant :
+$$S_i = \sum_{j=0}^{\infty} u_{ij}$$ 
+$\underset{i}\sum S_i$ converge
+\end{itemize}
+\end{de}
+\begin{theo}
+Soit ($u_{ij}$) une famille à valeur dans $\mathbb{C}$. Si $\underset{i=0}\sum^{\infty} \underset{j=0}\sum^{\infty} |u_{ij}|$ existe, alors on peut permutter les sommmes (elles existent), et on a égalité entre les différentes sommmes doubles.
+\end{theo}

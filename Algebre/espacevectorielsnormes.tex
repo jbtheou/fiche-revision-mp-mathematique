@@ -1,0 +1,165 @@
+\chapter{Espaces vectoriels normés - Première partie}
+\section{Norme - Distance -  Définitions}
+\subsection{Définitions}
+\begin{de}
+Soit E un K espace vectoriel.\\
+On appelle norme de E toutes application de $E \rightarrow \mathbb{R}^+$, que l'on note N ou $\parallel~ \parallel$, et vérifiant les axiomes suivants : \\
+\begin{itemize}
+ \item[$\rightarrow$]Si $\overrightarrow{x} \in E$, N($\overrightarrow{x}$) = 0 $\Rightarrow \overrightarrow{x} = \overrightarrow{0}$\\
+ \item[$\rightarrow$]$\forall \lambda \in K$, $\forall \overrightarrow{x} \in E$, N($\lambda\overrightarrow{x}$ = |$\lambda$|N($\overrightarrow{x}$)\\
+ \item[$\rightarrow$]$\forall(\overrightarrow{x},\overrightarrow{y}) \in E^2$ N($\overrightarrow{x}+\overrightarrow{y}$) $\leq$ N($\overrightarrow{x}$) + N($\overrightarrow{y}$)\\
+\end{itemize}
+\end{de}
+\subsection{Conséquence immédiate des axiomes}
+\begin{itemize}
+ \item[$\rightarrow$] N($\overrightarrow{0}$) = 0\\
+ \item[$\rightarrow$] $\forall (\overrightarrow{x_1},...,\overrightarrow{x_p}) \in E^p$, N($\overrightarrow{x_1}+...+\overrightarrow{x_p}) \leq N(\overrightarrow{x_1}) + ... + N(\overrightarrow{x_p})$\\
+ \item[$\rightarrow$] $\forall (\overrightarrow{x},\overrightarrow{y}) \in E^2$ |$\parallel\overrightarrow{x}\parallel - \parallel\overrightarrow{y}\parallel$| $\leq$ $\parallel\overrightarrow{x}+\overrightarrow{y}\parallel$\\
+ \item[$\rightarrow$] De meme : $\forall (\overrightarrow{x},\overrightarrow{y}) \in E^2$ |$\parallel\overrightarrow{x}\parallel - \parallel\overrightarrow{y}\parallel$| $\leq$ $\parallel\overrightarrow{x}-\overrightarrow{y}\parallel$
+\end{itemize}
+\section{Distance}
+\subsection{Définitions}
+\begin{de}
+Soit $\varepsilon$ un ensemble quelconque, non vide.\\
+On appelle distance sur $\varepsilon$ toutes applications :
+$$d : \varepsilon \times \varepsilon \rightarrow \mathbb{R}^+$$
+$$(\overrightarrow{x},\overrightarrow{y}) \mapsto d(\overrightarrow{x},\overrightarrow{y})$$
+vérifiant les axiomes suivantes :\\ 
+\begin{itemize}
+ \item[$\rightarrow$] Si x et y sont dans $\varepsilon$, $d(x,y)=0 \Leftrightarrow x=y$\\
+ \item[$\rightarrow$] $\forall(x,y) \in \varepsilon^2$, d(x,y) = d(y,x)\\
+ \item[$\rightarrow$] $\forall(x,y,z) \in \varepsilon^3$, d(x,z) $\leq$ d(x,y)+d(y,z)\\
+\end{itemize}
+\end{de}
+\subsection{Conséquence}
+Des axiomes précédents, on peut étendre l'axiome n°2 : 
+$$\forall(x_1,...,x_p) \in \varepsilon^p,~ d(x_1,...,x_p) \leq d(x_1,x_2) + ... + d(x_{p-1},x_p)$$
+\subsection{Distance déduite d'une norme}
+\begin{de}
+Soit $\varepsilon$ un K espace affine et $\parallel~\parallel$ une norme sur $\overrightarrow{\varepsilon}$, l'espace vectoriel associé à l'espace affine.\\
+On appelle distance déduite de $\parallel~\parallel$  sur $\varepsilon$ l'application : 
+$$d : \varepsilon \times \varepsilon \rightarrow \mathbb{R}^+$$
+$$(x,y) \mapsto d(x,y) = \parallel x - y\parallel$$
+\end{de}
+\section{Exemple classique de normes dans un espaces de dimension finies}
+\subsection{La norme $\parallel~\parallel_{\infty}$ sur $K^n$}
+\subsubsection{Définition générale}
+Soit X la matrice défini par : 
+$$X =
+\begin{pmatrix}
+x_1 \\
+. \\
+. \\
+x_n \\
+\end{pmatrix} \in K^n = M_{n,1}(K)$$
+On associe le n-upplet à une matrice colonnes.\\
+On défini la norme $\parallel X \parallel_{\infty}$ = max(|$x_k$|)
+\subsubsection{Cas d'un espace de dimension n}
+Soit E un K espace vectoriel de dimension n, et B=($\overrightarrow{e_1},...,\overrightarrow{e_n}$) une base de E.\\
+Si:
+$$\overrightarrow{x} = x_1.\overrightarrow{e_1}+...+x_n\overrightarrow{e_n}$$
+On défini $\parallel\overrightarrow{x}\parallel_{\infty,B}$ = max(|$x_k$|)
+\subsection{La norme $\parallel~\parallel_{1}$ sur $K^n$}
+\subsubsection{Définition générale}
+Soit X la matrice défini par : 
+$$X =
+\begin{pmatrix}
+x_1 \\
+. \\
+. \\
+x_n \\
+\end{pmatrix} \in K^n = M_{n,1}(K)$$
+On associe le n-upplet à une matrice colonnes.\\
+On défini la norme par : 
+$$\parallel X \parallel_{1} = \sum_{k=1}^n |x_k|$$
+\subsubsection{Cas d'un espace de dimension n}
+Soit E un K espace vectoriel de dimension n, et B=($\overrightarrow{e_1},...,\overrightarrow{e_n}$) une base de E.\\
+Si:
+$$\overrightarrow{x} = x_1.\overrightarrow{e_1}+...+x_n\overrightarrow{e_n}$$
+On défini :
+$$\parallel\overrightarrow{x}\parallel_{1,B} = \sum_{k=1}^n |x_k|$$
+\subsection{La norme $\parallel~\parallel_{2}$ sur $K^n$}
+\subsubsection{Définition}
+Avec les même notations :
+$$\parallel X \parallel_{2} = \sqrt{\sum_{k=1}^n |x_k|}$$
+\subsubsection{Cas particulier : K = $\mathbb{R}$}
+La norme défini ci dessus vérifie dans ce cas : 
+$$\parallel~\parallel_{2} = \sqrt{<X|X>}$$
+Si :
+$$X =
+\begin{pmatrix}
+x_1 \\
+. \\
+. \\
+x_n \end{pmatrix}$$
+et :
+$$Y = \begin{pmatrix}
+y_1 \\
+. \\
+. \\
+y_n \\ \end{pmatrix}$$
+Alors : 
+$$<X|Y> = \sum_{k=1}^n x_k.y_k$$
+Ceci est le produit scalaire canonique de $\mathbb{R}^n$. C'est l'unique produit scalaire sur $\mathbb{R}^n$ qui fasse de la base canonique une base orthonormée.\\
+Dans ce cas, l'inégalité triangulaire s'appelle l'inégalité de Minkowski
+\section{Convergence au sens d'une norme ou d'une distance - Norme équivalente}
+\subsection{Au sens d'une distance}
+\begin{de}
+Soit $(\varepsilon,d)$ un espace métrique, et ($x_n$) une suite de point de $\varepsilon$.\\
+On dit que $(x_n)$ converge vers $x \in \varepsilon$ au sens de la distance d si et seulement si : 
+$$d(x_n,x) \underset{n \mapsto \infty}\rightarrow 0$$
+\end{de}
+\subsection{Au sens d'une norme}
+\begin{de}
+Soit (E,$\parallel~\parallel$) un K espace vectoriel normé, et $(\overrightarrow{x_n})$ une suite d'éléments de E.\\
+On dit que la suite $(\overrightarrow{x_n})$ converge vers $\overrightarrow{l} \in E$ au sens de la norme $\parallel~\parallel$ si et seulement si :
+$$\parallel \overrightarrow{x_n} - \overrightarrow{l} \parallel \underset{n \mapsto \infty }\rightarrow 0$$
+En théorie, cette définition ramène le problème à un problème de convergence dans $\mathbb{R}^+$. La notion de norme sert à unifier les études de convergence.
+\end{de}
+\begin{prop}
+Cette propriété est un cas particulier de la définition au sens d'une distance, en utilisant la norme déduit de la norme.
+\end{prop}
+\subsection{Norme équivalente}
+\begin{de}
+Soit $\parallel~\parallel$ et $\parallel~\parallel$ deux normes sur un même K espace vectoriel de E.\\
+Ces deux normes sont dites équivalente si il existe $\alpha$ et $\beta$ deux réels strictement positif telque : 
+$$\parallel~\parallel'\leq\alpha\parallel~\parallel$$
+$$\parallel~\parallel \leq \beta \parallel~\parallel'$$ 
+\end{de}
+\begin{de}
+On peut écrire cette définition sous la forme suivante : \\
+Ces deux normes sont équivalente si les deux applications suivantes :
+$$E - \left\lbrace 0 \right\rbrace \rightarrow \mathbb{R}^+$$
+$$\overrightarrow{x} \mapsto \dfrac{\parallel\overrightarrow{x}\parallel'}{\parallel\overrightarrow{x}\parallel}$$
+et 
+$$E - \left\lbrace 0 \right\rbrace \rightarrow \mathbb{R}^+$$
+$$\overrightarrow{x} \mapsto \dfrac{\parallel\overrightarrow{x}\parallel}{\parallel\overrightarrow{x}\parallel'}$$
+sont majorées.
+\end{de}
+\begin{prop}
+Il résulte de ce qui précède que si $\parallel~\parallel$ et $\parallel~\parallel'$ sont deux normes équivalente sur le K espace vectoriel E : 
+$$\overrightarrow{x_n} \underset{\infty}\rightarrow \overrightarrow{x}~ dans~ (E,\parallel~\parallel) \Leftrightarrow \overrightarrow{x_n} \underset{\infty}\rightarrow \overrightarrow{x}~ dans~ (E,\parallel~\parallel')$$
+\end{prop}
+\begin{prop}
+Nous avons aussi la propriété réciproque :\\
+Soient $\parallel~\parallel$ et $\parallel~\parallel'$ deux normes sur un meme K espace vectoriel E telque pour toutes suite $(\overrightarrow{x_n})\in E^N$, et pour tous $\overrightarrow{x}\in E$ :
+$$\overrightarrow{x_n} \underset{\infty}\rightarrow \overrightarrow{x}~ dans~ (E,\parallel~\parallel) \Leftrightarrow \overrightarrow{x_n} \underset{\infty}\rightarrow \overrightarrow{x}~ dans~ (E,\parallel~\parallel')$$
+Alors ces deux normes sont équivalentes.
+\end{prop}
+\section{Convergence dans les K espaces vectoriel de dimension finies}
+\begin{theo}
+Si E est un K espace vectoriel de dimension finie, alors toutes les normes sur E sont équivalentes
+\end{theo}
+\begin{corro}
+La converge vers $\overrightarrow{x}\in E$ d'une suite $(\overrightarrow{x_n}) \in E^N$ ne dépend pas de la norme choisie si E est un K espace vectoriel de dimension finie.
+\end{corro}
+\begin{prop}
+Soit B=($\overrightarrow{e_1},...,\overrightarrow{e_p}$) une base du K espace vectoriel E. Si :
+$$\overrightarrow{x_n} = x_n^1\overrightarrow{e_1} + ...+x_n^p.\overrightarrow{e_p}$$
+$$\overrightarrow{x} = x^1\overrightarrow{e_1} + ...+x^p.\overrightarrow{e_p}$$
+Alors : 
+$$\overrightarrow{x_n} \underset{\infty}\rightarrow \overrightarrow{x} \Leftrightarrow x_n^1\underset{\infty}\rightarrow x^1,...,x_n^p\underset{\infty}\rightarrow x^p$$
+On peut écrire ceci de la façon suivante : \\
+$\overrightarrow{x_n} \rightarrow \overrightarrow{x}$ si et seulement si il y a convergence composant par composant.
+\end{prop}
+

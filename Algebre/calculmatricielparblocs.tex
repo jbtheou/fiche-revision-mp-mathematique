@@ -1,0 +1,131 @@
+\chapter{Calcul matriciel par blocs}
+\section{Produit matriciel par blocs}
+Considérons deux matrices A et A' : 
+\[A = \begin{blockarray}{cccc}
+        & \overset{\beta_1}\leftrightarrow & \dots & \overset{\beta_p}\leftrightarrow  \\
+        \begin{block}{c(ccc)}
+        \alpha_1 \updownarrow & \mesbloc{A_{11}}  & \dots & \mesbloc{A_{1p}}  \\
+        \vdots  & \vdots & \ddots & \vdots      \\
+        \alpha_n \updownarrow   & \mesbloc{A_{n1}} & \dots  & \mesbloc{A_{np}}   \\
+        \end{block}
+        \end{blockarray}
+\] 
+\[A' = \begin{blockarray}{cccc}
+        & \overset{\gamma_1}\leftrightarrow & \dots & \overset{\gamma_q}\leftrightarrow  \\
+        \begin{block}{c(ccc)}
+        \beta_1 \updownarrow & \mesbloc{A'_{11}}  & \dots & \mesbloc{A'_{1q}}  \\
+        \vdots  & \vdots & \ddots & \vdots      \\
+        \beta_p \updownarrow   & \mesbloc{A'_{p1}} & \dots  & \mesbloc{A'_{pq}}   \\
+        \end{block}
+        \end{blockarray}
+\] 
+Avec :
+$$\begin{cases}
+A_{ij} \in  \mathcal{M}_{\alpha_i,\beta_j}(K) \\  A'_{kl} \in  \mathcal{M}_{\beta_k,\gamma_l}(K)
+\end{cases}$$
+On défini de plus : 
+$$\begin{cases}
+\alpha = \alpha_1 + \dots + \alpha_n \\ \beta = \beta_1 + \dots + \beta_p \\ \gamma = \gamma_1 + \dots + \gamma_q
+\end{cases}$$
+On obtient, pour le produit de A' par A :
+\[A.A' = \begin{blockarray}{ccc}
+        \begin{block}{(ccc)}
+         \mesbloc{C_{11}}  & \dots & \mesbloc{C_{1q}}  \\
+         \vdots & \ddots & \vdots      \\
+         \mesbloc{C_{n1}} & \dots  & \mesbloc{C_{nq}}   \\
+        \end{block}
+        \end{blockarray}
+\] 
+Avec : 
+$$C_{ij} = \sum_{k=1}^p A_{ik}.A'_{kj}$$
+L'ordre du produit réalisé dans la somme a une importance à priori, car le produit des matrices n'est pas commuatif, à priori.
+\subsection{Cas particuliers}
+\subsubsection{Matrices diagonales}
+Soient A et A' deux matrices diagonales : 
+
+\[A = \begin{blockarray}{cccc}
+         \overset{\beta_1}\leftrightarrow & \dots & \overset{\beta_n}\leftrightarrow  \\
+        \begin{block}{(ccc)c}
+         \mesbloc{A_{11}}  &  & (0)  & ~~~~~ \\
+                            &\ddots  & & ~~~~~     \\
+         (0)                &  & \mesbloc{A_{nn}}  & ~~~~~\\
+        \end{block}
+        \end{blockarray}
+\]
+
+\[A' = \begin{blockarray}{cccc}
+        \begin{block}{(ccc)c}
+         \mesbloc{A'_{11}}  &  & (0) & \updownarrow \beta_1   \\
+                            &\ddots  &      &  \\
+         (0)                &  & \mesbloc{A'_{nn}} & \updownarrow\beta_n   \\
+        \end{block}
+        \end{blockarray}
+\] 
+On obtient, pour le produit : 
+\[A.A' = \begin{blockarray}{ccc}
+        \begin{block}{(ccc)}
+         \mesbloc{A_{11}.A'_{11}}  &  & (0)    \\
+                            &\ddots  &        \\
+         (0)                &  & \mesbloc{A_{nn}.A'_{nn}}   \\
+        \end{block}
+        \end{blockarray}
+\] 
+\subsubsection{Matrices Triangulaires}
+Soient A et A' deux matrices triangulaire : 
+\[A = \begin{blockarray}{cccc}
+         \overset{\beta_1}\leftrightarrow & \dots & \overset{\beta_n}\leftrightarrow  \\
+        \begin{block}{(ccc)c}
+         \mesbloc{A_{11}}  &  & (A)  & ~~~~~ \\
+                            &\ddots  & & ~~~~~     \\
+         (0)                &  & \mesbloc{A_{nn}}  & ~~~~~\\
+        \end{block}
+        \end{blockarray}
+\]
+
+\[A' = \begin{blockarray}{cccc}
+        \begin{block}{(ccc)c}
+         \mesbloc{A'_{11}}  &  & (A') & \updownarrow \beta_1   \\
+                            &\ddots  &      &  \\
+         (0)                &  & \mesbloc{A'_{nn}} & \updownarrow\beta_n   \\
+        \end{block}
+        \end{blockarray}
+\] 
+On obtient, pour le produit : 
+\[A.A' = \begin{blockarray}{ccc}
+        \begin{block}{(ccc)}
+         \mesbloc{A_{11}.A'_{11}}  &  & (B)    \\
+                            &\ddots  &        \\
+         (0)                &  & \mesbloc{A_{nn}.A'_{nn}}   \\
+        \end{block}
+        \end{blockarray}
+\] 
+\section{Calcul de déterminants de matrices triangulaires par blocs}
+\subsection{Propriétés}
+\begin{prop}
+Nous avons la propriété suivantes : 
+\[det~ \begin{blockarray}{cc}
+        \overset{n_1}\leftrightarrow & \overset{n_2}\leftrightarrow \\
+	\begin{block}{(cc)}
+         \mesbloc{A_{11}}  &  \mesbloc{A_{12}}    \\
+         0   		   & \mesbloc{A_{22}}   \\
+        \end{block}
+        \end{blockarray} = det(A_{11}).det(A_{22})
+\] 
+Avec :
+$$\begin{cases}
+A_{11} \in  \mathcal{M}_{n_1}(K) \\  A_{22} \in  \mathcal{M}_{n_2}(K)
+\end{cases}$$
+\end{prop}
+\subsection{Généralisation}
+\begin{prop}
+On peut généraliser la propriété de la façon suivante : 
+\[det ~ \begin{blockarray}{ccc}
+	\overset{n_1}\leftrightarrow & \dots & \overset{n_p}\leftrightarrow \\
+        \begin{block}{(ccc)}
+         \mesbloc{A_{11}}  &  & (B)    \\
+                          &\ddots  &        \\
+         (0)                &  & \mesbloc{A_{pp}}   \\
+        \end{block}
+        \end{blockarray} = det(A_{11})\dots det(A_{pp})
+\] 
+\end{prop}

@@ -1,0 +1,209 @@
+\chapter{Série entière}
+\section{Définitions, rayon de convergence}
+\subsection{Défintions}
+\begin{de}
+On appelle série entière une série d'application $\underset{n}\sum u_n$ où les $u_n$ sont des monomes à coefficient réels ou complexe, définis sur $\Re$ ou C, par : 
+$$u_n : K \rightarrow K$$
+$$ t \mapsto a_n t^n$$
+En général, $u_n$ est une application d'un corps dans ce même corps.
+\end{de}
+\subsection{Abus de notation}
+Par abus de notation, car on assimile de faite série d'application et série numérique, on note souvent $\underset{n} \sum a_n.x^n$, respectivement $\underset{n} \sum a_n.z^n$, ou lieu de $\underset{n}\sum u_n$.
+\subsection{Rayon de convergence}
+\begin{de}
+Étant donnée une série entière $\underset{n} \sum a_n.z^n$, c'est a dire étant donnée une suite ($a_n$) de complexe, on appelle rayon de convergence de cette série entière, noté parfois $\rho(\underset{n} \sum a_n.z^n)$ : 
+$$\rho(\underset{n} \sum a_n.z^n) = Sup\left\lbrace r \in \Re_+ ~/~ (|a_n|r^n) \mbox{ soit majorée }  \right\rbrace $$
+\end{de}
+\begin{prop}
+Dans le cas ou l'ensemble défini ci-dessus et non majorée, on convient que $\rho(\underset{n} \sum a_n.z^n) = + \infty$
+\end{prop}
+\begin{prop}
+Soit $\underset{n} \sum a_n.z^n$ une série entière, avec $(a_n)$ suite de complexe, et R = $\rho(\underset{n} \sum a_n.z^n)$.
+\begin{itemize}
+ \item[$\rightarrow$] Si R = $+ \infty$ : La série converge simplement dans C et converge normalement sur tout disque ferme $\bar{B}(0,\alpha)$, avec $\alpha \geq 0$, et meme converge normalement sur tout compact inclu dans C.
+ \item[$\rightarrow$] Si R est un réel > 0 : La série converge sur tout disque ouvert B(0,R). La série converge normalement sur tout disque fermé $\bar{B}(0,\alpha)$ inclu dans B(O,R), et meme converge normalement sur tout compact inclu dans B(O,R). 
+\end{itemize}
+\end{prop}
+\begin{voc}
+B(O,R) s'appelle le disque ouvert de convergence de la série entière $\underset{n} \sum a_n.z^n$.
+\end{voc}
+\subsection{Lemme d'Abel}
+Soit $z_0 \neq 0$. Si $(|a_n|.|z_0|^n)$ est majorée, $\forall \alpha \in [0,z_0[$, la série $\underset{n} \sum a_n.z^n$ converge normalement sur $\bar{B}(O,\alpha)$
+\section{Propriétés utilse au calcul du rayon de convergence}
+Dans tout ce chapitre, $(a_n)$ et $(b_n)$ désigne des suites de compact, et $\lambda$ désigne un complexe non nuls
+\begin{prop}
+\begin{itemize}
+ \item[$\rightarrow$] $\rho(\underset{n} \sum a_n.z^n) = \rho(\underset{n} \sum |a_n|.z^n)$
+ \item[$\rightarrow$] $\rho(\underset{n} \sum \lambda a_n.z^n) = \rho(\underset{n} \sum a_n.z^n)$
+ \item[$\rightarrow$] Si $z_0 \in C$, tq $\underset{n} \sum a_n.z_0^n$ converge, alors $\rho(\underset{n} \sum a_n.z^n) \geq |z_0|$. Il en est de meme si la suite ($a_n.z^n$) est bornée ou si la suite converge 
+ \item[$\rightarrow$] Si $z_0 \in C$, tq $\underset{n} \sum a_n.z_0^n$ diverge, alors $\rho(\underset{n} \sum a_n.z^n) \leq |z_0|$. Il en est de meme si la suite ($a_n.z^n$) n'est pas bornée ou si la suite ne tend pas vers 0. 
+\end{itemize}
+\end{prop}
+\begin{prop}
+Si $\forall n \geq n_0$, on a : 
+$$|a_n| \leq |b_n|$$
+Alors : 
+$$\rho(\sum_n a_n.z^n) \geq \rho(\sum_n b_n.z^n) $$
+\end{prop}
+\begin{prop}
+Si on a : 
+$$|a_n| \underset{n \rightarrow +\infty}\sim |b_n|$$
+Alors : 
+$$\rho(\sum_n a_n.z^n) = \rho(\sum_n b_n.z^n) $$
+\end{prop}
+\subsection{Règle de d'Alembert pour les séries entières}
+Soit $\underset{n} \sum a_n.z^n$ une série entière.\\
+Si $\forall n \geq n_0 $ |$a_n \neq 0$|, et si : 
+$$\dfrac{|a_{n+1}|}{|a_n|} \rightarrow l \in \Re_+ \cup \left\lbrace + \infty\right\rbrace $$
+Alors : 
+$$\rho(\sum_n a_n.z^n) = \dfrac{1}{l}$$
+avec les conventions suivantes : 
+$$l=0 \Rightarrow \rho(\sum_n a_n.z^n) = +\infty$$
+$$l = +\infty \Rightarrow \rho(\sum_n a_n.z^n) = 0$$
+\section{Somme et produit de deux séries entières}
+\subsection{Somme de deux séries entières}
+\begin{prop}
+Si $\underset{n} \sum a_n.z^n$ et $\underset{n} \sum b_n.z^n$ converge, alors $\underset{n} \sum (a_n+b_n).z^n$ converge et nous avons : 
+$$\sum_{n=0}^{+\infty} (a_n+b_n).z^n = \sum_{n=0}^{+\infty} a_n.z^n + \sum_{n=0}^{+\infty} b_n.z^n $$
+\end{prop}
+\begin{corr}
+Si : 
+$$R_A = \rho(\sum_n a_n.z^n)$$
+$$R_B = \rho(\sum_n b_n.z^n)$$
+$$R_S = \rho(\sum_n (a_n+b_n).z^n)$$
+Alors on obtient que : 
+$$R_S \geq min(R_A,R_B)$$
+De plus, si $R_A \neq R_B$, alors :
+$$R_S = min(R_A,R_B)$$
+\end{corr}
+\subsection{Produit de deux séries entières}
+\begin{prop}
+Si $\underset{n} \sum a_n$ et $\underset{n} \sum b_n$ sont deux séries numériques, à valeurs dans $\Re$ ou dans C, absolument convergente, et si : 
+$$c_n = \sum_{k=0}^n a_k.b_{n-k}$$
+Alors : \\
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{n} \sum c_n$ est absolument convergente.\\
+ \item[$\rightarrow$] Nous avons l'égalité suivante : 
+$$\left(\sum_{n=0}^{\infty} a_n\right)\left(\sum_{n=0}^{\infty} b_n\right) = \sum_{n=0}^{\infty} c_n $$
+\end{itemize}
+\end{prop}
+\begin{prop}
+Si $z \in C$ est telque $\underset{n} \sum a_n.z^n$ et $\underset{n} \sum b_n.z^n$ converge absolument, alors : 
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{n} \sum c_n.z^n$ est absolument convergente.\\
+ \item[$\rightarrow$] Nous avons l'égalité suivante : 
+$$\left(\sum_{n=0}^{\infty} a_n.z^n\right)\left(\sum_{n=0}^{\infty} b_n.z^n\right) = \sum_{n=0}^{\infty} c_n.z^n $$
+\end{itemize}
+\end{prop}
+\begin{de}
+La suite ($c_n$) défini par : 
+$$c_n = \sum_{k=0}^n a_k.b_{n-k}$$
+est parfois appelé produit de cauchy des suites ($a_n$) et ($b_n$)
+\end{de}
+\subsection{Propriétés sur les exponentiels complexes}
+\begin{prop}
+Soit z et z' deux complexes. Nous avons la propriété suivante :
+$$e^z.e^{z'} = e^{z+z'}$$
+\end{prop}
+\begin{corr}
+D'après la propriété précédente, on obtient que :
+$$\forall z \in C~ e^z \neq 0~ et~ (e^z)^{-1} = e^{-z}$$
+$$\forall z \in C,~ \forall n \in Z,~ (e^z)^n = e^{nz}$$
+\end{corr}
+\subsection{Continuité}
+\begin{prop}
+Si $R = \rho(\underset{n} \sum a_n.z^n)$, alors : 
+$$z \mapsto \sum_{n=0}^{+\infty} a_n.z^n$$ 
+est continue sur B(0,R)
+\end{prop}
+\section{Classe $C^{\infty}$}
+Soit $\underset{n} \sum a_n.x^n$ une série entière de rayon R>0 (on peut avoir $R = \infty$).\\
+Alors :
+$$S : x \mapsto \sum_{n=0}^{\infty} a_n.x^n$$
+est défini au moins sur $]-R,R[$. Cet intervalle est appelé intervalle de convergence.
+\begin{prop}
+Nous avons les propriétés suivantes : 
+$$\rho(\sum_n n.a_n.x^{n-1}) = \rho(\sum_n a_n.x^{n})$$
+$$\rho(\sum_n (n+1).a_{n+1}.x^{n}) = \rho(\sum_n a_n.x^{n})$$
+\end{prop}
+\begin{theo}
+Soit $\underset{n} \sum a_n.x^n$ une série entière de rayon R > 0 (On peut avoir $R = +\infty$).\\
+Alors sa somme : 
+$$S : ]-R,R[ \rightarrow K$$
+$$x \mapsto \sum_{n=0}^{+\infty} a_n.x^n$$
+est $C^{\infty}$ sur l'intervalle de convergence, et les dérivés $S^{(k)}$ s'obtiennent à l'aide d'une dérivation terme à terme : 
+$$\forall x \in ]-R,R[,~ S^{(p)}(x) = \sum \dfrac{n!}{(n-p)!}a_n.x^{n-p}$$
+\end{theo}
+\begin{corr}
+On obtient le corrolaire suivant : 
+$$\forall x \in ]-R,R[~ S(x) = \sum_{n=0}^{\infty} \dfrac{S^{(n)}(0)}{n!}x^n$$
+\end{corr}
+\begin{corr}
+Soient $\underset{n} \sum a_n.x^n$ et $\underset{n} \sum b_n.x^n$ deux séries entière de rayon $R_a$ et $R_b$ strictement positif. Si : 
+$$\forall x \in ]-r,r[~\underset{n} \sum a_n.x^n = \underset{n} \sum b_n.x^n$$
+avec : 
+$$0<r\leq min(R_a,R_b)$$
+Alors, on en déduit que : 
+$$a_n = b_n$$
+La conclusion reste valable en supposant seulement que l'égalité des sommes est vérifié pour tout x appartenant à un intervalle de longeur > 0.
+\end{corr}
+\begin{corr}
+Si $\underset{n} \sum a_n.x^n$ est une série entière de rayon R > 0, alors : 
+$$\rho(\sum_{n=0}^{\infty}\dfrac{a_n}{n+1}x^{n+1}) = R$$
+Et : 
+$$x \mapsto \sum_{n=0}^{\infty} \dfrac{a_n}{n+1} x^{n+1}$$
+est une primitive de 
+$$x \mapsto \sum_{n=0}^{\infty} a_n x^{n}$$
+sur $]-R,R[$
+\end{corr}
+\section{Fonctions développable en série entière}
+Dans ce chapitre, on se limite à la variable réelle.
+\begin{de}
+Soit f fonction de $\mathbb{R}$ dans $\mathbb{R}$ et $x_0 \in \mathbb{R}$.\\
+On dit que f est développable en série entière en $x_0$, ou au voisinage de $x_0$, si il existe un r > 0 et une série entière $\underset{n} \sum a_n.x^n$, c'est à dire $\exists (a_n) \in \mathbb{R}^{\mathbb{N}}$, de rayon R $\geq$ r tq :
+$$\forall x \in ]-r,r[~ f(x) = \sum_{n=0}^{\infty} a_n.(x-x_0)^n$$
+\end{de}
+\begin{prop}
+Soit f une fonction décomposable en série entière en $x_0$. Son développement est le développement de Taylor en $x_0$, c'est à dire : 
+$$\forall x \in ]x_0-r,x_0+r[~ f(x) = \sum_{n=0}^{\infty} \dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n$$
+\end{prop}
+\begin{corr}
+On peut obtenir un développement limité en $x_0$ de f, à l'ordre n, en tronquant le développement en série entière.
+$$f(x) \underset{x \rightarrow x_0}= \sum_{k=0}^n \dfrac{f^{(k)}(x_0)}{k!}.(x-x_0)^k + o((x-x_0)^n)$$
+\end{corr}
+\subsection{Quelques développpement en série entière classique}
+Nous avons les développement classique suivant : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall z \in \mathbb{C}$ tq $|z|<1$ : $$\dfrac{1}{1-z} = \sum_{k=0}^{\infty} z^k$$
+ \item[$\rightarrow$] $\forall z \in \mathbb{C}$ tq $|z|<1$ : $$\dfrac{1}{1+z} = \sum_{k=0}^{\infty} (-1)^k.z^k$$
+ \item[$\rightarrow$] $\forall x \in [-1,1[$ :  $$ln(1-x) = -\sum_{k=1}^{\infty} \dfrac{x^{k}}{k}$$
+ \item[$\rightarrow$] $\forall x \in ]-1,1]$ : $$ln(1+x) = \sum_{k=1}^{\infty} (-1)^{k+1}\dfrac{x^{k}}{k}$$
+ \item[$\rightarrow$] $\forall x \in \mathbb{R}$ : $$e^x = \sum_{k=1}^{\infty} \dfrac{x^k}{k!}$$
+ \item[$\rightarrow$] $\forall z \in \mathbb{C}$ : $$e^z = \sum_{k=1}^{\infty} \dfrac{z^k}{k!}$$
+\item[$\rightarrow$] $\forall x \in \mathbb{R}$ : $$ch(x) = \sum_{k=0}^{\infty} \dfrac{x^{2k}}{(2k)!}$$
+\item[$\rightarrow$] $\forall x \in \mathbb{R}$ : $$sh(x) = \sum_{k=0}^{\infty} \dfrac{x^{2k+1}}{(2k+1)!}$$
+\item[$\rightarrow$] $\forall x \in \mathbb{R}$ : $$cos(x) = \sum_{k=0}^{\infty} (-1)^k \dfrac{x^{2k}}{(2k)!}$$
+ \item[$\rightarrow$] $\forall x \in \mathbb{R}$ : $$sin(x) = \sum_{k=0}^{\infty} (-1)^k \dfrac{x^{2k+1}}{(2k+1)!}$$
+ \item[$\rightarrow$] $\forall \alpha \in \mathbb{R}-\mathbb{N}, \forall x \in ]-1,1[$ : $$(1+x)^{\alpha} = \sum_{k=0}^{\infty} a_k.x^k$$
+avec : 
+$$\begin{cases}
+  a_0 = 1 \\
+  a_k = \dfrac{\alpha.(\alpha-1)...(\alpha-k+1)}{k!}
+  \end{cases}
+$$
+\end{itemize}
+\subsection{Développement en série entière des fractions rationnelles}
+\begin{prop}
+Soit f une fraction rationnelle, f = $\dfrac{P}{Q}$, avec $(P,Q) \in \mathbb{C}[X]^2$, premiers entre eux. Si 0 n'est pas un pôle de f, alors f est un développable en série entière en 0 sur B(0,r), avec :
+$$r = \underset{\alpha \in Z(Q)}\min |\alpha|$$
+De plus, la série entière en question, qui est la série de Taylor de f, est de rayon r.
+\end{prop}
+\section{Extension à $\mathbb{C}$ des fonctions trigonométrique}
+Nous avons les développement en série entière classique pour les fonctions exp, sh, ch dans $\mathbb{C}$ et de cos et sin dans $\mathbb{R}$. En observant que les rayons de convergence de ces séries sont infini, on peut donc obtenir les fonctions cos et sin dans $\mathbb{C}$, en considérent le développement en série entière identique, mais avec une variable complexe.
+\subsection{Lien entre trigonométrie circulaire et trigonométrie hyperbolique}
+On montre, en utilisant le développement en série entière, que $\forall z \in \mathbb{C}$ : 
+$$ch(iz) = cos(z) $$
+$$sh(iz) = i.sin(z)$$
+En remplacant z par iz, on obtient : 
+$$cos(iz) = ch(z)$$
+$$sin(iz) = i.sh(z)$$

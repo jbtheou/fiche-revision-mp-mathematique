@@ -1,0 +1,285 @@
+\chapter{Réduction des endomorphismes et des matrices - Deuxième Partie}
+\section{Polynomes d'endomorphisme ou de matrice}
+Dans ce chapitre, toutes les relations vu sont transposable aux matrices
+\begin{de}
+Soit f une application linéaire de E dans E, avec E un K espace vectoriel.\\
+Soit P $\in K[X]$ défini par : 
+$$P = a_0 + a_1.X+\dots+a_p.X^p$$
+Avec $\forall i~ a_i \in K$. On défini :
+$$P(f) = a_0.Id + a_1.f +\dots+a_p.f^p$$
+Avec : 
+\begin{itemize}
+ \item[$\rightarrow$] $fofo\dots of = f^k$
+ \item[$\rightarrow$] $f^0 = Id$
+\end{itemize}
+De meme, si A $\in \mathcal{M}_n(K)$ : 
+$$P(A) = a_0.I_n + a_1.A + a_p.A^p$$
+\end{de}
+\begin{prop}
+Soit B est une base de E, avec E un K espace vectoriel de dimension fini, f$\in \mathcal{L}(E)$ et $A = mat_B(f)$. On obtient : 
+$$P(A) = mat_B(P(f))$$
+\end{prop}
+\begin{prop}
+Soit $P_1$ et $P_2 \in K[X]$, $\lambda \in K$, $f\in \mathcal{L}(E)$.\\
+Nous avons les résultats suivants :
+$$(P_1+P_2)(f) = P_1(f)+P_2(f)$$
+$$(\lambda P_1)(f) = \lambda P_1(f)$$
+$$(P_1.P_2)(f) = P_1(f) o P_2(f)$$
+De ce dernier résultat, on obtient que : 
+$$P_1(f)oP_2(f) = P_2(f)oP_1(f)$$
+\end{prop}
+\begin{de}
+Soit f un endomorphisme de E, avec E un K espace vectoriel et :
+$$K[f] = \left\lbrace P(f), P\in K[X] \right\rbrace $$
+Soit $A \in \mathcal{M}_n(K)$.\\
+On note : 
+$$K[A] = \left\lbrace P(A), P \in K[X] \right\rbrace $$
+\end{de}
+\begin{prop}
+Les espaces défini ci dessus sont des sous algèbres commuative de respectivement $(\mathcal{L}(E),+,\lambda.,o)$ et $(\mathcal{M}_n(K),+,\lambda.,x)$
+\end{prop}
+\section{Idéaux de K[X]}
+\begin{de}
+On appelle idéale de K[X] toute partie non vide $\mathcal{I}$ de K[X] tq : 
+\begin{itemize}
+ \item[$\rightarrow$] $\mathcal{I}$ est stable par +
+ \item[$\rightarrow$] $\forall P \in \mathcal{I}$ et $\forall Q \in K[X]$, PQ $\in \mathcal{I}$
+\end{itemize}
+De cette définition, on obtient que : 
+$$P \in \mathcal{I} \Rightarrow -P \in \mathcal{I}$$
+$$0 \in \mathcal{I}$$
+Avec ici 0, le polynome constant nul.
+\end{de}
+\subsection{Exemple}
+Nous avons les ensembles suivants, qui sont des idéaux triviaux : 
+$$\mathcal{I} = \left\lbrace 0 \right\rbrace $$
+Celui ci constitue l'idéal nul.
+$$K[X] = \mathcal{I}$$
+\begin{de}
+Soit P un polynome de K[X]. On défini l'idéal engendré par P, noté [P], par : 
+$$[P] = \left\lbrace PQ, Q \in K[X]\right\rbrace $$
+C'est donc l'ensemble constitué des multiples de P.
+\end{de}
+\subsection{Définitions et théorème}
+\begin{de}
+Un idéal engendrée par un seul polynome, du type [P], est appelé idéal principale
+\end{de}
+\begin{theo}
+Tout idéal de K[X] est principale. On dit donc que l'anneau K[X] est principale. 
+\end{theo}
+\begin{de}
+Soit $\mathcal{I}$, un idéal de K[X], donc un idéal idéal.\\
+On appelle générateurs de $\mathcal{I}$ les polynomes $\omega$ telque : 
+$$\mathcal{I} = [\omega]$$
+\end{de}
+\begin{prop}
+Les générateurs $\omega$ se déduisent les uns des autres par multiplication par une constante non nulle $\lambda \in K^*$.\\
+De plus, si $\mathcal{I} \neq \left\lbrace 0 \right\rbrace $, alors les générateurs ont tous le même degrés : 
+$$deg(\omega) = min\left\lbrace deg(P), P \in \mathcal{I}-\left\lbrace  0\right\rbrace  \right\rbrace  $$
+\end{prop}
+\begin{prop}
+De la propriété précédente, on déduit que si : 
+\begin{itemize}
+ \item[$\rightarrow$] $\omega \in \mathcal{I}$
+ \item[$\rightarrow$] deg($\omega) min\left\lbrace deg(P), P \in \mathcal{I}-\left\lbrace  0 \right\rbrace\right\rbrace $
+Alors : 
+$$\mathcal{I} = [\omega]$$ 
+\end{itemize}
+\end{prop}
+\begin{de}
+L'unique générateur unitaire d'un idéal $\mathcal{I}$ non nul est appelé polynome minmale de l'idéal $\mathcal{I}$
+\end{de}
+\subsection{Application au pgcd de deux polynomes, et à l'algorithme d'Euclide}
+Soit $P_1$ et $P_2$ deux polynomes de K[X] non tous les deux nuls.\\
+On sait que [$P_1,P_2$] est un idéal de K[X], donc un idéal principale.\\
+On obtient donc qu'il existe un unique $\omega \in K[X] - \left\lbrace 0 \right\rbrace $ telque : 
+$$[P_1,P_2] = [\omega]$$
+On montre que $\omega$ est le pgcd de $P_1$ et $P_2$
+\subsubsection{Algorithme d'Euclide}
+Cet algoritme se base sur la propriété suivante : 
+$$\forall Q \in K[X] ~ [P_1,P_2] = [P_1,P_2 + Q.P_1]$$
+\subsection{Polynome annulateur d'un endomorphisme ou d'une matrice, Polynome minimal d'un endomorphisme ou d'une matrice}
+\begin{de}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel.\\
+On dit que $P \in K[X]$ annule f, ou que P est un polynome annulateur de f, ou encore que f annule P si : 
+$$P(f) = \tilde{0}$$
+De meme, si $A \in \mathcal{M}_n(K)$, on dit que P annule A si :
+$$P(A) = \begin{pmatrix}
+          0 & \dots & 0 \\
+          \vdots & \ddots & \vdots \\
+          0 & \dots & 0
+         \end{pmatrix}
+$$
+\end{de}
+\begin{prop}
+L'ensemble $A_{nn}(f)$ (Notation non standard), des polynomes annulateur de f, défini par :
+$$A_{nn}(f) = \left\lbrace P \in K[X]~ tq~ P(f) = \tilde{0}\right\rbrace $$
+Cet ensemble est un idéal de K[X].
+\end{prop}
+\begin{de}
+On appelle polynome minimale de f, noté $\omega_f$, l'unique polynome unitaire telque que : 
+$$A_{nn}(f) = [\omega]$$
+On défini de même le polynome minimal d'une matrice
+\end{de}
+\begin{prop}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension finie, B une base de E et A = $mat_{B}(f)$.\\
+On obtient dans ce cas que : 
+$$\omega_A = \omega_f$$
+\end{prop}
+\begin{prop}
+Soit E une K espace vectoriel de dimension n.\\
+On obtient que, $\forall f \in \mathcal{L}(E)$ : 
+$$A_{nn} \neq \left\lbrace O\right\rbrace $$
+Donc que :
+$$\omega_f \neq 0$$
+\end{prop}
+\begin{prop}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel.\\
+Si $\omega_f \neq 0$ et d = deg($\omega_f$), alors (Id,f,...,$f^{d_1}$) est une base de K[f], en particulier : 
+$$dim K[f] = deg(\omega_f)$$
+\end{prop}
+\subsection{Théorème de Cayley-Hamilton}
+\begin{theo}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension fini. On obtient alors que :
+$$P_f(f) = \tilde{0}$$
+Nous avons les équivalences suivantes : 
+$$(P_f(f) = \tilde{0}) \Leftrightarrow (P_f \in A_{nn}(f) )\Leftrightarrow (\omega_f | P_f)$$
+\end{theo}
+\begin{corr}
+ Si E est une K espace vectoriel de dimension n, et $f \in \mathcal{L}(E)$, alors deg $w_f \leq n$
+\end{corr}
+\subsection{Relation entre valeurs propres et racines des polynomes annulateurs}
+\begin{prop}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel ( E peut être un espace de dimension infini).\\
+Si f annule $P \in K[X]$, alors :
+$$S_p(f) c Z(P)$$
+Avec Z(P) l'ensemble des zéros de P, c'est à dire l'ensemble des racines de P.
+\end{prop}
+\begin{lemme}
+Si $f(\overrightarrow{x}) = \lambda.\overrightarrow{x}$, alors :
+$$\forall P \in K[X]~ P(f)(\overrightarrow{x}) = P(\lambda)(\overrightarrow{x})$$
+\end{lemme}
+\begin{prop}
+Si $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension finies, alors :
+$$S_p(f) = Z(w_f)$$
+Cependant, ceci ne nous donne bien évidement aucune information sur la multiplicité des racines.
+\end{prop}
+\begin{prop}
+Soit f et g deux endomorphisme de E dans E. Si : 
+$$fog = gof$$
+C'est à dire, si les deux endomorphimes communent, alors Ker(g) et Im(g) sont stable par f
+\end{prop}
+\section{Lemme des noyaux}
+\begin{prop}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel. Soit $P_1$ et $P_2$ deux polynomes de $K[X]$, premiers entre eux. On obtient alors : 
+$$Ker(P_1.P_2)(f) = Ker(P_1)(f) \oplus Ker(P_2)(f)$$
+\end{prop}
+\begin{gene}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel. Soit $P_1,\dots,P_k$ des polynomes de K[X] deux à deux premiers entre eux. Soit P = $P_1\dots P_k$, on obtient alors : 
+$$Ker(P)(f) = Ker(P_1)(f) \oplus \dots \oplus Ker(P_k)(f)$$
+\end{gene}
+\subsection{Application fondamentale de Lemme des noyaux}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace de dimension n telque $P_f$ soit scindé sur K[X]. On peut donc écrire $P_f$ sous la forme : 
+$$P_f(X) = (-1)^n(X-\lambda_1)^{n_1}\dots(X-\lambda_p)^{n_p}$$
+En utilisant conjointement le lemme des noyaux et le théorème de Cayley-Hamilton, on obtient que : 
+$$P_f(f) = (-1)^n.(f-\lambda_1.Id)^{n_1}o\dots o (f-\lambda_p.Id)^{n_p} = \tilde{0}$$
+Grâce au lemme des noyaux, on obtient que :
+$$E = E_1 \oplus \dots \oplus E_p$$
+Avec :
+$$E_k = Ker(f-\lambda_k.Id)^{n_k}$$
+On peut obtenir à partir de tout ceci une matrice diagonale par bloc, de la forme : 
+\[mat_{B}(f) = \begin{blockarray}{cccccccccc}
+        | \leftarrow & -\overset{n_1}-- &\rightarrow | & | \leftarrow & -\overset{n_2}-- &\rightarrow|& \dots  & |\leftarrow & -\overset{n_p}-- & \rightarrow| \\
+        \begin{block}{(cccccccccc)}
+           \lambda_1 &  &  & & & & & & & (0) \\
+   	   & \ddots & & & & & & & \\
+  	   &  & \lambda_1 & &  & & & & &\\
+  	   &  &  & \lambda_2 & & & & & & \\
+  	   &  &  &  & \ddots & & & & &\\
+ 	   &  &  &  & & \lambda_2 & & & & \\
+ 	   &  &  &  & &  & \ddots & & &\\
+ 	   &  &  &  & &  &  & \lambda_p & &\\
+ 	   &  &  &  & &  & & & \ddots &\\
+  	  (0) &  &  &  & &  &  & & & \lambda_p\\
+        \end{block}
+        \end{blockarray}
+\]
+\section{Endomorphismes et matrices nilpotants}
+\begin{de}
+Soit $f \in \mathcal{L}(E)$.\\
+f est dit nilpotant si il existe $p \in N^*$ telque : 
+$$f^p = \tilde{0}$$
+La définition est analogue pour les matrices
+\end{de}
+\begin{prop}
+Soit E un C espace vectoriel de dimension n et $f \in \mathcal{L}(E)$, alors les conditions suivantes sont équivalentes :
+\begin{itemize}
+ \item[$\rightarrow$] f est nilpotant
+ \item[$\rightarrow$] $S_p(f) = \left\lbrace 0 \right\rbrace $
+ \item[$\rightarrow$] $\exists$ B base de E telque $mat_B(f)$ soit une matrice stricement triangulaire, c'est à dire triangulaire avec tous ces termes diagonaux nuls.
+\end{itemize}
+\end{prop}
+
+\begin{de}
+On appelle indice de nilpotence de f le plus petit entier $\nu$ telque : 
+$$f^{\nu} = \tilde{0}$$
+Si E est un C espace vectoriel de dimension n, on obtient que : 
+$$\nu \geq n$$
+Plus précisement, on obtient que : 
+$$w_f = X^{\nu}$$
+\end{de}
+\section{Nouveaux critères de trigonabilité}
+\begin{theo}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension n. Les conditions suivantes sont équivalentes : 
+\begin{itemize}
+ \item[$\rightarrow$] f est trigonalisable
+ \item[$\rightarrow$] f annule un polynome scindé sur K
+ \item[$\rightarrow$] $w_f$ est scindé sur K
+\end{itemize}
+\end{theo}
+\subsection{Réduction de Dunford}
+Si :
+$$w_f = (X - \lambda_1)^{m_1}...(X - \lambda_p)^{m_p}$$
+avec les $\lambda_k$ deux à deux distinct, alors on obtient que, d'après le lemme de noyaux : 
+$$E = E_1 \oplus ... \oplus E_P$$
+avec : 
+$$E_k = Ker(f + \lambda_k.id)^{m_k}$$
+On peut donc choisir une base de chaqu'un des $E_k$, notée $B_k$, telque :
+$$mat_{B_k}f_{\parallel E_k} = \begin{pmatrix}
+          \lambda_k &  & (a_{ij}) \\
+	   & \ddots & \\
+          (0) &  & \lambda_k
+         \end{pmatrix}$$
+C'est donc une matrice triangulaire superieur. De plus, on a : 
+$$B = B_1 \vee \dots \vee B_P$$
+qui est une base de E. On obtient donc que : 
+\[mat_B f = \begin{blockarray}{cccc}
+        \overset{n'_1}\leftrightarrow & \dots & \overset{n'_p}\leftrightarrow  \\
+        \begin{block}{(ccc)c}
+        \mesbloc{A_{1}}  &  & (0) & \updownarrow n'_1   \\
+          & \ddots &  &       \\
+        (0) &   & \mesbloc{A_{p}} & \updownarrow n'_p      \\
+        \end{block}
+        \end{blockarray}
+\] 
+Avec $A_k = mat_{B_k}f_{\parallel E_k}$. On montre de plus qu'en réalité : 
+\begin{itemize}
+ \item[$\rightarrow$] $n'_k$ est en réalité egale à $mult_{Pf}(\lambda_k)$
+ \item[$\rightarrow$] $E_k$ = Ker(f-$\lambda$.id$)^{n_k}$
+\end{itemize}
+\section{Nouveau critère de diagonabilité}
+\begin{theo}
+Soit $f \in \mathcal{L}(E)$, avec E un K espace vectoriel de dimension finies. Les propositions suivantes sont équivalente : 
+\begin{itemize}
+ \item[$\rightarrow$] f est diagonalisable
+ \item[$\rightarrow$] f annule un polynome scindé sur K à racine simple
+ \item[$\rightarrow$] $w_f$ est scindé sur K à racine simple
+\end{itemize}
+De plus, nous savons que : 
+$$Z(w_f) = S_p(f)$$
+La première proposition s'écrit donc : 
+$$w_f(X) = (X-\lambda_1)...(X-\lambda_p)$$
+ou 
+$$S_p(f) = \left\lbrace \lambda_1,...,\lambda_p\right\rbrace $$
+\end{theo}
+

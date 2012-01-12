@@ -1,0 +1,281 @@
+\chapter{Équations différentielles}
+\section{Équations différentielle linéaire du $1^{er}$ ordre}
+\begin{de}
+Une équation différentielle linéaire du $1^{er}$ ordre est une équation du type : 
+$$\alpha(t).y' + \beta(t).y = \gamma(t)~ (E)$$
+Avec : 
+$$\begin{cases}
+   \alpha,\beta,\gamma \in C(I,K),~ I \mbox{ Intervalle} c \mathbb{R} \\ 
+   y \in C^1(I,K) \mbox{ est une application incconue }
+  \end{cases}
+$$
+On dit que (E) est résolue, par rapport à y, sur I lorsque $\alpha$ ne s'annule par sur I. Dans ce cas : 
+$$(E) \Leftrightarrow y' + a(t)y = b(t)$$
+\end{de}
+\begin{de}
+On appelle équation homogène associé à (E), ou équation sans second membre, noté ($E_0$) : 
+$$y' + a(t)y = 0$$
+\end{de}
+\begin{theo}
+Théorème de Cauchy-Lipschitz linéaire du première ordre :\\
+Avec les notations et hypothèses précédentes, si (E) est résolue sur I, alors : 
+$$\forall t_0 \in I~ \forall y_0 \in K,~ \exists! y \in Sol(E) ~ tq~ y(t_0) = y_0$$ 
+\end{theo}
+\begin{coro}
+Toujours avec les mêmes notation et hypothèses : 
+\begin{itemize}
+ \item[$\rightarrow$] Sol($E_0$) est un K espace vectoriel de dimension 1
+ \item[$\rightarrow$] Sol(E) est un K espace affine de direction Sol($E_0$)
+\end{itemize}
+\end{coro}
+\section{Equations différentielle linéaire du second ordre}
+\begin{de}
+Une équation différentielle linéaire du $2^{nd}$ ordre est une équation du type : 
+$$\alpha(t).y'' + \beta(t).y' + \gamma(t).y = \delta(t)~ (E)$$
+Avec : 
+$$\begin{cases}
+   \alpha,\beta,\gamma,\delta \in C(I,K),~ I \mbox{ Intervalle} c \mathbb{R} \\ 
+   y \in C^2(I,K) \mbox{ est une application incconue }
+  \end{cases}
+$$
+On dit que (E) est résolue, par rapport à y, sur I lorsque $\alpha$ ne s'annule par sur I. Dans ce cas : 
+$$(E) \Leftrightarrow y'' + a(t)y' + b(t)y = h(t)$$
+\end{de}
+\begin{theo}
+Sous les hypothèses précédent, en particulier le fait que (E) est résolue sur I, alors, $\forall t_0 \in I,~ \forall(y_0,y_0')\in K^2, \exists! y\in Sol(E)$ tq :
+$$\begin{cases}
+   y(t_0) = y_0 \\
+   y'(t_0) = y'_0 \\
+  \end{cases}
+$$
+\end{theo}
+\begin{coro}
+Sous les hypothèses précédentes : 
+$$\begin{cases}
+   Sol(E_0) = \mbox{ K espace vectoriel de dimension 2} \\
+   Sol(E) = \mbox{ K espace affine de direction vectoriel } Sol(E_0) \\
+  \end{cases}
+$$
+\end{coro}
+\subsection{Cas Particuliers}
+Considérons une équation différentielle linéaire de $2^{nd}$ ordre à coefficiant constant : 
+$$y'' + ay' + by = h(t)~ (E)$$
+$$\begin{cases}
+   \mbox{ a et b sont des constantes indépendente de la variable du corps K} \\
+   h \in C(I,K)
+  \end{cases}
+$$
+Dans ce cas, on résout l'équation caractéristique associé : 
+$$r^2 + ar + b = 0$$
+\subsubsection{Si K = $\mathbb{C}$}
+\paragraph{Si l'équation caractérisitique a deux solutions}
+Notons $r_1,r_2$ ces deux solutions disctinct.
+$$Sol(E_0) = Vect(t \mapsto e^{r_1.t},t \mapsto e^{r_2.t})$$
+\paragraph{Si l'équation caractérisitique a racine double}
+Notons r cette solution : 
+$$Sol(E_0) = Vect(t \mapsto t.e^{r.t},t \mapsto e^{r.t})$$
+\subsubsection{Si K = $\mathbb{R}$}
+\paragraph{Si l'équation caractérisitique a deux solutions}
+Notons $r_1,r_2$ ces deux solutions disctinct.
+$$Sol(E_0) = Vect(t \mapsto e^{r_1.t},t \mapsto e^{r_2.t})$$
+\paragraph{Si l'équation caractérisitique a racine double}
+Notons r cette solution : 
+$$Sol(E_0) = Vect(t \mapsto t.e^{r.t},t \mapsto e^{r.t})$$
+\paragraph{Si l'équation caractéristique à deux racines non réelles}
+Notons : 
+$$r_1 = \alpha + i\beta$$
+$$r_2 = \alpha - i\beta$$
+$$Sol(E_0) = Vect(t \mapsto e^{\alpha.t}.cos(\beta.t),t \mapsto e^{\alpha.t}.sin(\beta.t))$$
+\subsection{Solutions de (E)}
+Si l'on possède une solution particulier de ($E_0$), on peut résoudre, si cette solution ne s'annule pas sur I, completement l'équation (E) par la méthode de variation de la constante.
+\section{Équations différentielle (non linéaire) du $1^{er}$ ordre, résolue}
+\begin{de}
+Un ouvert de $\mathbb{B}$ est défini par : 
+$$(\mbox{ U est un ouvert }) \Leftrightarrow ( \forall M \in U,~ \exists r > 0~ tq~ B(M,r) c U )$$
+Avec : 
+$$B(M,r) = \left\lbrace P \in \mathbb{R}^2 / \parallel \overrightarrow{MP} \parallel < \overrightarrow{r}\right\rbrace $$
+Le fait que U soit ouvert ne dépend pas de la norme choisie, car toutes les normes sont équivalente entre dimension finies.
+\end{de}
+Cette équation est une équation du type : 
+$$y' = f(y,t) $$
+avec f une fonction de $\mathbb{R}^2$ dans $\mathbb{R}$, de classe $C^1$ sur un ouvert U de $\mathbb{R}^2$.
+\begin{de}
+Une solution de (E) est une application $y \in C^1(I,\mathbb{R})$, avec I intervalle de $\mathbb{R}$ telle que : 
+$\begin{cases}
+ 	\forall t \in I,~ (t,y(t)) \in U \\
+        \forall t \in I,~ y'(t) = f(t,y(t)) \\
+\end{cases}$
+\end{de}
+\begin{de}
+Une solution y est dite maximale si on ne peut pas la prolonger en une solution de (E) sur un intervalle I' $\supsetneqq$ I.\\
+C'est à dire qu'il n'existe pas de solutionz de (E) sur I' $\supsetneqq$ I telque :
+$$y = z_{|I}$$
+\end{de}
+\begin{theo}
+Théorème de Cauchy-Lipshitz pour les équations différentielles (non linéaire) du $1^{er}$ ordre résolue.\\
+Si $f \in C^1(U,\mathbb{R})$ avec U ouvert de $\mathbb{R}^2$, $\forall(t_0,y_0) \in U$, l'équation (E) : y' = f(t,y) admet une solution maximale et une seule, noté $y \in C^1(I,\mathbb{R})$, avec I un intervalle $\ni$ $t_0$, telque :
+$$y(t_0) = y_0$$
+De plus, pour une telle solution maximale, I est ouvert. Si $z \in C^1(J,\mathbb{R})$ est une solution de (E) sur J $\ni$ $t_0$ vérifiant z($t_0$) = $y_0$, alors : 
+$$\begin{cases}
+   J c I \\
+   z = y_{|J}
+  \end{cases}
+$$
+Autrement dit, toutes solutions de (E) se prolonge en une unique solution maximale.
+\end{theo}
+\begin{coro}
+ Si $z_1$ et $z_2$ sont des solutions de (E) sur des intervalles $J_1$ et $J_2$ contenant $t_0$ et si : 
+$$z_1(t_0) = z_2(t_0)$$
+Alors : 
+$$z_1{|J_{1}\wedge J_{2}} = z_2{|J_{1}\wedge J_{2}}$$
+\end{coro}
+\subsection{Équation à variable séparable}
+\begin{de}
+C'est une équation différentielle du $1^{er}$ ordre équivalente à une équation du type :
+$$f(y).y' = g(t)~ (E)$$
+Avec f et g des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.\\
+Si I est un intervalle sur lequel f ne s'annulent pas :
+$$(E) \Leftrightarrow y' = \dfrac{g(t)}{f(y)} = F(t,y)$$
+Si f est continue sur I, et ne s'annule pas sur I, et si g est continue sur J $\in \mathbb{R}$, alors F précédement définie est continue sur $JxI$. On le démontre à l'aide de fonctions composées.
+\end{de}
+\subsection{Énoncé simplifié du théorème de Cauchy-Lipschitz pour les équations différentielle du $1^{er}$ ordre autonomes}
+\begin{de}
+Une équation différentielle est dites autonome si elle est indépendente de t. C'est à dire si c'est une équation du type : 
+$$y' = f(y)~ (E)$$
+\end{de}
+Si $f \in C^1(J,\mathbb{R})$, avec J intervalle ouvert de $\mathbb{R}$.\\
+$\forall t_0 \in \mathbb{R}$, $\forall y_0 \in J$, il existe une solution maximale et une seule de (E), noté $y \in C^1(I,\mathbb{R})$ telle que $y(t_0)=y_0$.\\
+De plus, l'intervalle de définition d'une telle solution maximale est un ouvert $\ni t_0$.\\
+Toute solution z de (E) sur un intervalle $I' \in I$ vérifiant le meme condition initiale est la restriction sur I' de y.\\
+\begin{coro}
+Si $z_1$ et $z_2$ sont deux solutions de (E) sur des intervalles $J_1$ et $J_2$, vérfiant une même condition initiale en $t_0 \in J_1 \cap J_2$, alors $z_1$ et $z_2$ coincident sur $J_1 \cap J_2$
+\end{coro}
+$y' = f(y)$ est un cas particulier de y' = F(t,y) avec :
+$$F : \mathbb{R}^2 \rightarrow \mathbb{R}$$
+$$(t,y) \mapsto f(y)$$
+On peut donc appliquer directement le théorème de Cauchy-Lipschitz en considérant comme ouvert U $\mathbb{B}\times J$
+\section{Équation différentielle (non linéaire) du $2^{nd}$ ordre, résolue}
+C'est une équation du type : 
+$$y'' = f(t,y,y')~ (E)$$
+\begin{theo}
+Théorème de Cauchy-Lipschitz pour une équation différentielle (non linéaire) du $2^{nd}$ ordre.\\
+Si f $\in C^{1}(U,\mathbb{R})$, avec U un ouvert de $\mathbb{R}^2$, alors :
+$\forall{(t_0,y_0,y'_0)} \in U$, il existe une unique solution maximale de (E), noté y $\in C^2(I,\mathbb{R})$, avec I un intervalle de $\mathbb{R}$, c'est à dire que : 
+$$\begin{cases}
+   \forall t \in I,~ (t,y(t),y'(t)) \in U \\
+   \forall t \in I,~ y''(t) = f(t,y(t),y'(t)) \\
+  \end{cases}
+$$
+Vérifiant les conditions initiale suivante :
+$$\begin{cases}
+   y(t_0) = y_0 \\
+   y'(t_0) = y'_0 \\
+  \end{cases}
+$$
+De plus, l'intervalle I de définition d'une telle solution maximale est ouvert.\\
+Toute solution z de (E) sur un intervalle J $\ni t_0$ et vérifiant les mêmes conditions initiales est la restrictions de J sur y.\\
+$$\begin{cases}
+   J c I \\
+   \forall t \in J~ z(t)=y(t) \\
+  \end{cases}
+$$
+\end{theo}
+\begin{coro}
+Si deux solutions $z_1$ et $z_2$ de (E) sur $J_1$ et $J_2$ vérifiant la même condition initiale en $t_0$, alors $z_1$ et $z_2$ coincident sur $J_1 \cap J_2$ 
+\end{coro}
+\subsection{Énoncé simplifié pour les équations différentielles autonomes}
+C'est une équation du type : 
+$$y'' = f(y,y')$$
+Si f $\in C^1(W,\mathbb{R})$, W un ouvert de $\mathbb{R}^2$, alors $\forall t_0 \in \mathbb{R}$, $\forall (y_0,y'_0) \in W$, (E) admet une solution et une seule, maximale, de (E), noté $y \in C^1(I,\mathbb{R})$, I intervalle $\in t_0$, c'est à dire :
+$$\begin{cases}
+   \forall t \in I,~ (y(t),y'(t)) \in W \\
+   \forall t \in I,~ y''(t) = f(y(t),y'(t))\\
+  \end{cases}
+$$
+vérifiant la condition initiale.\\
+De plus, l'intervalle de définition d'une telle solution maximale est ouvert. Toute solution de (E) se prolonge en une unique solution maximale
+\begin{coro}
+Si $z_1$ et $z_2$ sont deux solutions de (E), sur $J_1$ et sur $J_2$, $\ni t_0$, et si ces solutions vérifient les même conditions initiale, alors : 
+$$\forall t \in J_1\cap J_2,~ z_1(t) = z_2(t)$$
+\end{coro}
+\section{Système différentielles (non linéaire) autonome du $1^{er}$ ordre, de deux équations à deux inconnus}
+\begin{de}
+Ce sont les systèmes différentielles du type : 
+$$(S) : \begin{cases}
+    x' = f(x,y) \\
+    y' = g(x,y) \\
+  \end{cases}
+$$
+Le système est dit autonome car la variable t dont dépendent les deux fonctions x et y ne figurent pas dans les équations.
+\end{de}
+Dans ce chapitre, nous faisons les hypothèses suivantes : f et g sont deux applications de $C^1(U,\mathbb{R})$, avec U un ouvert de $\mathbb{R}^2$, c'est à dire que f et g admettent des dérivées partielles du $1^{er}$ ordre, continues sur U.
+\begin{de}
+On dit que x et y sont des solutions de (S) sur I $c \mathbb{R}$ si x et y $\in C^1(I,\mathbb{R})$ telque : 
+$$\forall t \in I, (x(t),y(t)) \in U$$
+$$\forall t \in I \begin{cases}
+                   x'(t) = f(x(t),y(t)) \\
+		   y'(t) = g(x(t),y(t)) \\
+                  \end{cases}
+$$
+Dans ce cas, x et y sont solutions de (S) sur I c $\mathbb{R}$.
+\end{de}
+\subsection{Ecriture synthétique du système (S)}
+Notons X la fonction suivante :
+$$X : \mathbb{R} \rightarrow \mathbb{R}^2$$
+$$t \mapsto X(t)$$
+Avec : 
+$$X(t) = \begin{pmatrix}
+  x(t) \\
+  y(t) \\
+\end{pmatrix}
+$$
+X est $C^{1}(I,\mathbb{R}^2)$ si x et y sont elle même $C^1$ sur I, avec I intervalle de $\mathbb{R}$. Dans ce cas : 
+$$\forall t \in I~ X'(t) = \begin{pmatrix}
+  x'(t) \\
+  y'(t) \\
+\end{pmatrix}$$
+D'autre part, définissons : 
+$$F : \mathbb{R}^2 \rightarrow \mathbb{R}^2$$
+$$(x,y) \mapsto F(x,y)$$
+Avec : 
+$$F(x,y) = \begin{pmatrix}
+  f(x,y) \\
+  g(x,y) \\
+\end{pmatrix}
+$$
+De plus, F est de classe $C^1$ de U sur $\mathbb{R}^2$, c'est à dire admet des dérivées partielles continues sur U si et seulement si f et g sont $C^{1}(U,\mathbb{R})$.\\
+Dans ce cas, on obtient les dérivées partielles de F par dérivée composantes par composantes.
+\begin{de}
+F est appelé champs de vecteur de classe $C^1$ sur l'ouvert U de $\mathbb{R}^2$
+\end{de}
+A l'aide de ces notations, on obtient que x et y sont solutions de (S) sur I si et seulement si : 
+$$X \in C^{1}(I,\mathbb{R}^2)$$
+$$\forall t \in I,~ X(t) \in U$$
+$$\forall t \in I,~ X'(t) = F(X(t))$$
+On résume donc les trois conditions en disant que X est solution sur I de l'équation différentielle vectorielle : 
+$$X' = F(X)~ (E)$$
+\begin{de}
+Une solution X de (E) est dite maximale si elle n'est pas prolongable en une solution de (E) sur un intervalle I' $\supsetneqq$ I
+\end{de}
+\begin{theo}
+Théorème de Cauchy-Lipschitz.\\
+Sous les hypothèses précédente, c'est à dire essentiellement $F \in C^{1}(U,\mathbb{R}^2)$, avec U un ouvert de $\mathbb{R}^2$, l'équation (E) :
+$$X' = F(X)$$
+admet $\forall t_0 \in \mathbb{R}$ et tout $X_0 = (x_0,y_0) \in U$ une unique solution maximale X : 
+$$X : I \rightarrow \mathbb{R}^2$$
+$$t \mapsto X(t)$$
+Avec : 
+$$X(t) = \begin{pmatrix}
+  x(t) \\
+  y(t) \\
+\end{pmatrix}$$
+De classe $C^1$ sur I telle que X($t_0$) = $X_0$. De telles solutions maximales de (E) s'appelle des courbes intégrale de champs F. De plus : 
+\begin{itemize}
+ \item[$\rightarrow$] L'intervalle de définition d'un solution maxe de (E) est ouvert
+ \item[$\rightarrow$] Toutes solutions de (E) sur un intervalle J est la restriction à J d'une solution maximale
+\end{itemize}
+\end{theo}
+\begin{coro}
+Si $Z_1$ et $Z_2$ sont deux solutions de (E) défini sur $J_1$ et $J_2$, vérifiant les mêmes conditions initiales, alors : 
+$$\forall t \in J_1 \cap J_2~ Z_1(t) = Z_2(t) $$
+\end{coro}

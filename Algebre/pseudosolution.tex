@@ -1,0 +1,68 @@
+\documentclass[a4paper,12 pt,oneside]{report}     % Type de document
+\usepackage[utf8x]{inputenc}			  % Utilisation du UTF8
+\usepackage{textcomp}				  % Accents dans les titres
+\usepackage [ french ] {babel}                    % Titres en français
+\usepackage [T1] {fontenc} 			  % Correspondance clavier -> document
+\usepackage[Lenny]{fncychap}                      % Beau Chapitre
+\usepackage{dsfont}                    	  % Pour afficher N,Z,D,Q,R,C
+\usepackage{fancyhdr}                             % Entete et pied de pages
+\usepackage [outerbars] {changebar}               % Positionnement barre en marge externe
+\usepackage{amsmath}				  % Utilisation de la librairie de Maths
+\usepackage{amssymb}				  % Utilisation des polices de Maths
+\usepackage{cite}                                 % Citations de la bibliographie
+\usepackage{openbib}                              % Gestion avancée de Bibtex
+\usepackage{enumerate}				  % Permet d'utiliser la fonction énumerate
+\usepackage{dsfont}				  % Utilisation des polices Dsfont
+\usepackage{ae}					  % Rend le PDF plus lisible
+\usepackage[pdftex]{graphicx}
+\usepackage{graphics}
+\usepackage[thinlines,thiklines]{easybmat}
+\usepackage{blkarray}
+\newcommand{\diag}{\mathrm{diag}} % matrice diagonale
+\newtheorem{de}{Définition}
+\newtheorem{theo}{Théorème}
+\newtheorem{enon}{Énoncé}
+\newtheorem{prop}{Propriété}
+\newtheorem{voc}{Vocabulaire}
+\newtheorem{corr}{Corrolaire}
+\newtheorem{gene}{Généralisation}
+\newcommand{\mesbloc}[1]{\begin{array}{|c|} \hline #1 \\ \hline \end{array}}
+\makeatletter
+
+\title{Pseudo solution d'un système linéaire sur déterminé}
+\author{MP}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Approximation au sens des moindres carrées}
+Soit :
+$$ (S) \begin{cases}
+          a_{11}x_1 + ... + a_{1n}x_n = b_1 \\
+	  \dots \\
+	  a_{p1}x_1 + ... + a_{pn}x_n = b_p \\
+          \end{cases}
+$$
+On suppose $p \geq n$. On peut introduire une matrice A de telque sorte que le système soit équivalent à : 
+$$AX = b$$
+Si p > n, la système n'admet pas en général de solution. Pour quand même essayer d'en déterminer, on fait appelle au pseudo-solution.
+\section{Pseudo solution}
+Soit f l'application de $\mathbb{R}^n$ dans $\mathbb{R}^p$ défini par :
+$$f(X) = AX$$
+Dans ce chapitre, $\mathbb{R}^p$ est munie de la norme euclidienne canonique. Dans ce cas :
+$$(S) \Leftrightarrow f(X) = b$$
+Ceci signifie : 
+$$(\mbox{ X solution de (S)} \Leftrightarrow f(X) = b)$$
+$$(\mbox{ X solution de (S)} \Leftrightarrow b \in Im(f))$$
+Soit $\pi$ le projecteur orthogonale sur Im(f). $\pi(b) \in Im(f)$ par définition, donc :
+$$\exists x \in \mathbb{R}^n / \pi(b) = f(x)$$
+Ce x s'appelle pseudo solution au sens des moindres carrées. On choisit cette norme 2 (norme euclidienne) car on montre que cette norme permet d'obtenir la solution la plus proche de la solution obtenu sans erreur de calcul.
+\subsection{Résumé}
+En résumé, nous avons le système suivant : 
+$$AX = b$$
+Ce système n'a en général pas de solution dans le nombre d'équation est superieurs au nombre d'inconnus. On remplace donc ce système par : 
+$$Ax = \pi(b)$$
+Ce système est équivalent, on le montre, au système suivant : 
+$$^tA.A.x = ^tA.b$$
+Ce système est appelé système normale, noté (SN). Pour qu'on puisse trouver une solution à ce système, il faut qu'on ai un système de Cramer. On montre que : 
+$$(\mbox{ (SN) est de Cramer}) \Leftrightarrow (\mbox{ rang(A) = n })$$
+\end{document}

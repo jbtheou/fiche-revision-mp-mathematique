@@ -1,0 +1,225 @@
+\chapter{Série numérique}
+\section{Définitions}
+\subsection{Définitions générales}
+\begin{de}
+Soit ($u_n$) une suite à valeur dans K.\\
+On appelle série de terme général $u_n$, et on note $\underset{n}\Sigma u_n$ cette nouvelle suite, de terme générale :
+$$S_n = \sum_{k=0}^n u_k = u_0 +u_1 + ... +u_n$$
+$S_n$ est appelé somme partiel de rang n de la série $\underset{n}\Sigma u_n$
+\end{de}
+\begin{de}
+On dit que la série $\underset{n}\Sigma u_n$ converge si la suite ($S_n$) des sommes partiel converge dans K.\\
+On note alors :
+$$\sum_{k=0}^{\infty} u_k$$
+cette limite.\\
+En général, on note également S cette limite, et on appelle S somme de la série.
+\end{de}
+\begin{prop}
+Si la série $\underset{n}\Sigma u_n$ converge, alors $u_n \rightarrow 0$ quand $ n \rightarrow +\infty$.
+\end{prop}
+\subsection{Reste d'ordre n}
+\begin{de}
+Si $\underset{n}\Sigma u_n$ converge, on peut définir $R_n$, le reste d'ordre n de la série $\underset{n}\Sigma u_n$, par :
+$$R_n = \lim_{p \rightarrow \infty} \sum_{k=n+1}^p u_k$$
+\end{de}
+\begin{prop}
+On obtient les relations suivantes : 
+$$S_n + R_n = S$$
+$$\lim_{n \rightarrow \infty} R_n \rightarrow 0$$
+\end{prop}
+\section{Quelques propriétés générales}
+Dans tout ce chapitre, ($u_n$),($v_n$),... sont des suites à valeurs dans K
+\begin{prop}
+Supposons que $\underset{n}\Sigma u_n$ et $\underset{n}\Sigma v_n$ converge, alors la série de terme général $w_n = u_n + v_n$ converge, et on as :
+$$\sum_{k = 0 }^{\infty} w_k = \left(\sum_{k = 0 }^{\infty} u_k\right) + \left(\sum_{k = 0 }^{\infty} v_k\right)$$
+\end{prop}
+\begin{prop}
+Soit $\lambda \in K$.\\
+Si $\underset{n}\Sigma u_n$ converge, il en est de même de la série de terme général $w_n = \lambda u_n$, et alors : 
+$$\sum_{k = 0 }^{\infty} w_k = \lambda\left(\sum_{k = 0 }^{\infty} u_k\right)$$
+\end{prop}
+\begin{prop}
+Soit $(z_n)$ est une suite à valeur dans C.\\
+Si $(x_n) = Re(z_n)$ et $(y_n)= Im(z)$, donc $z_n = x_n + iy_n$, alors : 
+$$(\underset{n}\sum z_n \mbox{ converge }) \Leftrightarrow (\sum_n x_n~ et~ \sum_n y_n \mbox{ converge })$$
+\end{prop}
+\begin{de}
+On dit que la série de terme général $u_n$ converge absolument, ou que la suite ($u_n$) est sommable, si la série $\underset{n}\Sigma |u_n|$ converge.
+\end{de}
+\begin{theo}
+L'absolu convergence de la série de terme général $u_n$ implique la converge de la série de terme général $u_n$.\\
+Dans ce cas, on as : 
+$$|\sum_{k=0}^{\infty} u_k| \leq \sum_{k=0}^{\infty} |u_k|$$
+\end{theo}
+\begin{prop}
+Pour tous $n_0$ entier naturel, on peut modifier les $n_0$ premier termes de la suite ($u_n$) sans modifier la convergence de la série de terme général $u_n$.\\
+On peut écrire ceci sous la forme :\\
+Si $(v_n)$ vérifie à partir du rang $n_0$ $v_n = u_n$, alors :
+$$(\underset{n}\Sigma v_n \mbox{ converge }) \Rightarrow (\underset{n}\Sigma u_n \mbox{ converge })$$
+\end{prop}
+\begin{prop}
+Toute suite $(a_n)$ est une somme partielle d'une série $\underset{n} u_n$, à un terme constant près.
+$$\forall n \in N ~a_n = \sum_{k=1}^n (a_k -a_{k-1}) + a_0$$
+\end{prop}
+\section{Séries à termes réels positifs (ou de signe constant)}
+\begin{propfond}
+Soit $(u_n)$ une suite à valeur réel positive.\\
+Alors la suite des sommes partielle $S_n$ est croissante. Donc : 
+\begin{itemize}
+ \item[$\rightarrow$] Soit $(S_n)$ est majorée, et alors elle converge vers S = $Sup S_n$
+ \item[$\rightarrow$] Soit $(S_n)$ n'est pas majorée, alors $S_n \underset{\infty}\rightarrow \infty$. On ecrit :
+$$\sum_{k=0}^{\infty} u_k = +\infty$$
+\end{itemize}
+\end{propfond}
+\begin{prop}
+Si $(u_n) $ et $(v_n)$ sont à terme réels positifs telque 
+$$0 \leq u_n \leq v_n$$
+Alors : 
+\begin{itemize}
+ \item[$\rightarrow$] $\underset{n}\Sigma v_n$ converge $\Rightarrow$ $\underset{n}\Sigma u_n$ converge et :
+$$0 \leq \Sigma_{k=0}^{\infty} u_k  \leq \Sigma_{k=0}^{\infty} v_k$$
+ \item[$\rightarrow$] $\underset{n}\Sigma u_n$ diverge $\Rightarrow$ $\underset{n}\Sigma v_n$ diverge
+\end{itemize}
+\end{prop}
+\begin{prop}
+Soient $(u_n)$ et $(v_n)$ deux suites à termes réel positifs.\\
+Si $u_n = \underset{\infty}= O(v_n)$ (Grand O), et si $\underset{n}\sum v_n$ converge, alors $\underset{n}\sum u_n$ converge
+\end{prop}
+\begin{prop}
+Soient $(u_n)$ et $(v_n)$ deux suites à termes réels positifs, ou simplement de signe constant.\\
+Si $u_n \underset{\infty}\sim v_n$, alors:
+$$(\underset{n}\sum u_n \mbox{ converge })\Leftrightarrow(\underset{n}\sum v_n \mbox{ converge }) $$
+On dit que $\underset{n}\sum u_n$ et $\underset{n}\sum u_n$ ont même nature.
+\end{prop}
+\subsection{Convergence des séries de Riemann}
+\begin{de}
+On appelle série de Riemann les séries de terme général, avec $\alpha \in \Re$ :
+$$u_n = \dfrac{1}{n^{\alpha}}$$
+\end{de}
+\begin{prop}
+Soit ($u_n$) la suite de terme général :
+$$u_n = \dfrac{1}{n^{\alpha}}$$
+Alors :
+$$(\underset{n}\sum u_n \mbox{converge}) \Leftrightarrow (\alpha > 1)$$
+\end{prop}
+\begin{prop}
+La comparaison série-intégrale (Qui consiste à encadrer la somme partiel, ou le reste partiel, par des intégrales de la fonction) précédent permet d'obtenir un équivalent simple, quand le cas de série de terme général $u_n = \dfrac{1}{n^{\alpha}}$ :
+\begin{itemize}
+ \item{$\rightarrow$} De $S_n$ dans le cas divergent
+ \item{$\rightarrow$} De $R_n$, dans le cas convergent.
+\end{itemize}
+\end{prop}
+
+\subsection{Règle de Riemann}
+\begin{prop}
+Soit $(u_n)$ suite à valeur réelle ou complexe.\\
+Si $\exists \alpha > 1$ telque $n^{\alpha}u_n \underset{\infty}\rightarrow 0$, alors $\underset{n}\sum |u_n|$ converge. On dit aussi que la suite $(u_n)$ est sommable
+\end{prop}
+\begin{prop}
+Soit $(u_n)$ suite à valeur réelle.\\
+Si $nu_n \underset{\infty}\rightarrow \infty$, alors $\underset{n}\sum u_n$ diverge. On a meme : 
+$$\sum_{k=0}^{\infty} u_n = \infty$$
+\end{prop}
+\subsection{Série de Bertrand}
+\begin{de}
+Ce sont les séries de terme général :
+$$u_n = \dfrac{1}{n^{\alpha}.ln(n)^{\beta}}$$
+\end{de}
+\begin{prop}
+Une série de Bertrand converge si et seulement si : 
+$$\alpha > 1~ ou~ \alpha=1~ et~ \beta>1$$
+\end{prop}
+\subsection{Propriété de Cauchy}
+Soit u, la fonction définie $\forall n_0 \in N$, par : 
+$$u : \left[n_0,\infty \right[ \rightarrow \Re$$
+$$t \rightarrow u(t)$$
+u est une application continue par morceaux et monotone. On obtient que :
+$$(\sum_n u(n) \mbox{ converge }) \Leftrightarrow (\int_{n_0}^{\infty} u \mbox{ converge })$$
+On dit que la série et l'intégrale ont même nature.
+\subsection{Règle de d'Alembert}
+\begin{prop}
+Soit $(u_n)$ une suite de réels telque $\forall n \Leftrightarrow \geq n_0$, $u_n > 0$, et telque :
+$$\dfrac{u_{n+1}}{u_n}\underset{\infty}\rightarrow l\in \bar{\Re^+}$$
+Alors : 
+\begin{itemize}
+ \item{$\rightarrow$} Si l > 1, alors la série de terme général $u_n$ diverge grossièrement
+ \item{$\rightarrow$} Si l < 1, alors la série converge
+\end{itemize}
+\end{prop}
+\section{Séries alternées}
+\begin{de}
+Soit $(u_n)$ une suite de réels.\\
+On dit que $(u_n)$ est alternée si elle est du type :
+$$\forall n \in N,~ u_n = (-1)^n.a_n$$
+Ou du type : 
+$$\forall n \in N,~ u_n = (-1)^{n+1}.a_n$$
+Avec $(a_n)$, suite de réels positive. Dan ces deux cas : 
+$$a_n = |u_n|$$
+La série $\underset{n}\sum u_n$ est dites alternée sur la suite $(u_n)$ est alternée.
+\end{de}
+\subsection{Critère de Leibniz ou Critère spécial des séries alternée}
+\begin{enon}
+Soit $\underset{n}\sum u_n$ une série alternée.\\
+Si : 
+\begin{itemize}
+ \item{$\rightarrow$} La suite $(u_n) \underset{\infty}\rightarrow 0$
+ \item{$\rightarrow$} (|$u_n$|) est une suite décroissante
+\end{itemize}
+Alors : 
+\begin{itemize}
+  \item{$\rightarrow$} La série $\underset{n} \sum u_n$ converge
+ \item{$\rightarrow$} $\forall n \in N$, le signe de $R_n$ est le signe de son premier terme, et : 
+$$|R_n|\leq |u_{n+1}|$$
+\end{itemize}
+Ce résultat est valable aussi si on considère que S, la limite de la série, est le reste d'ordre $-1$.
+\end{enon}
+\begin{prop}
+ Sous les hypothèses de la série alternée, la somme S est comprise entre deux sommes partielle consécutive, $S_n$ et $S_{n+1}$, et ceci $\forall n \in N$
+\end{prop}
+\begin{prop}
+Si la série n'est alternée, et ne vérifie le fait que la suite ($|u_n|$) n'est décroissante qu'a partir d'un rang $n_0$, alors la série converge toujours, et le regle sur le reste reste valable, à partir du rang $n_0$.
+\end{prop}
+Lors d'exercice, le point le plus souvent difficile est de démontrer que la suite des valeurs absolu décroit.
+\section{Quelques espaces remarquables}
+\begin{prop}
+L'ensembles des suites $(u_n) \in K^{N}$ telque $\underset{n}\sum u_n$ converge est un sous espace vectoriel de $K^N$. (Stable par addition et par multiplication par un scalaire). 
+\end{prop}
+\subsection{Ensemble $l^1(K)$}
+\begin{de}
+L'ensemble $l^1(K)$ est l'ensemble des suites sommables à valeurs dans K. Cette ensemble est un sous espace vectoriel de l'espace vectoriel vu ci dessus.
+\end{de}
+\begin{prop}
+Soit $(u_n)$ une suite à valeur dans K.\\
+Si la suite $(u_n)$ est sommable, la serie $\underset{n}\sum u_n$ converge aussi (L'absolu convergence implique la convergence). $l^1(K)$ est donc inclu dans l'espace vectoriel vu au début de ce chapitre.
+\end{prop}
+\begin{prop}
+Supposons que u=$(u_n)$ et $v=(v_n)$ soient sommable. L'inégalité suivante : 
+$$0 \leq |u_n + v_n|\leq|u_n|+|v_n|$$
+Montre que u+v est également sommable.
+\end{prop}
+\begin{prop}
+Soit $\lambda$ un scalaire.
+$$u \in l^1(K) \Rightarrow \lambda.u \in l^1(K)$$
+\end{prop}
+\subsection{Ensemble $l^2(K)$}
+\begin{de}
+L'ensemble $l^2(K)$ est l'ensemble des suites de carrées sommable, c'est à dire telque :
+$$\sum_n |u_n^2|$$
+converge.\\
+On montre que l'ensemble précédent est inclu dans cette ensemble.
+\end{de}
+\section{Sommation par paquets ou associativité de la sommation}
+\begin{de}
+Soit $(u_n)$ une suite à valeur dans K telque $\underset{n}\sum u_n$ converge.\\
+Soit :
+$$S = \sum_{k=0}^{\infty} u_k$$
+Donnons nous une application $\phi$ défini par :
+$$\phi : N \rightarrow N$$
+telque $\phi$ soit une application strictement croissante.\\
+Une telle application étant donnée, définisoons à partir de $(u_n)$ et de $\phi$ une nouvelle suite $(v_n)$ de terme général : 
+$$v_n = u_{\phi_{(n-1)+1}}+...+u_{\phi_n}$$
+\end{de}
+\begin{prop}
+Avec les notations précédentes, le fait que la série de terme général $u_n$ converge implique que la série de terme général $v_n$ converge, et vers S aussi.
+\end{prop}
+

@@ -1,0 +1,331 @@
+\chapter{Intégrales généralisées, Fonctions intégrables}
+\section{Applications continues par morceaux}
+En ce qui concerne les intégrales, le programme se limite aux applications continues par morceaux.
+\subsection{Définitions}
+\begin{de}
+Soit f, une application (fonction définies sur tous l'espace de départ) de $\left[a,b\right]$ dans K, avec a et b deux réels, a<b.\\
+On dit que f est continue par morceaux sur [a,b] s'il existe une subdivision finie de [a,b] : 
+$$a = x_0 < x_1 < ... < x_p = b$$
+telque : 
+\begin{itemize}
+ \item[$\rightarrow$]$\forall i \in \left\lbrace0,...,p-1\right\rbrace$, f est $C^0$ sur ]$x_i,x_{i+1}$[ 
+ \item[$\rightarrow$]$\forall i \in \left\lbrace1,...,p-1\right\rbrace$, f admet une limite finie à droite et une limite finie à gauche de $x_i$
+ \item[$\rightarrow$]f admet une limite finie à droite en a et une limite finie à gauche en b
+\end{itemize}
+\end{de}
+\begin{de}
+On peut définir pour tous i $\in \left\lbrace0,...,p-1\right\rbrace$ des applications continues $\overset{\sim}f_i$ de  $\left[x_i,x_{i+1}\right]$ dans K, définies par : 
+\begin{itemize}
+ \item[$\rightarrow$]Si $x \in \left] x_i, x_{i+1}\right[~ \overset{\sim}f_i(x) = f(x) $
+ \item[$\rightarrow$]$\overset{\sim}f_i(x_i) = \underset{x\rightarrow x_i^+}\lim f(x)$
+ \item[$\rightarrow$]$\overset{\sim}f_i(x_{i+1}) = \underset{x\rightarrow x_{i+1}^-}\lim f(x)$
+\end{itemize}
+$\overset{\sim}f_i$ est donc le prolongement par continuité de f sur $\left[x_i,x_{i+1}\right]$  
+\end{de}
+Il existe aussi la variante suivante de cette définition : 
+\begin{de}
+Soit f application de $\left[a,b\right]$ dans K.\\
+f est continue par morceaux si il existe une subdivision finie de $\left[a,b\right]$ :
+$$a = x_0 < x_1 < ... < x_p = b$$
+et des applications continues, avec $i \in \left\lbrace0,...,p-1\right\rbrace$ : 
+$$\overset{\sim}f : \left[x_i,x_{i+1}\right] \rightarrow K$$
+telque, $\forall i \in \left\lbrace0,...,p-1\right\rbrace$ : 
+$$f_{\left]x_i,x_{i+1}\right[} = \overset{\sim} f_i$$
+\end{de}
+\begin{de}
+Soit I un intervalle quelconque de $\Re$ et f, application de I dans K.\\
+On dit que f est continue par morceaux sur I si f est continue par morceaux sur tous segments (intervalle borné fermé) $\left[a,b\right] C I$
+\end{de}
+\begin{prop}
+Si f est une application continue par morceaux de $\left[a,b\right]$ dans K, alors :
+$$\int_a^b f = \sum_{i=0}^{p-1} \int_{x_i}^{x_{i+1}} \overset{\sim}f_i$$
+\end{prop}
+\begin{prop}
+Soient f,g fonctions de $\left[a,b\right]$ dans K.
+Si f est une application intégrable au sens de Riemann sur $\left[a,b\right]$ et si g ne diffère qu'en un nombre finie de point de f, alors g est également intégrable au sens de Riemann et : 
+$$\int_a^b g = \int_a^b f$$
+\end{prop}
+\section{Convergence d'une intégrale}
+\subsection{Convergence vers $\infty$}
+\begin{de}
+Soit f application continue par morceaux de $\left[a,\infty\right[$ dans K.\\
+Alors, $\forall x \in \left[a,\infty\right[$, f est continue par morceaux sur $\left[a,x\right]$ et on peut calculer :
+$$\int_a^x f$$
+C'est à dire que l'on peut définir une nouvelle application F :
+$$F : \left[a,\infty\right[ \rightarrow K$$
+$$x \mapsto \int_a^x f$$
+Lorsque F a une limite finie, quand $x \rightarrow \infty$, on dit que $\int_a^{\infty} f$ converge, et on note : 
+$$\int_a^{\infty} f = \lim_{x \rightarrow \infty} F(x)$$
+En réalité, on devrai dire que $\int_a^{\infty} f$ existe, ou que $\int_a^x f$ converge quand $x \rightarrow \infty$
+\end{de}
+\begin{prop}
+Si $\alpha \in \Re$ et $a \in \Re^{+*}$ :\\
+$\int_a^{\infty} \dfrac{dt}{t^{\alpha}}$ converge si et seulement si $\alpha$ > 1.\\
+De plus, on peux calculer la limite par primitivation. 
+\end{prop}
+\begin{prop}
+Soit f une application continue par morceaux de $\left[a,\infty\right[ $ dans K, et si b $\in \left[a,\infty\right[ $
+$$\int_a^{\infty} f \mbox{ converge si et seulement si } \int_b^{\infty} f \mbox{ converge}$$
+Dans ce cas, on obtient la relation de Chasles : 
+$$\int_a^{\infty} f = \int_a^b f + \int_b^{\infty} f$$
+\end{prop}
+\subsection{Convergence vers 0}
+\begin{de}
+Soit f application continue par morceaux de $\left]0,a\right]$ dans K.\\
+Alors on peut définir F, fonction de $\left]0,a\right]$ dans K, défini par :
+$$\forall x \in \left]0,a\right]~ F(x)=\int_x^a f$$
+Car f est continue par morceaux sur $\left[ x,a\right]$
+On dit que $\int_0^a f$ converge lorsque F($x$) a une limite finie quand x tend vers $0^+$.
+En réalité, on devrai dire que $\int_0^{a} f$ existe, ou que $\int_0^a f$ converge quand $x \rightarrow 0^+$
+\end{de}
+\begin{prop}
+Si $\alpha \in \Re$ et $a \in \Re^{+*}$ :\\
+$\int_0^a \dfrac{dt}{t^{\alpha}}$ converge si et seulement si $\alpha$ < 1.\\
+De plus, on peux calculer la limite par primitivation. 
+\end{prop}
+\begin{prop}
+Soit f une application continue par morceaux de $\left]0,a\right] $ dans K.
+$$\forall b \in \left]0,a\right] \int_0^a f \mbox{ converge si et seulement si } \int_0^b f \mbox{ converge}$$
+Dans ce cas, on obtient la relation de Chasles : 
+$$\int_0^a f = \int_0^b f + \int_b^a f$$
+\end{prop}
+\section{Résultats spécifiques sur les applications de $\left[a;\infty\right[$ à valeurs dans K}
+\subsection{Limite de l'application et convergence de l'intégrale}
+Soit f, application continue par morceaux sur $\left[a;\infty\right[$ à valeurs dans K, avec $a \in \Re$.
+\begin{prop}
+Si f a une limite finie l, l $\in$ K, quand $x \rightarrow \infty$, et si $\int_a^{\infty} f$ converge, alors l=0
+\end{prop}
+\begin{prop}
+Si f est à valeur réelle et si f a une limite l, l $\in \Re+\left\lbrace+\infty;-\infty\right\rbrace $, quand $x \rightarrow \infty$, et si $\int_a^{\infty} f$ converge, alors l=0.
+\end{prop}
+\begin{prop}
+Soit f application continue par morceaux de $\left[a,\infty\right[$ dans $\Re$.\\
+$\int_a^{\infty}$ peut être convergente sans que f ait une limite en $\infty$, ou que f soit bornée.
+\end{prop}
+\subsection{Caractérisation séquentielle d'une limite}
+\begin{prop}
+Soit f application continue par morceaux de $\left[a,\infty\right[$ dans K. Soit $l \in K$
+$$(\lim_{x \rightarrow \infty } f(x) = l) \Leftrightarrow (\forall (x_n) \mbox{ à valeur dans } \left[a,\infty\right[ \mbox{ tendant vers }\infty, ~ f(x_n) \underset{n\rightarrow\infty}\rightarrow l)$$
+\end{prop}
+\begin{prop}
+Soit f application de $\Re$ dans K définies sur un voisinage V de $x_0 \in \bar{\Re}$, et l $\in K$ ( ou l $\in \bar{\Re}$ si K=$\Re$)
+$$(\lim_{x \underset{x \in V}\rightarrow x_0 } f(x) = l) \Leftrightarrow (\forall (x_n) \mbox{ à valeur dans V, tendant vers }x_0, ~ f(x_n) \underset{n\rightarrow\infty}\rightarrow l)$$
+\end{prop}
+\section{Définitions et propriétés générales}
+Dans les chapitres suivants, on adopte la notation suivante : 
+$$\int_a^{\alpha} f = \lim_{x \rightarrow \alpha} \int_a^x f$$
+\begin{de}
+Soit a $\in \Re$, et $\alpha \in \Re+\left\lbrace+\infty\right\rbrace $, avec a $\leq \alpha$.\\
+Soit f application continue par morceaux de $\left[a,\alpha\right[$.\\
+On peut alors définir F :
+$$F : \left[a,\alpha\right[ \rightarrow K$$
+$$x \mapsto \int_a^x f$$
+On dit que $\int_a^{\alpha} f$ converge si et seulement si F(x) a une limite finie dans K quand x tend vers $\alpha$ par valeur inferieur.\\
+On note alors $\int_a^{\alpha}$ cette limite.
+\end{de}
+\begin{prop}
+Soit f application continue par morceaux de $\left[a,\alpha\right[$ dans K.\\
+Si b$\in \left[a,\alpha\right[$ :
+$$\left(\int_a^{\alpha} f \mbox{ converge }\right) \Leftrightarrow \left(\int_b^{\alpha} f \mbox{ converge } \right)$$
+Dans ce cas, nous avons la relation de Chasles suivante :
+$$\int_a^{\alpha} f = \int_a^b f + \int_b^{\alpha} f$$
+\end{prop}
+\begin{prop}
+Soit f application continue par morceaux de $\left[a,\alpha\right[$ dans K.\\
+$\forall \lambda \in \Re$ :  
+$$\lambda f : \left[a,\alpha\right[ \rightarrow K$$
+$$x\rightarrow\lambda f(x)$$
+est une fonction continue par morceaux et :
+$$\left(\int_a^{\alpha} f \mbox{ converge }\right) \Rightarrow \left(\int_a^{\alpha} \lambda f \mbox{ converge }\right)$$
+Et dans ce cas :
+$$\int_a^{\alpha} \lambda f = \lambda \int_a^{\alpha} f$$
+\end{prop}
+\begin{prop}
+Soient f et g deux applications continues par morceaux de $\left[a,\alpha\right[$ dans K.\\
+Alors f+g est continue par morceaux.\\
+Si $\int_a^{\alpha} f$ et $\int_a^{\alpha} g$ converge, alors $\int_a^{\alpha} f+g$ converge et :
+$$\int_a^{\alpha} f+g = \int_a^{\alpha} f + \int_a^{\alpha} g$$
+\end{prop}
+\begin{prop}
+Soit f application de $\left[a,\alpha\right[$ dans C. Soient $f_1 $= Re(f) et $f_2 = Im(f)$.\\
+f est continue par morceaux sur $\left[a,\alpha\right[$ $\Leftrightarrow$ $f_1$ et $f_2$ sont continue par morceaux sur $\left[a,\alpha\right[$.\\
+Dans ce cas : 
+$$\left(\int_a^{\alpha} f \mbox{ converge }\right) \Leftrightarrow \left(\int_a^{\alpha} f_1 ~et~ \int_a^{\alpha}  f_2\mbox{ convergent }\right)$$.
+On obtient alors : 
+$$\int_a^{\alpha} f = \int_a^{\alpha} f_1 + i\int_a^{\alpha} f$$
+\end{prop}
+\begin{prop}
+Soit f application continue par morceaux de $\left[a,\alpha\right[$ dans K, avec : 
+$$\alpha \in \Re\cup\left\lbrace-\infty\right\rbrace $$
+$$\beta \in \Re\cup\left\lbrace+\infty\right\rbrace $$
+$$\alpha \leq \beta$$
+Soit $\gamma \in \left]\alpha,\beta\right[$
+Si f est continue par morceaux sur $\left]\alpha,\gamma\right[$ et sur $\left]\gamma,\beta\right[$
+On dit que $\int_{\alpha}^{\beta} f$ converge si les intégrales $\int_{\alpha}^{\gamma} f$ et $\int_{\gamma}^{\beta} f$ convergent.\\
+On obtient alors que :
+$$\int_{\alpha}^{\beta} f = \int_{\alpha}^{\gamma} f+ \int_{\gamma}^{\beta} f$$
+\end{prop}
+\section{Convergence Absolue, Fonctions intégrables sur un intervalle}
+Dans ce chapitre, nous allons nous limiter aux applications continue par morceaux de $\left[a,\alpha\right[$ dans K, avec :
+$$\alpha \in \Re\cup\left\lbrace-\infty\right\rbrace $$
+$$a \in \Re,~ a \leq \alpha$$
+Mais les définitions et résultats se généralise sur des applications continues par morceaux sur $\left]\alpha,\beta\right[$ ou sur $\left]\alpha,\gamma\right[,\left]\gamma,\beta\right[$.
+\subsection{Convergence Absolue}
+\begin{de}
+Soit f application continue par morceaux sur $\left[a,\alpha\right[$ dans K.\\
+L'application g :
+$$g : \left[a,\alpha\right[ \rightarrow \Re^+$$
+$$x \mapsto |f(x)|$$
+est aussi continue par morceaux sur $\left[a,\alpha\right[$.\\
+On dit que f est intégrable sur $\left[a,\alpha\right[$ ou que $\int_{a}^{\alpha} f$ converge absolument lorsque $\int_{a}^{\alpha} |f|$ converge
+\end{de}
+\begin{prop}
+$$(\int_{a}^{\alpha} f \mbox{ converge absolument} ) \Rightarrow (\int_{a}^{\alpha} f \mbox{converge})$$
+\end{prop}
+\subsection{Critère de Cauchy}
+\subsubsection{Critère de Cauchy pour les suites}
+\begin{enon}
+On dit qu'une suite $(u_n)$ a valeur dans K vérifie le critère de Cauchy si et seulement si: \\
+$\forall \varepsilon > 0, \exists N_0 \in N~ tq~ \forall (p,q) \in N^2~ tq~ p~ et~ q \geq N_0$ :
+$$|u_p-u_q| \leq \varepsilon$$
+En faite, on obtient une définition équivalente en se limitant aux couples (p,q)$\in N^2$ telque q<p. Ce qui donne : \\
+$(u_n)$ est une suite de Cauchy si et seulement si :
+$$\forall \varepsilon > 0, \exists N_0 \in N~ tq~ \forall q>p\geq N_0~ |u_p-u_q| \leq \varepsilon$$
+\end{enon}
+\begin{prop}
+Toutes suites $(u_n)$ à valeur dans $\Re$ vérifiant le critère de Cauchy converge.
+\end{prop}
+\begin{prop}
+ Toutes suite de Cauchy à valeur dans C converge dans C
+\end{prop}
+\subsubsection{Critère de Cauchy pour les fonctions}
+\begin{de}
+Soit f fonction de $\Re$ dans K, définie sur un voisinage V de $x_0 \in \bar{\Re}$.\\
+On dit que f vérifie le critère de Cauchy en $x_0$ si et seulement si :
+$$\forall \varepsilon > 0,~ \exists U \mbox{ voisinage de }x_0 \mbox{ dans V tq } \forall(x,x')\in U^2, |f(x)-f(x')| \leq \varepsilon$$
+\end{de}
+\begin{prop}
+Avec les notations précédantes, si f, fonction de $\Re$ dans K, définie au voisinage de $x_0 \in \bar{\Re}$, admet un limite finie en $x_0$, alors f vérifie le critère de Cauchy en $x_0$
+\end{prop}
+\begin{prop}
+Si f, fonction de $\Re$ dans K, définie au voisinage de $x_0 \in \bar{\Re}$, vérifie le critère de Cauchy en $x_0$, alors f admet une limite finie en $x_0$
+\end{prop}
+\section{Convergence des intégrales de fonctions positives - Intégrabilité}
+\subsection{Propriétés fondamentale}
+\begin{prop}
+Soit f, application continue par morceaux de [a,b[ dans $\Re$.\\
+Si f est à valeurs positives sur [a,b[, alors :
+$$x \mapsto \int_a^x f(t)dt \mbox{ est croissante}$$  
+\end{prop}
+\subsubsection{Convergence d'une intégrale de fonction positive par majoration}
+\begin{prop}
+Soient f et g deux fonction continue par morceaux de [a,b[ dans $\Re$.\\
+Si $\forall t \in$[a,b[ $0 \leq f(t)\leq g(t)$, alors : 
+$$( \int_a^b g \mbox{ converge } ) \Rightarrow (\int_a^b f \mbox{ converge et } 0 \leq \int_a^bf(t)\leq \int_a^bg(t) )$$ 
+$$( \int_a^b g \mbox{ diverge } ) \Rightarrow (\int_a^b f \mbox{ diverge }$$
+\end{prop}
+\subsubsection{Intégration par domination}
+\begin{prop}
+Soient f et g deux fonctions continue par morceaux de [a,b[ dans K.\\
+Si $f \underset{b^-}= O(g)$ (Grand O), alors :
+$$(\mbox{ g intégrable sur [a,b[ })\Rightarrow(\mbox{ f intégrable sur [a,b[ })$$
+\end{prop}
+\subsubsection{Convergence des intégrales de fonction positive}
+\begin{prop}
+Soient f et g deux fonction continue par morceaux de [a,b[ dans $\Re$, telque : 
+\begin{itemize}
+ \item[$\rightarrow$]f et g soit de signe constant au voisinage de $b^-$
+ \item[$\rightarrow$]$f \underset{b^-}\sim g$
+\end{itemize}
+alors :
+$$( \int_a^b g \mbox{ converge } ) \Leftrightarrow (\int_a^b f \mbox{ converge }$$
+$$( \int_a^b g \mbox{ diverge } ) \Leftrightarrow (\int_a^b f \mbox{ diverge }$$
+On dit que ces deux intégrales sont de même nature.
+\end{prop}
+\begin{prop}
+Soit b réel fini > a.\\
+Si f est une fonction continue par morceaux de [a,b[ dans K, et si f a une limite finie en $b^-$, alors :
+$$\int_a^b f \mbox{ converge }$$
+\end{prop}
+\subsection{Règles de Riemann}
+\subsubsection{En $\infty$}
+Soit $a \in \Re$
+\begin{enon}
+Soit f fonction continue par morceaux de $\left[a,\infty \right[ $ dans K.\\
+Si il existe $\alpha > 1$ telque $t^{\alpha}f(t) \underset{t \rightarrow \infty}\rightarrow 0$, alors f est intégrable sur $\left[a,\infty \right[$.
+\end{enon}
+\begin{prop}
+Soit f fonction de $\left[a,\infty \right[$ dans $\Re$, continue par morceaux.\\
+Si tf(t) $\underset{t \rightarrow \infty}\rightarrow 0$, alors :
+$$\int_a^{\infty} f \mbox{ diverge }$$
+\end{prop}
+\subsubsection{En 0}
+Soit $a \in \Re$
+\begin{enon}
+Soit f fonction continue par morceaux de $\left]0,a \right] $ dans K.\\
+Si il existe $\alpha < 1$ telque $t^{\alpha}f(t) \underset{t \rightarrow O^+}\rightarrow 0$, alors f est intégrable sur $\left]0,a\right]$.
+\end{enon}
+\begin{prop}
+Soit f fonction de $\left]0,a\right]$ dans $\Re$, continue par morceaux.\\
+Si tf(t) $\underset{t \rightarrow O^+}\rightarrow 0$, alors :
+$$\int_0^{a} f \mbox{ diverge }$$
+\end{prop}
+\subsection{Intégrale de Bertrand}
+\begin{prop}
+Soit a>1 et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_a^{\infty} \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha > 1,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+\begin{prop}
+Soit $a \in \left]0,1\right[$ et $(\alpha,\beta) \in \Re^2$.
+$$\left(\int_0^{a} \dfrac{dx}{x^{\alpha}ln(x)^{\beta}} \mbox{ converge }\right) \Leftrightarrow ( \alpha < 1,~ ou~ \alpha=1,\beta>1)$$
+\end{prop}
+\section{Intégration par parties - Changement de variable}
+\subsection{Intégration par parties}
+\begin{de}
+Soient u et v deux applications de [a,b[ dans K $C^1$ par morceaux et continue sur [a,b[. 
+$$\int_a^b u'.v = \left[u.v\right]_a^b - \int_a^b u.v' $$
+Avec : 
+$$\left[u.v\right]_a^b = \lim_{x \rightarrow b^-} \left[u.v\right]_a^x$$
+\end{de}
+\subsection{Changement de variable}
+Soit f fonction continue sur [a,b[, à valeur dans K.\\
+Soit g fonction $C^1$ sur [a',b'[ à valeur dans [a,b[, avec a=g(a'), b=$\underset{x\rightarrow b^-}\lim g(x)$.\\
+$$\int_a^b f(t).dt = \int_{a'}^{b'} f(g(u)).g'(u).du$$
+\section{Quelques espaces remarquables}
+Dans tous ce chapitre, on considère que I est un intervalle fondamental.
+\begin{de}
+On dit que I est un intervalle fondamental si : 
+$$I = \left[a,b\right] ; I = \left[a,b\right[ ; I = \left]a,b\right] ; I = \left]a,b\right[ $$
+Avec, selon les cas :
+$$a \in \Re~ ou~ a \in \Re\cup\left\lbrace-\infty\right\rbrace $$
+$$b \in \Re~ ou~ b \in \Re\cup\left\lbrace+\infty\right\rbrace $$
+Cette notation est une notation personnelle.
+\end{de}
+\begin{prop}
+L'ensemble des applications continue par morceaux de I dans K telque $\int_I f$ converge est un K espace vectoriel
+\end{prop}
+\begin{prop}
+L'ensemble $L^1_{cpm}$, qui est l'ensemble des applications continue par morceaux sur I, à valeur dans K, et intégrable sur I, est un K espace vectoriel. C'est un sous-espace vectoriel de l'espace précédent.
+\end{prop}
+\begin{prop}
+L'ensemble $L^2_{cpm}$, qui est l'ensemble des applications continue par morceaux sur I, à valeur dans K, de carrée intégrable sur I, est un K espace vectoriel.
+\end{prop}
+\begin{lemme}
+Soit a et b deux complexes : 
+$$|a+b|^2 \leq 2.(|a|^2 + |b|^2)$$
+Si a et b sont réel, ce lemme devient : 
+$$(a+b)^2 \leq 2.(a^2 + b^2)$$
+\end{lemme}
+\section{Remarque concernant le reste}
+\begin{de}
+Soit f fonction de $\left[a,b\right[$ dans K, avec a réel et $b \in \Re \cup \left\lbrace +\infty \right\rbrace$, continue par morceaux et telque $\int_a^b$ converge.\\
+On a donc aussi : 
+$$\forall x \in \left[a,b\right[ \int_x^b f \mbox{ converge }$$ 
+On peut donc définir le reste intégrale au voisinage de b, notée R(x) :
+$$R : \left[a,b\right[ \rightarrow K$$
+$$x \mapsto \int_x^b f$$
+\end{de}
+\begin{prop}
+Avec les notations et définition précédantes, on obtient que : 
+$$\lim_{x \rightarrow b^-} R(x) = 0$$
+\end{prop}

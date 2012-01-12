@@ -1,0 +1,209 @@
+\chapter{Espace Prehilbertiens, Espaces euclidiens}
+Ce chapitre se réfère aux chapitres de MPSI et de MP sur les espaces vectoriels normés. Certaines propriétés établie précédement ne seront pas re-mentionné, mais font partie intégrante de ce chapitre. Dans le cours de MPSI, qui contient la grande majorité des élements non revu ici, on considère un espace euclidien. Mais ces propriétés, si elle n'ont pas été reproduite ici, s'étendent aux espaces $\mathbb{R}$ prehilbertien.
+\section{Norme euclidienne}
+\begin{de}
+Soit E un $\mathbb{R}$ espace vectoriel.\\
+On appelle norme euclidienne sur E une norme N telle qu'il existe un produit scalaire : 
+$$\varphi : E\times E \rightarrow \mathbb{R}$$
+vérifiant : 
+$$\forall \overrightarrow{x} \in E,~ N(\overrightarrow{x}) = \sqrt{\varphi(\overrightarrow{x},\overrightarrow{x})}$$
+\end{de}
+\begin{de}
+Un $\mathbb{R}$ espace vectoriel munie d'un produit scalaire, c'est à dire le couple (E,<|>), s'appelle un espace préhilbertien réel.\\
+On appelle espace euclidien un espace préhilbertien réel de dimension finie.
+\end{de}
+\begin{prop}
+On montre que l'application :
+$$E \rightarrow \mathbb{R}_+$$
+$$\overrightarrow{x} \mapsto \parallel\overrightarrow{x}\parallel = \sqrt{<\overrightarrow{x}|\overrightarrow{x}>}$$
+est une norme sur E. Cette norme est appelée norme euclidienne déduite du produit scalaire <|>.
+\end{prop}
+\section{Propriétés Elémentaire}
+\subsection{Identités de polarisation}
+\begin{de}
+On appelle identité de polarisation une égalité qui permet d'exprimer le produit scalaire au moyen de la norme euclidienne seule. Nous avons donc les égalités suivantes : 
+$$<\overrightarrow{x}|\overrightarrow{y}> = \dfrac{1}{2}(\parallel\overrightarrow{x} + \overrightarrow{y}\parallel^2 - \parallel\overrightarrow{x}\parallel^2 - \parallel\overrightarrow{y}\parallel^2)$$
+$$<\overrightarrow{x}|\overrightarrow{y}> = \dfrac{1}{4}(\parallel\overrightarrow{x} + \overrightarrow{y}\parallel^2 - \parallel\overrightarrow{x} - \overrightarrow{y}\parallel^2)$$
+\end{de}
+\subsection{Identités du Parallélogramme et de la médiane}
+\begin{enon}
+En généralisant la propriété en géométrie élémentaire, on obtient que dans le cas d'un $\mathbb{R}$ espace vectoriel prehilbertien, on a :
+$$2.(\parallel\overrightarrow{x}\parallel^2 + \parallel\overrightarrow{y}\parallel^2) = \parallel\overrightarrow{x}+ \overrightarrow{y}\parallel^2 + \parallel\overrightarrow{x} - \overrightarrow{y}\parallel^2$$
+On obtient aussi une égalité de la médiane, mais elle n'a pas de valeur ajouté par rapport à l'égalité précédente.
+\end{enon}
+\begin{prop}
+Si une norme vérifié l'égalité ci-dessus, alors c'est une norme euclidienne
+\end{prop}
+\section{Forme linéaire dans un espace euclidien}
+\begin{prop}
+Si E est un $\mathbb{R}$ espace vectoriel préhilbertien, muni du produit scalaire <|>, alors :\\
+$\forall \overrightarrow{e} \in E$, l'application :
+$$\varphi_{\overrightarrow{e}} : E \rightarrow \mathbb{R}$$
+$$\overrightarrow{x} \rightarrow <\overrightarrow{e}|\overrightarrow{x}>$$
+est une forme linéaire continue non nulee si et seulement si $\overrightarrow{e} \neq \overrightarrow{0}$
+\end{prop}
+\begin{prop}
+Si E est un $\mathbb{R}$ espace vectoriel euclidien, alors pour toute forme linéaire $\varphi \in E^*$, l'ensemble des formes linéaires sur E, il existe un unique vecteur $\overrightarrow{e} \in E$ telque : 
+$$\varphi = \varphi_e$$
+C'est à dire telque : 
+$$\forall \overrightarrow{x} \in E, <\overrightarrow{e}|\overrightarrow{x}>$$
+\end{prop}
+\begin{coro}
+Tout hyperplan d'un $\mathbb{R}$ espace vectoriel euclidien est l'orthogonal d'une droite vectorielle.
+\end{coro}
+\section{Théorème de projection orthogonale sur un sous espace de dimension finie}
+Cette section s'appuit fortement sur la section "Projection orthogonale" dans le livre de révision de Mathématiques de MPSI.
+\subsection{Inégalité de Bessel}
+Avec les notations présenté dans l'ouvrage MPSI, on a : 
+$$\parallel p(\overrightarrow{x}) \parallel^2 = \sum_{i=1}^p <\overrightarrow{e_i}|\overrightarrow{x}>^2$$
+On obtient donc que : 
+$$\sum_{i=1}^p <\overrightarrow{e_i}|\overrightarrow{x}>^2 \leq \parallel\overrightarrow{x}\parallel^2$$
+Ceci constitue l'inégalité de Bessel.
+\subsection{Norme d'un projecteur orthogonal subordonnée à la norme euclidienne}
+Soit E un $\mathbb{R}$ espace vectoriel préhilbertien, et $\parallel~\parallel$ la norme euclidienne de E.\\
+Soit F un sous espace vectoriel de E, de dimension fini, et p le projecteur orthogonal sur F. Alors : 
+$$\parallel p \parallel_{*} = 1$$
+Si F $\neq \left\lbrace \overrightarrow{0}\right\rbrace$, avec, par définition : 
+$$\parallel p \parallel_* = \underset{\overrightarrow{x} \in E - \left\lbrace \overrightarrow{0}\right\rbrace}\sup \dfrac{\parallel p(\overrightarrow{x})\parallel}{\parallel\overrightarrow{x}\parallel}$$
+\subsection{Projection orthogonale sur une droite vectorielle}
+Soit $D=Vect(\overrightarrow{u})$ une droite vectorielle d'un $\mathbb{R}$ espace vectoriel préhilbertien E, et p le projecteur orthogonal sur D. Alors : 
+$$\forall \overrightarrow{x} \in E,~ p(\overrightarrow{x}) = \dfrac{<\overrightarrow{x}|\overrightarrow{u}>}{\parallel\overrightarrow{\overrightarrow{u}}\parallel^2}.\overrightarrow{u}$$
+\subsection{Théorème de la base orthonormée incomplète dans un espace vectoriel euclidien}
+Soit E un $\mathbb{R}$ espace vectoriel euclidien de dimension n et ($\overrightarrow{e_1},...,\overrightarrow{e_p}$) un système orthonormé de E. Si p<n, alors il existe un système orthonormée ($\overrightarrow{e_{p+1}},...,\overrightarrow{e_n}$) telque ($\overrightarrow{e_1},...,\overrightarrow{e_n}$) soit une base orthonormée de E.
+\section{Orthogonal d'une partie, sous-espaces orthogonaux}
+\begin{coro}
+Pour que $\overrightarrow{x}$, un vecteur de E, soit orthogonal à un sous espace vectoriel F, il faut et il suffit que $\overrightarrow{x}$ soit orthogonal à une famille génératrice de F.
+\end{coro}
+\subsection{Propriétés}
+Soit E un $\mathbb{R}$ espace vectoriel prehilbertien. Soit A et B deux parties de E, F et G de sous espaces vectoriel de E. Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] A c B $\Rightarrow$ $A^{\bot}$ c $B^{\bot}$
+ \item[$\rightarrow$] $(F + G)^{\bot} = F^{\bot} + G^{\bot}$. Cette propriété se généralise pour un plus grand nombre de sous espace.
+ \item[$\rightarrow$] $F^{\bot} + G^{\bot}$ c $(F\cap G)^{\bot}$. Si E est un espace de dimension finie, il y a égalité. Cette propriété se généralise elle aussi. 
+ \item[$\rightarrow$] F c $F^{\bot\bot}$. Il y a égalité dans le cas d'un espace de dimension finie.
+\end{itemize}
+\subsection{Sous-espaces Vectoriels orthogonaux}
+\begin{de}
+On dit que des sous espaces vectoriels $F_1,...,F_p$ d'un $\mathbb{R}$ espace vectoriel prehilbertien E sont supplémentaire orthogonaux s'ils sont supplémentaire et orthogonaux deux à deux. On le note : 
+$$E = F_1 \overset{\bot}\oplus ... \overset{\bot}\oplus F_p$$
+\end{de}
+\begin{prop}
+Si les $F_i$ précédents sont des sous espaces vectoriel deux à deux orthogonaux, et si $B_i$ est une famille orthogonale (respectivement orthonormée) de $F_i$, alors $B_1 \vee ... \vee B_p$ est une famille orthogonale ( respectivement orthonormée) de $F_1 \overset{\bot}\oplus ... \overset{\bot}\oplus F_p$.\\
+Il en est de même si on considère une base au lieu d'une famille
+\end{prop}
+\begin{prop}
+Si $B_1,...,B_p$ sont des familles orthogonales (respectivement orthnormée) telque $\forall i \neq j \in [1,p]$, tout vecteur de $B_i$ soit orthogonal à tout vecteur de $B_j$, alors les $F_i = Vect(B_i)$ sont des sous espaces vectoriels deux à deux orthogonaux et $B_1\vee...\vee B_p$ est une base orthogonale (respectivement orthonormée) de :
+$$F_1 \overset{\bot}\oplus ... \overset{\bot}\oplus F_p$$
+\end{prop}
+\section{Orthonormalisation de Gram-Schmidt}
+\begin{theo}
+Soit $(u_i)$ une famille libre d'un $\mathbb{R}$ espace vectoriel préhilbertien E, avec $i \in I = [1,n]$ ou $i \in I = \mathbb{N}^*$.\\
+Alors, il existe une unique famille orthonormée ($e_i$) telle que : 
+\begin{itemize}
+ \item[$\rightarrow$] $\forall i \in I,~ Vect(\overrightarrow{e_1},...,\overrightarrow{e_i}) = Vect(\overrightarrow{u_1},...,\overrightarrow{u_i})$
+ \item[$\rightarrow$] $\forall i \in I,~ <\overrightarrow{u_i}|\overrightarrow{e_i}> = 0$
+\end{itemize}
+L'unicité provient de la seconde condition.
+\end{theo}
+\subsection{Traduction matricielle}
+\begin{prop}
+$\forall A \in Gl_n(\mathbb{R}),~ \exists!(Q,R) \in \mathcal{M}_n(\mathbb{R})^2$ avec Q orthogonale et R triangulaire supérieur à diagonale strictement positive telque : 
+$$A = QR$$
+A l'aide de cette propriété, on peut traduire matriciellement l'orthonormalisation de Gram-Schmidt.
+\end{prop}
+\section{Endomorphismes Orthogonaux, Matrices orthogonales}
+Dans cette section, on généralise les résultats vu en MPSI, dans le cas ou l'espace de départ n'est pas forcémement l'espace d'arrivé.
+\subsection{Isométries vectorielles}
+\begin{prop}
+Soient E et E' deux $\mathbb{R}$ espace vectoriel préhilbertiens de f une application de E dans E', qui n'est pas supposé linéaire. On a alors équivalence entre les deux conditions suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] f conserve le produit scalaire : $\forall \overrightarrow{x},\overrightarrow{x}' \in E^2~ <f(\overrightarrow{x})|f(\overrightarrow{x}')> = <\overrightarrow{x}|\overrightarrow{x}'>$
+ \item[$\rightarrow$] f est linéaire et conserve la norme : $\forall \overrightarrow{x} \in E,~ \parallel f(\overrightarrow{x}\parallel = \parallel\overrightarrow{x}\parallel$
+\end{itemize}
+\end{prop}
+\begin{de}
+Une telle application f est appelé isométrie vectorielle de E dans E'.
+\end{de}
+\begin{prop}
+Toute isométrie vectorielle est injective.
+\end{prop}
+\subsection{Matrices orthogonales}
+\begin{de}
+Une matrice orthogonale est une matrice $A \in \mathcal{M}_n(\mathbb{R})$ telque $^tA.A = I_n$. On note $O_n(\mathbb{R})$ l'ensembles des matrices orthogonales de $\mathcal{M}_n(\mathbb{R})$. D'apres la caractérisation précédente, on obtient que l'inverse d'une matrice orthogonale est sa transposé.
+\end{de}
+\begin{prop}
+$(O_n(\mathbb{R}),\times)$ est un sous groupe de ($Gl_n(\mathbb{R},\times)$. Nous avons donc les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] $I_n$ est une matrice orthogonale
+ \item[$\rightarrow$] Le produit de deux matrices orthogonales est une matrice orthogonales
+ \item[$\rightarrow$] L'inverse d'une matrice orthogonale est une matrice orthogonale
+\end{itemize}
+\end{prop}
+\begin{prop}
+Soit E un espace vectoriel euclidien. Nous avons les propriétés suivantes : 
+\begin{itemize}
+ \item[$\rightarrow$] Si $f \in O(E)$, alors la matrice de f dans n'importe quelle base orthonormée est orthogonale
+ \item[$\rightarrow$] Si $f \in \mathcal{L}(E)$, et si il existe une base orthonormée dans laquelle f est représenté par une matrice orthogonale, alors $f \in O(E)$
+\end{itemize}
+\end{prop}
+\subsubsection{Lien avec les bases orthonormées}
+\begin{prop}
+Nous avons les propriétés suivantes :
+\begin{itemize}
+ \item[$\rightarrow$] Si E est un espace vectoriel euclidien, la matrice de passage d'une base orthonormée à une autre base orthonormée est une matrice orthogonale.
+ \item[$\rightarrow$] Si B est une base orthonormée de E et si la matrice de passage entre B et B' est une matrice orthogonale, alors B' est aussi une base orthonormée de E.
+ \item[$\rightarrow$] $A \in \mathcal{M}_n(\mathbb{R})$ est une matrice orthogonale si et seulement si ses colonnes forment une base orthonormée dans $\mathbb{R}^n$ euclidien canonique. Il en est de même si on considère les lignes.
+\end{itemize}
+\end{prop}
+\subsubsection{Déterminant d'un endomorphisme orthogonal}
+\begin{prop}
+Si $A \in O_n(\mathbb{R})$, alors : 
+$$det(A) = \pm 1$$
+\end{prop}
+\begin{prop}
+Si $f \in O(E)$, avec E un $\mathbb{R}$ espace vectoriel euclidien, alors :
+$$det(f) = \pm 1$$
+\end{prop}
+\begin{prop}
+Les endomorphismes orthogonaux de déterminant +1 sont dits directs ou positif.\\
+Les endomorphismes orthogonaux de déterminant -1 sont dits indirects ou négatif.\\
+\end{prop}
+\subsubsection{Valeurs propres d'un endomorphisme orthogonal ou d'une matrice orthogonale}
+Soit $A \in O_n(\mathbb{R})$
+\begin{prop}
+Les valeurs propres complexes d'une matrice orthogonale sont de module 1.
+\end{prop}
+\subsubsection{Symétries orthogonales}
+\begin{de}
+Soit E un $\mathbb{R}$ espace vectoriel euclidien de dimension finie n et F un sous espace vectoriel de E. Nous avons donc : 
+$$E = F \oplus F^{\bot}$$
+On peut donc définir la symétrie orthogonale s par rapport à F et parralèlement de $F^{\bot}$ : 
+$$s : E \rightarrow E$$
+$$\overrightarrow{x} = \overrightarrow{x_1} + \overrightarrow{x_2} \rightarrow s(\overrightarrow{x}) = \overrightarrow{x_1} - \overrightarrow{x_2}$$
+Avec $\overrightarrow{x_1} \in F$ et $\overrightarrow{x_2} \in F^{\bot}$.
+\end{de}
+\begin{prop}
+Nous avons la propriété suivante : 
+$$s \in O(E)$$
+\end{prop}
+\subsubsection{Réduction orthonormale d'un endomorphisme orthogonal}
+\begin{theo}
+Soit $f \in O(E)$, avec E un $\mathbb{R}$ espace vectoriel euclidien. Alors, il existe au moins une base orthonormée B de E telle que : 
+\[mat_B(f) = \begin{blockarray}{ccc}
+        \begin{block}{(ccc)}
+         \mesbloc{R_1}  &  & (0)   \\
+                            &\ddots      &  \\
+         (0)                &  & \mesbloc{R_p}  \\
+        \end{block}
+        \end{blockarray}
+\] 
+Avec $R_k = (1)$ ou $R_k = (-1)$ ou :
+\[R_k = \begin{blockarray}{cc}
+        \begin{block}{(cc)}
+         cos(\theta_k)  &  -sin(\theta_k)   \\
+         sin(\theta_k)  & cos(\theta_k)  \\
+        \end{block}
+        \end{blockarray}
+\] 
+$O_k \neq 0~ [\pi]$. Dans ce dernier cas, $R_k$ représente une rotation d'angle $\theta_k$
+\end{theo}
